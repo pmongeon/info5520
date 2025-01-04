@@ -1,26 +1,26 @@
 {
-    "id": "FC18FFB7",
-    "path": "~/GitHub/info5520/ch11.qmd",
-    "project_path": "ch11.qmd",
+    "id": "AA840CAE",
+    "path": "~/GitHub/info5520/docs/slides/ch1.qmd",
+    "project_path": "docs/slides/ch1.qmd",
     "type": "quarto_markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1735958978347.0,
+    "created": 1736008855378.0,
     "source_on_save": false,
     "relative_order": 3,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "6,21",
+        "cursorPosition": "9,20",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1735958451,
+    "lastKnownWriteTime": 1736008985,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1735958451,
+    "last_content_update": 1736008985,
     "read_only": false,
     "read_only_alternatives": []
 }
