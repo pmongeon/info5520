@@ -1,0 +1,40 @@
+# Course overview {.unnumbered}
+
+This book is a work-in-progress intended to support the course MGMT2605 - Working with Data offered at the Faculty of Management of Dalhousie University. The course introduces this knowledge and skillset through lectures and hands-on labs. Students will learn to use a variety of tools to find, manage, assess, extract value from, and visualize raw data.
+
+## Learning outcomes
+
+Upon completion of this course, students should be able to:
+
+1.  Manipulate, assess, analyze, and share raw data of different types (including quantitative data, qualitative data, and GIS data)
+2.  Identify the nature and extent of data needed and collected for given managerial purposes
+3.  Locate, collect, and integrate data of multiple types from multiple sources
+4.  Use data to inform evidence-based decision-making
+5.  Understand the data lifecycle (including collection, management, analysis, and application)
+6.  Demonstrate critical evaluation at various stages of the data lifecycle
+7.  Assess data visualizations and analyses for accuracy, relevance, and objectivity
+8.  Employ a range of data skills to address diverse, real-world scenarios/problems in multiple sectors and disciplines
+9.  Use data ethically and with awareness of the capabilities and limitations of data analysis
+
+## Schedule
+
+| Weeks         | Module                                    | Chapters       |
+|---------------|-------------------------------------------|----------------|
+| 1, 2          | Data fundamentals                         | 1, 2, 3        |
+| 3, 4, 5       | Data retrieval, assessment and processing | 4, 5, 6        |
+| 6, 7, 8       | Data analytics                            | 7, 8, 9        |
+| 9, 10, 11, 12 | Data visualization                        | 10, 11, 12, 13 |
+
+::: callout-important
+## Important note
+
+Use the course Brightspace to:
+
+-   Access the detailed instruction for the assignments **(note that new assignments are under preparation and will be made available as soon as they are ready)**
+
+-   Submit your assignments.
+
+-   Access and complete the quizzes (one for each module).
+
+-   Access the syllabus (note: in case of discrepancy between the syllabus and the information on Brightspace or in this textbook, Brightspace and the textbook prevail.)
+:::

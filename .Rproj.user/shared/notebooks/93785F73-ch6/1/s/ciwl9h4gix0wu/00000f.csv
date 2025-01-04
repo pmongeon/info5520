@@ -1,0 +1,5 @@
+"0","data <- data %>% "
+"0","  separate_rows(grade, sep = ""; "")"
+"0","data %>% "
+"0","  kbl() %>% "
+"0","  kable_classic"

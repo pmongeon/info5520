@@ -1,0 +1,23 @@
+---
+bibliography: references.bib
+---
+
+# Data types
+
+There are four types of data that we will deal with in this course: character strings, numbers, logical values, and dates. Let's look at them one by one.
+
+### Character strings
+
+Character strings (or strings) are sequences of any kind of symbols (including space and other non-printed characters like line breaks). They can easily be recognized because they are surrounded by single (`'`) or double (`"`) quotation marks. Let's create an object called fruit and store the string "banana" inside it.
+
+## Exercise: Clean E-commerce data
+
+1.  **Text Cleaning** – Prepare a screenshot of your completed **olist_orders.xlsx** file with a screenshot of the modified file. Write one or two sentences about what you did to clean this file sheet and explain how many values of “Espírito Santos” were replaced.
+
+2.  **The Value of Vouchers** – Create a pivot table with the data from the order_payments data and investigate the total payment_value of records paid by vouchers. Provide a screenshot of the table and a few sentences on whether vouchers are likely an important part of Olist’s business.
+
+3.  **Further Outliers** – Besides the outliers found in Step 4, there are other possible outliers in this data, specifically the records with a cash value of 0. Put these values into either a table or pivot table and provide a screenshot of the results and an explanation about whether these are truly outliers based on what you read about outliers in the textbook. 
+
+4.  **Credit Cards and Installments** – Using the orders_payments spreadsheet, determine whether there is a possible relationship between the credit card payment method and the number of payment installments. Provide a visualization of a table or pivot table, along with a few sentences explaining what you did and the conclusion you arrived at.
+
+## 

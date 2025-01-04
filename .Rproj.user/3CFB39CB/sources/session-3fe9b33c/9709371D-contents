@@ -1,0 +1,12 @@
+---
+bibliography: references.bib
+---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+# Sampling
+
+Under construction...
