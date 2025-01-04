@@ -1,7 +1,14 @@
 ---
 title: "INFO5520 - Week 1"
-format: revealjs
-self-contained: true
+format: 
+  revealjs:
+    smaller: true
+    scrollable: true
+    slide-number: true
+    show-slide-number: all
+    show-notes: false
+    chalkboard: true
+    footer: '<a href="https://pmongeon.github.io/info5520/ch1.html">INFO 5520 - Research Methods - Chapter 1</a>'
 ---
 
 ## Plan
