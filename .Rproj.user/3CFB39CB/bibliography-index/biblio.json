@@ -4082,6 +4082,96 @@
             "language": "en",
             "title": "Competitions Documentation",
             "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Fortin",
+                    "given": "Marie-Fabienne"
+                },
+                {
+                    "family": "Gagnon",
+                    "given": "Johanne"
+                }
+            ],
+            "edition": "3e",
+            "id": "fortin2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Chenelière Éducation",
+            "publisher-place": "Montréal, QC",
+            "title": "Fondements et étapes du processus de recherche: Méthodes quantitatives et qualitatives",
+            "title-short": "Fondements et étapes du processus de recherche",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1177/1609406917748992",
+            "URL": "https://doi.org/10.1177/1609406917748992",
+            "author": [
+                {
+                    "family": "Galdas",
+                    "given": "Paul"
+                }
+            ],
+            "container-title": "International Journal of Qualitative Methods",
+            "id": "galdas2017",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: SAGE Publications Inc",
+            "page": "1609406917748992",
+            "title": "Revisiting Bias in Qualitative Research: Reflections on Its Relationship With Funding and Impact",
+            "title-short": "Revisiting Bias in Qualitative Research",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "DOI": "10.1111/spc3.12735",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/spc3.12735",
+            "author": [
+                {
+                    "family": "Jamieson",
+                    "given": "Michelle K."
+                },
+                {
+                    "family": "Govaart",
+                    "given": "Gisela H."
+                },
+                {
+                    "family": "Pownall",
+                    "given": "Madeleine"
+                }
+            ],
+            "container-title": "Social and Personality Psychology Compass",
+            "id": "jamieson2023",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/spc3.12735",
+            "page": "e12735",
+            "title": "Reflexivity in quantitative research: A rationale and beginner’s guide",
+            "title-short": "Reflexivity in quantitative research",
+            "type": "article-journal",
+            "volume": "17"
         }
     ],
     "project_biblios": [
