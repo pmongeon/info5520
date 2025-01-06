@@ -2,7 +2,7 @@
 title: "INFO5520 - Week 1"
 format: 
   revealjs:
-#    smaller: true
+    smaller: true
     scrollable: true
     slide-number: true
     show-slide-number: all
@@ -29,7 +29,7 @@ All information professionals require knowledge of formal research processes to 
 ## Learning outcomes
 
 -   Understand the research process.
--   Criticallt evaluate research.
+-   Critically evaluate research.
 -   Understand and apply qualitative and quantitative research methods.
 -   Understand and apply core research ethics principles.
 -   Understand how research can be practiced in different contexts.
@@ -52,15 +52,21 @@ We will learn by doing. So that you can say you did it. And let’s focus on cur
 
 ![](images/clipboard-3487385684.png){.center fig-align="center" width="503"}
 
-## Research is a process
-
-Five phases [@fortin2016]:
+## The five phases of the research process [@fortin2016]
 
 -   Conceptual phase
+    -   Formulation of the research problem, purpose, and questions.
+    -   Identification and definition of key concepts.
+    -   Review of the literature.
 -   Methodological phase
+    -   Development of a research design, a strategy to answer the research questions and fulfill the goal of the study.
 -   Empirical phase
+    -   Actual collection of the data.
 -   Analytical phase
+    -   Data analysis (production of the results)
+    -   Interpretation of the results.
 -   Reporting phase
+    -   Dissemination of the findings to target audiences through various formats (journal articles, blogs, dissertation, oral presentations, poster presentations, etc.)
 
 ## Research is situational
 
@@ -72,14 +78,14 @@ Knowledge **claims** are directed to a more or less broad **audience** that is t
 
 ## Research can have many goals
 
+-   Know and understand phenomena (basic/fundamental research)
+-   Solve problems (applied research)
 -   Explore
 -   Describe
 -   Compare
 -   Explain
 -   Predict
 -   Evaluate
--   Know and understand phenomena (basic/fundamental research)
--   Solve problems (applied research)
 
 ## Research can take different forms
 
@@ -87,13 +93,13 @@ Knowledge **claims** are directed to a more or less broad **audience** that is t
 
     -   Measures, counts.
     -   Focus on validity, reliability, objectivity, generalizability.
-    -   Types of methodological approach (descriptive, correlational, experimental, quasi-experimental, etc.)
+    -   Types of methodological approach (descriptive, correlational, experimental, quasi-experimental, etc.).
 
 -   Qualitative research
 
     -   Rich descriptions, nuances.
-    -   Focus on subjectivity, trustworthiness, accuracy, transferability
-    -   Types of methodological approach (phenomenology, ethnography, grounded theory, critical theory, case studies, etc.)
+    -   Focus on subjectivity, trustworthiness, accuracy, transferability.
+    -   Types of methodological approach (phenomenology, ethnography, grounded theory, critical theory, case studies, etc.).
 
 -   Mixed methods research
 
@@ -155,9 +161,9 @@ Knowledge **claims** are directed to a more or less broad **audience** that is t
 
 ## Deduction, induction, abduction
 
-**Deduction**:Logical conclusion derived from a set of premises.
+**Deduction**: Logical conclusion derived from a set of premises.
 
-**Induction**:Generalizing from a set of observations.
+**Induction**: Generalizing from a set of observations.
 
 **Abduction**: Guessing based on the most likely explanation.
 
@@ -171,19 +177,21 @@ No, you don't. However, they provide a conceptual framework through which you ca
 
 A proposal for your master's thesis (if you are doing one or thinking of doing one) **OR** a mixed methods research proposal on an information management related topic of your choice (in groups of 3-5 people). The proposal includes the following sections:
 
-1.  Abstract
-2.  Introduction (draws from assignment #1)
-3.  Literature review (draws from assignment #1)
-4.  Methodology
-5.  Methods (relates to assignment #2 and #3)
-    1.  Data collection
-    2.  Data analysis
-6.  Expected contributions
-7.  Limitations
-8.  Dissemination strategy
-9.  Future research
-10. References
-11. Appendices
+-   Abstract
+-   Introduction (draws from assignment #1)
+-   Literature review (draws from assignment #1)
+-   Methodology
+-   Methods (relates to assignment #2 and #3)
+    -   Data collection
+    -   Data analysis
+-   Discussion
+    -   Expected contributions
+    -   Limitations
+    -   Discussion of quality criteria of research
+        -   Quantitative: internal validity, external validity, reliability, objectivity.
+        -   Qualitative: credibility, transferability, dependability, confirmability.
+-   References
+-   Appendices
 
 ## Assignments
 
