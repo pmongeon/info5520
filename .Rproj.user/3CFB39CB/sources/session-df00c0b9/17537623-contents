@@ -1,8 +1,0 @@
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-library(kableExtra)
-```
-
-## Literature review
-
-Under construction...

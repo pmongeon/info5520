@@ -1,8 +1,0 @@
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-library(kableExtra)
-```
-
-# What is research?
-
-**Important note:** The content for this week will be a set of slides that will be posted here. However, the slide deck might not be available before the class (Monday, January 6th). I will eventually complement the slides with more elaborated content and other resources.
