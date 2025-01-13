@@ -4172,6 +4172,472 @@
             "title-short": "Reflexivity in quantitative research",
             "type": "article-journal",
             "volume": "17"
+        },
+        {
+            "DOI": "10.3233/EFI-211513",
+            "URL": "https://content.iospress.com/articles/education-for-information/efi211513",
+            "author": [
+                {
+                    "family": "Mongeon",
+                    "given": "Philippe"
+                },
+                {
+                    "family": "Brown",
+                    "given": "Alison"
+                },
+                {
+                    "family": "Dhaliwal",
+                    "given": "Ratna"
+                },
+                {
+                    "family": "Hill",
+                    "given": "Jessalyn"
+                },
+                {
+                    "family": "Matthews",
+                    "given": "Amber"
+                }
+            ],
+            "container-title": "Education for Information",
+            "id": "mongeon2021",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: IOS Press",
+            "page": "231-246",
+            "title": "A bibliometric analysis of race-related research in LIS",
+            "type": "article-journal",
+            "volume": "37"
+        },
+        {
+            "DOI": "10.31235/osf.io/uw3xe",
+            "author": [
+                {
+                    "family": "Madsen",
+                    "given": "Emil Bargmann"
+                },
+                {
+                    "family": "Mongeon",
+                    "given": "Philippe"
+                },
+                {
+                    "family": "Schneider",
+                    "given": "Jesper W."
+                }
+            ],
+            "id": "madsen",
+            "language": "en-us",
+            "title": "Does double-blind peer review effectively correct for gender disparities in research funding?",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1139/facets-2023-0005",
+            "URL": "https://www.facetsjournal.com/doi/full/10.1139/facets-2023-0005",
+            "author": [
+                {
+                    "family": "Robertson",
+                    "given": "Manjulika E."
+                },
+                {
+                    "family": "Chu",
+                    "given": "Samantha M."
+                },
+                {
+                    "family": "Cloutier",
+                    "given": "Anika"
+                },
+                {
+                    "family": "Mongeon",
+                    "given": "Philippe"
+                },
+                {
+                    "family": "Driscoll",
+                    "given": "Don A."
+                },
+                {
+                    "family": "Heer",
+                    "given": "Tej"
+                },
+                {
+                    "family": "Westwood",
+                    "given": "Alana R."
+                }
+            ],
+            "container-title": "FACETS",
+            "id": "robertson2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        1
+                    ]
+                ]
+            },
+            "note": "Publisher: Canadian Science Publishing",
+            "page": "1-31",
+            "title": "Interference in science: Scientists’ perspectives on their ability to communicate and conduct environmental research in canada",
+            "title-short": "Interference in science",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "DOI": "10.5206/cjils-rcsib.v46i2.15568",
+            "URL": "https://ojs.lib.uwo.ca/index.php/cjils/article/view/15568",
+            "author": [
+                {
+                    "family": "Mongeon",
+                    "given": "Philippe"
+                },
+                {
+                    "family": "Gracey",
+                    "given": "Catherine"
+                },
+                {
+                    "family": "Riddle",
+                    "given": "Poppy"
+                },
+                {
+                    "family": "Hare",
+                    "given": "Madelaine"
+                },
+                {
+                    "family": "Simard",
+                    "given": "Marc-André"
+                },
+                {
+                    "family": "Sauvé",
+                    "given": "Jean-Sébastien"
+                }
+            ],
+            "container-title": "The Canadian Journal of Information and Library Science",
+            "id": "mongeon2023",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        11,
+                        6
+                    ]
+                ]
+            },
+            "page": "1-27",
+            "title": "Mapping information research in canada",
+            "type": "article-journal",
+            "volume": "46"
+        },
+        {
+            "DOI": "10.1162/qss_a_00296",
+            "URL": "https://doi.org/10.1162/qss_a_00296",
+            "author": [
+                {
+                    "family": "Hare",
+                    "given": "Madelaine"
+                },
+                {
+                    "family": "Krause",
+                    "given": "Geoff"
+                },
+                {
+                    "family": "MacKnight",
+                    "given": "Keith"
+                },
+                {
+                    "family": "Bowman",
+                    "given": "Timothy D."
+                },
+                {
+                    "family": "Costas",
+                    "given": "Rodrigo"
+                },
+                {
+                    "family": "Mongeon",
+                    "given": "Philippe"
+                }
+            ],
+            "container-title": "Quantitative Science Studies",
+            "id": "hare2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        2,
+                        26
+                    ]
+                ]
+            },
+            "page": "1-25",
+            "title": "Do you cite what you tweet? Investigating the relationship between tweeting and citing research articles",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.48550/arXiv.2404.01985",
+            "author": [
+                {
+                    "family": "Simard",
+                    "given": "Marc-Andre"
+                },
+                {
+                    "family": "Basson",
+                    "given": "Isabel"
+                },
+                {
+                    "family": "Hare",
+                    "given": "Madelaine"
+                },
+                {
+                    "family": "Lariviere",
+                    "given": "Vincent"
+                },
+                {
+                    "family": "Mongeon",
+                    "given": "Philippe"
+                }
+            ],
+            "id": "simard",
+            "title": "The open access coverage of OpenAlex, scopus and web of science",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1002/asi.24890",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.24890",
+            "author": [
+                {
+                    "family": "Deja",
+                    "given": "Marek"
+                },
+                {
+                    "family": "Bobkowski",
+                    "given": "Piotr"
+                },
+                {
+                    "family": "Huvila",
+                    "given": "Isto"
+                },
+                {
+                    "family": "Mierzecka",
+                    "given": "Anna"
+                }
+            ],
+            "container-title": "Journal of the Association for Information Science and Technology",
+            "id": "deja2024",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://asistdl.onlinelibrary.wiley.com/doi/pdf/10.1002/asi.24890",
+            "page": "1288-1303",
+            "title": "Empowering through digital skills: A case of alumni in the business services sector",
+            "title-short": "Empowering through digital skills",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "DOI": "10.1002/asi.24954",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.24954",
+            "author": [
+                {
+                    "family": "Wedlake",
+                    "given": "Stacey"
+                },
+                {
+                    "family": "Coward",
+                    "given": "Chris"
+                },
+                {
+                    "family": "Lee",
+                    "given": "Jin Ha"
+                }
+            ],
+            "container-title": "Journal of the Association for Information Science and Technology",
+            "id": "wedlake2024",
+            "issue": "13",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://asistdl.onlinelibrary.wiley.com/doi/pdf/10.1002/asi.24954",
+            "page": "1480-1497",
+            "title": "How games can support misinformation education: A sociocultural perspective",
+            "title-short": "How games can support misinformation education",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "DOI": "10.1002/asi.24893",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.24893",
+            "author": [
+                {
+                    "family": "Quan",
+                    "given": "Mingzhe"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Chenwei"
+                }
+            ],
+            "container-title": "Journal of the Association for Information Science and Technology",
+            "id": "quan2024",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://asistdl.onlinelibrary.wiley.com/doi/pdf/10.1002/asi.24893",
+            "page": "1166-1181",
+            "title": "Does disseminating scientific information on social media promote public health during the COVID-19 pandemic?",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "DOI": "10.1002/asi.24885",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.24885",
+            "author": [
+                {
+                    "family": "McKay",
+                    "given": "Dana"
+                },
+                {
+                    "family": "Makri",
+                    "given": "Stephann"
+                },
+                {
+                    "family": "Gutierrez-Lopez",
+                    "given": "Marisela"
+                },
+                {
+                    "family": "Porlezza",
+                    "given": "Colin"
+                },
+                {
+                    "family": "Macfarlane",
+                    "given": "Andrew"
+                },
+                {
+                    "family": "Cooper",
+                    "given": "Glenda"
+                },
+                {
+                    "family": "Missaoui",
+                    "given": "Sondess"
+                }
+            ],
+            "container-title": "Journal of the Association for Information Science and Technology",
+            "id": "mckay2024",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://asistdl.onlinelibrary.wiley.com/doi/pdf/10.1002/asi.24885",
+            "page": "844-858",
+            "title": "I’m the same, I’m the same, I’m trying to change: Investigating the role of human information behavior in view change",
+            "title-short": "I’m the same, I’m the same, I’m trying to change",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "DOI": "10.1002/asi.24883",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.24883",
+            "author": [
+                {
+                    "family": "Chen",
+                    "given": "Kejun"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "Yuehua"
+                },
+                {
+                    "family": "Song",
+                    "given": "Ningyuan"
+                },
+                {
+                    "family": "Han",
+                    "given": "Yufei"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Jiaer"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Jiaqing"
+                }
+            ],
+            "container-title": "Journal of the Association for Information Science and Technology",
+            "id": "chen2024",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://asistdl.onlinelibrary.wiley.com/doi/pdf/10.1002/asi.24883",
+            "page": "807-828",
+            "title": "You are not alone: Characterizing users’ relationship-layer identities in online health communities",
+            "title-short": "You are not alone",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "DOI": "10.1002/asi.24882",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.24882",
+            "author": [
+                {
+                    "family": "Urban",
+                    "given": "Alex"
+                },
+                {
+                    "family": "Bossaller",
+                    "given": "Jenny Simpson"
+                }
+            ],
+            "container-title": "Journal of the Association for Information Science and Technology",
+            "id": "urban2024",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://asistdl.onlinelibrary.wiley.com/doi/pdf/10.1002/asi.24882",
+            "page": "789-806",
+            "title": "Exploring enigmas: Information seeking after exposure to virtual reality awe elicitors",
+            "title-short": "Exploring enigmas",
+            "type": "article-journal",
+            "volume": "75"
         }
     ],
     "project_biblios": [

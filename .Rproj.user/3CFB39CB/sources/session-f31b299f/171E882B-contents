@@ -1,0 +1,20 @@
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+# What is research?
+
+**Important note:** The content for this week will be a set of slides that will be posted here. However, the slide deck might not be available before the class (Monday, January 6th). I will eventually complement the slides with more elaborated content and other resources.
+
+## Slides
+
+```{=html}
+<iframe width="780" height="500" src="https://pmongeon.github.io/info5520/slides/ch1.html#/title-slide/" title="Slides - Week 1"></iframe>
+```
+
+```{=html}
+<a href="https://pmongeon.github.io/info5520/slides/ch1.html#/title-slide/" target="_blank" rel="noopener noreferrer">Click here to open the slides in a new tab</a> 
+```
+
+
