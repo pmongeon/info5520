@@ -96,21 +96,21 @@ Source: [@fortin2016, p. 69-70]
 ### Descriptive research
 
 | Question | Goal | State of knowledge | Type of research |
-|---------------------|-----------------|-----------------|-----------------|
+|----|----|----|----|
 | What is? What? Who? What is the nature/purpose/meaning of? | Explore, discover, understand phenomena. | Not extensively studied; not fully understood; under theorized. | Qualitative studies |
 | What are the characteristics of? What is the prevalence of? | Name, classify, describe, count, measure | Not extensively studied; not fully understood; under theorized. | Quantitative studies |
 
 ### Explanatory research
 
 | Question | Goal | State of knowledge | Type of research |
-|------------------|------------------|-------------------|------------------|
+|----|----|----|----|
 | What is the relation? What are the associated factors? What is the process? | Explore, discover, understand phenomena. | Not extensively studied; not fully understood; under theorized. | Descriptive-correlational studies, time series studies. |
 | What is the influence/contribution? Why? | Explain the direction and strength of relationships. Test hypotheses | Existing publications support the existence of the relationship. Theories and models. | Correlational-predictive studies; cohort studies; case-control studies |
 
 ### Predictive research
 
 | Question | Goal | State of knowledge | Type of research |
-|------------------|------------------|-------------------|------------------|
+|----|----|----|----|
 | What is the effect of? What are the differences between groups? How effective is? | Predict causality, establishing group differences. | Well-researched phenomenon; Existing theory(ies)/model(s). | Experimental or quasi-experimental studies |
 
 ## Examples {.smaller}
