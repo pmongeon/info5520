@@ -4638,6 +4638,56 @@
             "title-short": "Exploring enigmas",
             "type": "article-journal",
             "volume": "75"
+        },
+        {
+            "DOI": "10.3389/fpsyt.2022.936097",
+            "URL": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2022.936097/full",
+            "author": [
+                {
+                    "family": "Hsueh",
+                    "given": "Meng-Lun"
+                },
+                {
+                    "family": "Jong",
+                    "given": "Din"
+                }
+            ],
+            "container-title": "Frontiers in Psychiatry",
+            "id": "hsueh2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        7,
+                        22
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "title": "Self-awareness of sleep apnea symptoms among middle-aged and elderly people in taiwan",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "DOI": "10.1016/S0306-4573(99)00023-0",
+            "author": [
+                {
+                    "family": "Dervin",
+                    "given": "B."
+                }
+            ],
+            "container-title": "Inf. Process. Manag.",
+            "id": "dervin1999",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "title": "On studying information seeking methodologically: The implications of connecting metatheory to method",
+            "title-short": "On studying information seeking methodologically",
+            "type": "article-journal"
         }
     ],
     "project_biblios": [

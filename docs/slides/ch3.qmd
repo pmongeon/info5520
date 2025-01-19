@@ -9,7 +9,7 @@ format:
     show-slide-number: all
     show-notes: false
     chalkboard: true
-    footer: '<a href="https://pmongeon.github.io/info5520/ch2.html">INFO 5520 - Research Methods - Chapter 2</a>'
+    footer: '<a href="https://pmongeon.github.io/info5520/ch3.html">INFO 5520 - Research Methods - Chapter 3</a>'
 bibliography: ../../references.bib
 ---
 
@@ -117,7 +117,7 @@ The research objective/purpose/goal should be:
 -   Should be written in a single sentence, in the present indicative tense. (e.g., "There is a positive association between studying and academic success")
 
 | Type | Nature of relationship between variables |
-|-------------------|-----------------------------------------------------|
+|--------------------|----------------------------------------------------|
 | Non-directional | The is a relationship between X and Y |
 | Directional | There is a positive or negative relationship between X and Y |
 | Associative | There is a non-directional or directional relationship (variable X changes when Y changes), but Y is not directly caused by X. |
