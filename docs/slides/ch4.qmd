@@ -1,0 +1,202 @@
+---
+title: "The methodological phase"
+subtitle: "Part 1: Research design"
+format: 
+  revealjs:
+#    smaller: true
+    scrollable: true
+    slide-number: true
+    show-slide-number: all
+    show-notes: false
+    chalkboard: true
+    footer: '<a href="https://pmongeon.github.io/info5520/ch4.html">INFO 5520 - Research Methods - Chapter 4</a>'
+bibliography: ../../references.bib
+---
+
+## Plan
+
+-   Research design: key concepts
+-   Qualitative designs
+-   Quantitative designs
+-   Mixed methods designs
+
+## The methodological phase
+
+-   Ethical considerations (TCPS 2: CORE 2022).
+
+-   **Research designs (this week)**.
+
+-   Sampling (next week).
+
+-   Concept definition and operationalization (next week).
+
+-   Qualitative data collection (in 2 weeks).
+
+-   Quantitative data collection (in 2 weeks).
+
+# Research design
+
+## Elements to consider {.smaller}
+
+-   Comparisons
+-   Interventions
+-   Research milieu (location/context).
+-   Data collection methods and instruments.
+-   Temporality (when are you collecting data)
+-   Communications with participants
+-   Biases
+-   Control of exogenous and endogenous factors
+
+## Types of research and their associated designs {.smaller}
+
+| Type | Goal | Research designs |
+|------------------------|------------------------|------------------------|
+| descriptive/exploratory (qualtiative) | Describe phenomena | Phenomenology; Ethnography; Grounded theory; Case study; Qualitative descriptive study |
+| descriptive (quantitative) | Describe population | Simple descriptive study; Comparative study; Longitudinal study; Case study. |
+| Correlational descriptive, predictive, confirmative | Explore or verify relations | correlational descriptive or predictive study; cohort study; case-control study. |
+| Experimental | Verify causal relations | Before-and-after design with control group; after design with control group; factorial design. |
+| Quasi-experimental | Verify causal relations | Same as experimental, but with a non-equivalent control group. |
+
+# Qualitative research designs
+
+## Phenomenology
+
+-   Aims to understand the lived experience of participants
+
+-   Focus on a particular phenomenon
+
+-   Data usually collected from interviews
+
+## Ethnography
+
+-   Aims to understand behaviours and group cultures.
+
+-   Rooted in anthropology.
+
+-   Focus on a natural setting in which individuals share a common culture.
+
+-   Data collected from participant observation, interviews, and documents
+
+## Grounded theory
+
+-   Aims to generate theory from data collected in a natural setting.
+
+-   Rooted in sociology and symbolic interactionism.
+
+-   Focus on a process involving human actions and interactions and how they influence one another.
+
+-   Data collected through interviews or other relevant data sources.
+
+## Case study
+
+-   Aims to provide a deep understanding of a person, small group, or situation.
+
+-   Rooted in anthropology and sociology
+
+-   Focus on one or several case(s) in a natural setting.
+
+-   Data collected through observation, interviews, documents, etc.
+
+## Qualitative descriptive
+
+-   Aims to provide a simple description of a phenomenon, situation or event.
+
+-   Focus on the who, what, and where of a phenomenon, situation or event in a natural setting.
+
+-   Data collected through any relevant method.
+
+# Quantitative research designs
+
+## Simple or comparative descriptive
+
+-   Aims to describe the characteristics of a population or a phenomenon.
+
+-   Can describe a single group (simple) or compare the characteristics of different groups (comparative).
+
+-   Uses one or multiple variables.
+
+-   No hypotheses or causal claims.
+
+-   Can be cross-sectional (data collected at one point in time) or longitudinal (data collected at multiple points in time).
+
+## Correlational descriptive, predictive, or confirmative
+
+-   Aims to explore, predict, or confirm relations between variables
+
+-   Continuum from descriptive when no or limited pre-existing knowledge of relation to confirmative when there is a theory being tested.
+
+-   Uses one or multiple variables.
+
+-   Hypotheses are used in predictive or confirmative designs.
+
+-   No causal claims.
+
+## cohort and case-control design {.smaller}
+
+-   These are common in epidemiology but can also be applied to other fields.
+
+-   Prospective cohort studies follow a group exposed to a risk factor (comes from epidemiology) and another group that is not exposed.
+
+-   Retrospective cohort studies start from a phenomenon and then seek explanations in the past.
+
+-   Case-control designs aim to link a current phenomenon to a past phenomenon by comparing a group in which the phenomenon is currently present to a group in which it is not.
+
+## Experimental and quasi-experimental {.smaller}
+
+-   Before-and-after design with a control group.
+
+    -   Random assignment to groups → Measures → treatment (experimental group) → Measures
+
+-   after design with a control group.
+
+    -   Random assignment to groups → Treatment (experimental group) → Measures
+
+-   factorial design
+
+    -   (Quasi-)experimental design in which two or more variables are manipulated.
+
+-   Experimental design requires randomization.
+
+-   In quasi-experimental research, there is limited control of external factors and of the setting, and there is no randomization.
+
+# Mixed methods research designs
+
+## Exploratory sequential design
+
+QUAL → quan
+
+-   Priority on qualitative data.
+
+-   Aims to refine a theory or explore relations between phenomenons observed during the qualitative phase.
+
+-   Integration of quantitative and qualitative data during the interpretation phase.
+
+## Explanatory sequential design
+
+QUAN → qual
+
+-   Priority on quantitative data.
+
+-   Integration of quantitative and qualitative data during the interpretation phase.
+
+-   Qualitative findings aim to clarify or explain quantitative findings.
+
+## Parallel design
+
+QUAN+QUAL or QUAL+QUAN
+
+-   The quantitative and qualitative data are equally important (in theory, but generally not in practice).
+
+-   Triangulation is the main purpose.
+
+-   Data are analyzed separately and results are compared.
+
+## Embedded design
+
+QUAN/qual or QUAL/quan
+
+-   Qualitative and quantitative data are collected concomitantly.
+
+-   One method dominates and the other is used to complement.
+
+-   Data are integrated during the analysis phase.

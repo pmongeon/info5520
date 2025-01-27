@@ -7,7 +7,7 @@ bibliography: references.bib
 ## Slides
 
 ```{=html}
-<iframe width="780" height="500" src="https://pmongeon.github.io/info5520/slides/ch3.html#/title-slide/" title="Slides - Week 1"></iframe>
+<iframe width="780" height="500" src="https://pmongeon.github.io/info5520/slides/ch3.html#/title-slide/" title="Slides - Week 3"></iframe>
 ```
 
 ```{=html}

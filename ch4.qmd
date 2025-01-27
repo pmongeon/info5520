@@ -4,4 +4,12 @@ bibliography: references.bib
 
 # Methodological designs
 
-Under construction...
+## Slides
+
+```{=html}
+<iframe width="780" height="500" src="https://pmongeon.github.io/info5520/slides/ch4.html#/title-slide/" title="Slides - Week 4"></iframe>
+```
+
+```{=html}
+<a href="https://pmongeon.github.io/info5520/slides/ch4.html#/title-slide/" target="_blank" rel="noopener noreferrer">Click here to open the slides in a new tab</a> 
+```
