@@ -50,7 +50,7 @@ bibliography: ../../references.bib
 ## Types of research and their associated designs {.smaller}
 
 | Type | Goal | Research designs |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | descriptive/exploratory (qualtiative) | Describe phenomena | Phenomenology; Ethnography; Grounded theory; Case study; Qualitative descriptive study |
 | descriptive (quantitative) | Describe population | Simple descriptive study; Comparative study; Longitudinal study; Case study. |
 | Correlational descriptive, predictive, confirmative | Explore or verify relations | correlational descriptive or predictive study; cohort study; case-control study. |

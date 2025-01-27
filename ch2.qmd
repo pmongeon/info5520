@@ -7,6 +7,12 @@ library(kableExtra)
 
 ## Slides
 
+### January 27 guest lecture
+
+Download the slides [here](https://pmongeon.github.io/info5520/slides/Jan27-guest-lecture.pptx).
+
+### Regular class
+
 ```{=html}
 <iframe width="780" height="500" src="https://pmongeon.github.io/info5520/slides/ch2.html#/title-slide/" title="Slides - Week 1"></iframe>
 ```
