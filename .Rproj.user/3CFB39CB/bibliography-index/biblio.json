@@ -4688,6 +4688,61 @@
             "title": "On studying information seeking methodologically: The implications of connecting metatheory to method",
             "title-short": "On studying information seeking methodologically",
             "type": "article-journal"
+        },
+        {
+            "URL": "https://www.geeksforgeeks.org/non-probability-sampling/",
+            "id": "non-prob2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10,
+                        6
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "note": "Section: Data Science",
+            "title": "Non-probability sampling",
+            "type": ""
+        },
+        {
+            "URL": "https://www.geeksforgeeks.org/probability-sampling/",
+            "id": "probabil2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10,
+                        31
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "note": "Section: Data Science",
+            "title": "Probability sampling",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Cohen",
+                    "given": "Jacob"
+                }
+            ],
+            "edition": "2nd ed",
+            "id": "cohen1988",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "publisher": "L. Erlbaum Associates",
+            "publisher-place": "Hillsdale, N.J",
+            "title": "Statistical power analysis for the behavioral sciences",
+            "type": "book"
         }
     ],
     "project_biblios": [

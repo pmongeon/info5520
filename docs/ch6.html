@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -69,7 +89,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="include/webex.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -267,8 +317,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives"><span class="header-section-number">6.1</span> Objectives</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts"><span class="header-section-number">6.2</span> Key concepts</a>
+  <ul class="collapse">
+  <li><a href="#population" id="toc-population" class="nav-link" data-scroll-target="#population"><span class="header-section-number">6.2.1</span> Population</a></li>
+  <li><a href="#sample" id="toc-sample" class="nav-link" data-scroll-target="#sample"><span class="header-section-number">6.2.2</span> Sample</a></li>
+  </ul></li>
+  <li><a href="#probability-sampling-methods" id="toc-probability-sampling-methods" class="nav-link" data-scroll-target="#probability-sampling-methods"><span class="header-section-number">6.3</span> Probability sampling methods</a>
+  <ul class="collapse">
+  <li><a href="#simple-random-sampling" id="toc-simple-random-sampling" class="nav-link" data-scroll-target="#simple-random-sampling"><span class="header-section-number">6.3.1</span> Simple random sampling</a></li>
+  <li><a href="#systematic-random-sampling" id="toc-systematic-random-sampling" class="nav-link" data-scroll-target="#systematic-random-sampling"><span class="header-section-number">6.3.2</span> Systematic random sampling</a></li>
+  <li><a href="#stratified-random-sampling" id="toc-stratified-random-sampling" class="nav-link" data-scroll-target="#stratified-random-sampling"><span class="header-section-number">6.3.3</span> Stratified random sampling</a></li>
+  <li><a href="#random-cluster-sampling" id="toc-random-cluster-sampling" class="nav-link" data-scroll-target="#random-cluster-sampling"><span class="header-section-number">6.3.4</span> Random cluster sampling</a></li>
+  </ul></li>
+  <li><a href="#non-probability-sampling-methods" id="toc-non-probability-sampling-methods" class="nav-link" data-scroll-target="#non-probability-sampling-methods"><span class="header-section-number">6.4</span> Non-probability sampling methods</a>
+  <ul class="collapse">
+  <li><a href="#convenience-sampling" id="toc-convenience-sampling" class="nav-link" data-scroll-target="#convenience-sampling"><span class="header-section-number">6.4.1</span> Convenience sampling</a></li>
+  <li><a href="#purposive-sampling" id="toc-purposive-sampling" class="nav-link" data-scroll-target="#purposive-sampling"><span class="header-section-number">6.4.2</span> Purposive sampling</a></li>
+  <li><a href="#quota-sampling" id="toc-quota-sampling" class="nav-link" data-scroll-target="#quota-sampling"><span class="header-section-number">6.4.3</span> Quota sampling</a></li>
+  <li><a href="#snowball-sampling" id="toc-snowball-sampling" class="nav-link" data-scroll-target="#snowball-sampling"><span class="header-section-number">6.4.4</span> Snowball sampling</a></li>
+  </ul></li>
+  <li><a href="#choosing-a-sample-method" id="toc-choosing-a-sample-method" class="nav-link" data-scroll-target="#choosing-a-sample-method"><span class="header-section-number">6.5</span> Choosing a sample method</a></li>
+  <li><a href="#choosing-a-sample-size" id="toc-choosing-a-sample-size" class="nav-link" data-scroll-target="#choosing-a-sample-size"><span class="header-section-number">6.6</span> Choosing a sample size</a></li>
+  <li><a href="#critically-examining-sampling-methods" id="toc-critically-examining-sampling-methods" class="nav-link" data-scroll-target="#critically-examining-sampling-methods"><span class="header-section-number">6.7</span> Critically examining sampling methods</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6.8</span> References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -292,11 +371,405 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Under construction…</p>
+<section id="objectives" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="objectives"><span class="header-section-number">6.1</span> Objectives</h2>
+<p>At the end of this chapter, you should be able to :</p>
+<ul>
+<li>Define the key concepts related to sampling.</li>
+<li>Understand the different sampling techniques.</li>
+<li>Choose an appropriate sampling technique for a study.</li>
+<li>Determine an appropriate sample size for a study.</li>
+</ul>
+</section>
+<section id="key-concepts" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="key-concepts"><span class="header-section-number">6.2</span> Key concepts</h2>
+<section id="population" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="population"><span class="header-section-number">6.2.1</span> Population</h3>
+<p>In research, the <strong>population</strong> refers to the group (e.g., people, objects, events) about which we want to know something. For examples, if we want to know how online delivery of courses affect the undergraduate student experience, then our population would be all undergraduate students.</p>
+<p>The <strong>Target population</strong> is the population to which you can hope to generalize, it’s the subset of the population that meets the <strong>selection crietria</strong>. The selection criteria are aimed at reducing heterogeneity in the population, and eventually reduce the sample size requirement, and improve the likelihood that your study wil generate credible knowledge. For example, if your study aims to understand the experience of first first-year undergraduate students at a university, you may choose to set specific criteria that would create undesired heterogeneity in your population, such as requiring that they are between 18 and 21 years old and enrolled full-time in a program in which in-person courses are the norm. This will prevent you from dealing with the potentially different experiences of students who study online, of those who are mainly working and taking courses part-time, or who are older adults returning to university or doing a second degree.</p>
+<p>The <strong>accessible population</strong>is the subset of the target population that is accessible to the researcher, and from which a sample will be drawn. It should be as <strong>representative</strong> as possible of the target population. For example, if your accessible population are residents of Halifax, then it might be a bad idea to aim to generalize your results to people living in rural regions of south america (that would be silly), but your target population could be medium-sized cities in the Atlantic provinces of Canada, for example.</p>
+</section>
+<section id="sample" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="sample"><span class="header-section-number">6.2.2</span> Sample</h3>
+<p>The sample is the subset of the accessible population that is included in a study. It is drawn from the accessible population, following a probability or non-probability sample method, which are described in the next section. Sampling tends to be a very important step of a study as it will determine the degree to which your findings can produce convincing and reliable knowledge about your target population.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3621591362.png" class="img-fluid figure-img" width="406"></p>
+<figcaption>Sampling from a population</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="probability-sampling-methods" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="probability-sampling-methods"><span class="header-section-number">6.3</span> Probability sampling methods</h2>
+<p>A sampling methods is probabilistic when every unit of the population has an equal chance of being included in the sample. When that is not the case, the sample method is non-probabilistic.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1501771543.png" class="img-fluid figure-img"></p>
+<figcaption>Probability sampling methods. Source: <span class="citation" data-cites="probabil2023">(<a href="#ref-probabil2023" role="doc-biblioref"><span>“Probability Sampling”</span> 2023</a>)</span></figcaption>
+</figure>
+</div>
+<section id="simple-random-sampling" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="simple-random-sampling"><span class="header-section-number">6.3.1</span> Simple random sampling</h3>
+<p>Simple random sampling draws random units from the entire accessible population. The process is as follows:</p>
+<ol type="1">
+<li>Create a list of all units in the accessible population.</li>
+<li>Assign each unit a number.</li>
+<li>Use a random number generator (e.g., <a href="https://www.randomizer.org/" class="uri">https://www.randomizer.org/</a>) to create a random set of <em>n</em> numbers within the range of your list, where <em>n</em> is the desired sample size.</li>
+<li>The units associated with these numbers constitute your random sample.</li>
+</ol>
+</section>
+<section id="systematic-random-sampling" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="systematic-random-sampling"><span class="header-section-number">6.3.2</span> Systematic random sampling</h3>
+<p>This method is very similar to the simple random sampling, except that the units are ordered in the list, then each <em>n</em><sup>th</sup> unit is selected, starting with a randomly selected position in the list. The process is as follows:</p>
+<ol type="1">
+<li>Create a list of all units in the accessible population.</li>
+<li>Order the units in some way (e.g., alphabetical order).</li>
+<li>Assign each unit a number.</li>
+<li>Use a random number generator (e.g., <a href="https://www.randomizer.org/" class="uri">https://www.randomizer.org/</a>) to generate a single random number within the range of numbers from your list.</li>
+<li>This number is the first chosen unit for your sample.</li>
+<li>Determine an appropriate interval to obtain a sample of the desired size. (population size/desired sample size = interval; ex. 1000/100 = 10)</li>
+<li>Starting from the unit you selected at step #5, move down your list and select each n<sup>th</sup> where <em>n</em> is your interval.</li>
+<li>Go back to the beginning of the list if you reach the end.</li>
+<li>Stop when you have a sample of the desired size.</li>
+</ol>
+</section>
+<section id="stratified-random-sampling" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="stratified-random-sampling"><span class="header-section-number">6.3.3</span> Stratified random sampling</h3>
+<p>The stratified random sample aims to ensure that all groups within an heterogenous population are covered in the study. The process is as follows:</p>
+<ol type="1">
+<li>Create relatively homogenous groups (strata) based on relevant and known characteristics of the population.</li>
+<li>For each group, assign a number from 1 to N where N is the total number of units in the group.</li>
+</ol>
+<p>For <strong>proportional</strong> stratifiedrandom sampling</p>
+<ol start="3" type="1">
+<li>For each group, generate <em>n</em> random numbers from 1 to <em>N</em> where <em>N</em> in the size of the group and <em>n</em> is the desired group sample size, calculated like this:</li>
+</ol>
+<p><span class="math display">\[
+GroupSampleSize = (Group Size/PopulationSize)*StudySampleSize
+\]</span></p>
+<p>For example, if a group represents 10% of your population, and the sample size for your study is 200, then you would want ro randomly select 0.10 * 200 = 20 units from that group.</p>
+<p>For <strong>non-proportional</strong> stratified random sampling:</p>
+<ol start="3" type="1">
+<li>For each group, use a random number generator (e.g., <a href="https://www.randomizer.org/" class="uri">https://www.randomizer.org/</a>) to generate <em>n</em> random numbers from 1 to <em>N</em> where <em>N</em> in the size of the group and <em>n</em> is the desired sample size from that group (typically, but not necessarily, the total sample size desired for the study divided by the number of groups):</li>
+</ol>
+<p><span class="math display">\[
+GroupSampleSize = StudySampleSize/Number ofgroups
+\]</span></p>
+<p>For example, if your target sample size is 100, and you have 4 groups, you would select 100/4 = 25 participants from each groups.</p>
+</section>
+<section id="random-cluster-sampling" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="random-cluster-sampling"><span class="header-section-number">6.3.4</span> Random cluster sampling</h3>
+<p>The random cluster sampling is convenient when the units are spread geographically, and when there are too many individual units to create a list to perform the above three types of random sampling. Instead of randomly selecting units, the researchers identify groups of units, and randomly selects groups rather than units. The method can layered and end with a random sampling of units. Here’s the process:</p>
+<ol type="1">
+<li>Identify groups.</li>
+<li>Assign a number to each group.</li>
+<li>Generate a random set of numbers within the range of your list.</li>
+<li>If you have more than one level of clustering, repeat steps 1 to 3 for each level.</li>
+<li>select all units in the randomly selected clusters <strong>or</strong> apply one of the three sampling methods above to sample units within each of the randomly selected clusters.</li>
+</ol>
+<p>For example, you could randomly select universities in the Canada (cluster), then randomly select programs within each of the selected universities (second level clusters) and then randomly selected classes withing each of the randomly selected programs (third level clusters) and then create a stratified random sample of students of students from each class.</p>
+</section>
+</section>
+<section id="non-probability-sampling-methods" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="non-probability-sampling-methods"><span class="header-section-number">6.4</span> Non-probability sampling methods</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3148073752.png" class="img-fluid figure-img"></p>
+<figcaption>Non-probability sampling methods. Source: <span class="citation" data-cites="non-prob2023">(<a href="#ref-non-prob2023" role="doc-biblioref"><span>“Non-Probability Sampling”</span> 2023</a>)</span></figcaption>
+</figure>
+</div>
+<section id="convenience-sampling" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="convenience-sampling"><span class="header-section-number">6.4.1</span> Convenience sampling</h3>
+<p>A sample is a convenience sample (also called accidental sample) when the units are selected based on their availability. In fact, they may not be <em>selected</em> at all, but based on whoever happened to show up at a specific time and place. Conveniene samples sometimes rely on ads (e.g.&nbsp;the ones you see sometimes on bulletin boards) to recruit participants.</p>
+</section>
+<section id="purposive-sampling" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="purposive-sampling"><span class="header-section-number">6.4.2</span> Purposive sampling</h3>
+<p>In purposive sampling the units are “cherry picked” by the researcher as a strategy to fulfill the goal of the study. There are several types of strategies:</p>
+<ul>
+<li><p><strong>Extreme cases sampling</strong>:for example looking at the best and the worst performing players in a team, so explore factors that may explain their performance.</p></li>
+<li><p><strong>Homegenous sampling</strong>: selecting very similar units can help studying a group or phenomenon with more depth (as opposed to exploring differences between units or groups).</p></li>
+<li><p><strong>Maximum variation/diversity/heterogeneity sampling</strong>: is essentially the opposite of homogenous sampling, and is effective when the goal is to capture the broadest set of different perspective possible, and to explore/describe relationships between variables.</p></li>
+</ul>
+</section>
+<section id="quota-sampling" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="quota-sampling"><span class="header-section-number">6.4.3</span> Quota sampling</h3>
+<p>Quota sampling is similar to the stratified random sampling, but without the randomization element. Units are chosen either through convenience or purposefully, but the researcher also aims at creating a sample that is representative of the population by selecting participants from groups based on known and relevant characteristics. Like in the stratified random sampling. The quotas can be proportional to the the size of each group, of equal size, or based on any other decision made by the researcher.</p>
+</section>
+<section id="snowball-sampling" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="snowball-sampling"><span class="header-section-number">6.4.4</span> Snowball sampling</h3>
+<p>The snowball sample starts with a few number of participants, and then the researcher asks participants to provide the names and contact information for other people who they think also meet the selection criteria for the study. This can be a very useful method when potential participants are very hard to find.</p>
+</section>
+</section>
+<section id="choosing-a-sample-method" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="choosing-a-sample-method"><span class="header-section-number">6.5</span> Choosing a sample method</h2>
+<p>Some factors to take into account:</p>
+<ul>
+<li><strong>The population</strong>: If your population is heterogenous, probability sample tends to be better. However, it may be difficult, in some cases, to have a list of all the units in the accessible population, which is a requirement of probabilty sampling.</li>
+<li><strong>The objective/type of the study</strong>: If you are doing correlational predictive/confirmative, or experimental research, you will want to use probability sampling. However, exploratory and descriptive research tends to use more non-probability sampling methods.</li>
+<li><strong>The available time and resources</strong>: Probability sampling can require more time and resources than non-probability sampling.</li>
+</ul>
+</section>
+<section id="choosing-a-sample-size" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="choosing-a-sample-size"><span class="header-section-number">6.6</span> Choosing a sample size</h2>
+<p>The general principle is that your sample size should be large enough to give credibility to your findings. A commonly used rule of thumb is that 10% of the accessible population is usually appropriate sample size, or 25-30 participants from each group in a stratified or quota sample.</p>
+<p>You can also use a sample size calculator such as this one: <a href="https://www.calculator.net/sample-size-calculator.html" class="uri">https://www.calculator.net/sample-size-calculator.html</a></p>
+<p>Some factors to take into account:</p>
+<ul>
+<li><strong>The type of study</strong>: Study that require statistical analyses, like correlational and experimental designs, tend to require a relatively large samples, as opposed to qualitative and exploratory studies than can have very small samples.</li>
+<li><strong>The desired statistical power</strong>: According to <span class="citation" data-cites="cohen1988">Cohen (<a href="#ref-cohen1988" role="doc-biblioref">1988</a>)</span>, the minimum acceptable level of statistical power in 0.8 (meaning that there is a 80% chance that an effect/relationship is it does it). But if you aim for a statistical power of .95, .99 or .999 (as is often the case) you will need a larger sample.</li>
+<li><strong>The number of variables in your study</strong>: The more variables (especially categorical variables) you include in your study, the larger the sample needs to be.</li>
+<li><strong>The homogeneity/heterogeneity of the population</strong>: If the target population is believed to be very heterogenous the sample size will need to be larger.</li>
+<li><strong>The expected variability of the measurements</strong>: if the observed phenomenon are expected to vary a lot between units, then a larger sample size will be needed to achieve statistically significant results.</li>
+</ul>
+</section>
+<section id="critically-examining-sampling-methods" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="critically-examining-sampling-methods"><span class="header-section-number">6.7</span> Critically examining sampling methods</h2>
+<p>Here are some of the questions suggested by <span class="citation" data-cites="fortin2016">Fortin and Gagnon (<a href="#ref-fortin2016" role="doc-biblioref">2016</a>)</span> to critically examine the sampling method used for a study:</p>
+<ul>
+<li>Is the target population well defined?</li>
+<li>Are the inclusion and exclusion criteria clearly established?</li>
+<li>Is the sampling method probabilistic or non-probabilistic?</li>
+<li>What sampling technique was used to recruit participants?</li>
+<li>Is the sample representative of the target population?</li>
+<li>Is the sample size adequate and justified?</li>
+<li>Is the sample clearly described?</li>
+</ul>
+<!--
+## Practice
+
+-   **Numeric questions** How much is 2+3? <input class='webex-solveme nospaces' size='1' data-answer='["5"]'/>
+-   **Multiple Choice** Which is the capital city of Barbados? <select class='webex-select'><option value='blank'></option><option value='answer'>Bridgetown</option><option value=''>Georgetown</option><option value=''>Kingston</option><option value=''>Bridgerton</option></select>
+-   **True or False** Quarto is very cool <select class='webex-select'><option value='blank'></option><option value='answer'>TRUE</option><option value=''>FALSE</option></select>.
+-->
+</section>
+<section id="references" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="references"><span class="header-section-number">6.8</span> References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cohen1988" class="csl-entry" role="listitem">
+Cohen, Jacob. 1988. <em>Statistical Power Analysis for the Behavioral Sciences</em>. 2nd ed. Hillsdale, N.J: L. Erlbaum Associates.
+</div>
+<div id="ref-fortin2016" class="csl-entry" role="listitem">
+Fortin, Marie-Fabienne, and Johanne Gagnon. 2016. <em>Fondements Et Étapes Du Processus de Recherche: Méthodes Quantitatives Et Qualitatives</em>. 3e ed. Montréal, QC: Chenelière Éducation.
+</div>
+<div id="ref-non-prob2023" class="csl-entry" role="listitem">
+<span>“Non-Probability Sampling.”</span> 2023. <a href="https://www.geeksforgeeks.org/non-probability-sampling/">https://www.geeksforgeeks.org/non-probability-sampling/</a>.
+</div>
+<div id="ref-probabil2023" class="csl-entry" role="listitem">
+<span>“Probability Sampling.”</span> 2023. <a href="https://www.geeksforgeeks.org/probability-sampling/">https://www.geeksforgeeks.org/probability-sampling/</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
