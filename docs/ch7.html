@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -70,6 +90,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="include/webex.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -267,8 +288,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">7.1</span> Learning objectives</a></li>
+  <li><a href="#defining-and-operationalizing-concepts" id="toc-defining-and-operationalizing-concepts" class="nav-link" data-scroll-target="#defining-and-operationalizing-concepts"><span class="header-section-number">7.2</span> Defining and operationalizing concepts</a>
+  <ul class="collapse">
+  <li><a href="#indicators" id="toc-indicators" class="nav-link" data-scroll-target="#indicators"><span class="header-section-number">7.2.1</span> Indicators</a></li>
+  <li><a href="#indices" id="toc-indices" class="nav-link" data-scroll-target="#indices"><span class="header-section-number">7.2.2</span> Indices</a></li>
+  </ul></li>
+  <li><a href="#measuring-concepts" id="toc-measuring-concepts" class="nav-link" data-scroll-target="#measuring-concepts"><span class="header-section-number">7.3</span> Measuring concepts</a></li>
+  <li><a href="#measurement-scales" id="toc-measurement-scales" class="nav-link" data-scroll-target="#measurement-scales"><span class="header-section-number">7.4</span> Measurement scales</a>
+  <ul class="collapse">
+  <li><a href="#nominal-scale" id="toc-nominal-scale" class="nav-link" data-scroll-target="#nominal-scale"><span class="header-section-number">7.4.1</span> Nominal scale</a></li>
+  <li><a href="#ordinal-scale" id="toc-ordinal-scale" class="nav-link" data-scroll-target="#ordinal-scale"><span class="header-section-number">7.4.2</span> Ordinal scale</a></li>
+  <li><a href="#interval-scale" id="toc-interval-scale" class="nav-link" data-scroll-target="#interval-scale"><span class="header-section-number">7.4.3</span> Interval scale</a></li>
+  <li><a href="#ratio-scale" id="toc-ratio-scale" class="nav-link" data-scroll-target="#ratio-scale"><span class="header-section-number">7.4.4</span> Ratio scale</a></li>
+  </ul></li>
+  <li><a href="#measurement-errors" id="toc-measurement-errors" class="nav-link" data-scroll-target="#measurement-errors"><span class="header-section-number">7.5</span> Measurement errors</a>
+  <ul class="collapse">
+  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors"><span class="header-section-number">7.5.1</span> Type I and type II errors</a></li>
+  <li><a href="#random-errors" id="toc-random-errors" class="nav-link" data-scroll-target="#random-errors"><span class="header-section-number">7.5.2</span> Random errors</a></li>
+  <li><a href="#systematic-errors" id="toc-systematic-errors" class="nav-link" data-scroll-target="#systematic-errors"><span class="header-section-number">7.5.3</span> Systematic errors</a></li>
+  <li><a href="#validity-and-reliability-of-instruments" id="toc-validity-and-reliability-of-instruments" class="nav-link" data-scroll-target="#validity-and-reliability-of-instruments"><span class="header-section-number">7.5.4</span> Validity and reliability of instruments</a></li>
+  <li><a href="#reliability-of-instruments" id="toc-reliability-of-instruments" class="nav-link" data-scroll-target="#reliability-of-instruments"><span class="header-section-number">7.5.5</span> Reliability of instruments</a></li>
+  <li><a href="#precision-and-accuracy" id="toc-precision-and-accuracy" class="nav-link" data-scroll-target="#precision-and-accuracy"><span class="header-section-number">7.5.6</span> Precision and accuracy</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7.6</span> References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -292,11 +342,441 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>under construction…</p>
+<section id="learning-objectives" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">7.1</span> Learning objectives</h2>
+<ul>
+<li>Understand the concepts of operationalization and measurement.</li>
+<li>Understand the four basic scales of measurements.</li>
+<li>recognize the different types of measurement errors.</li>
+<li>Understand the concepts of validity and reliability.</li>
+</ul>
+</section>
+<section id="defining-and-operationalizing-concepts" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="defining-and-operationalizing-concepts"><span class="header-section-number">7.2</span> Defining and operationalizing concepts</h2>
+<p>The operationalization of concepts is the process through which an abstract concept (construct) like learning, pain, happiness, success, quality, etc. is made observable and measurable <span class="citation" data-cites="fortin2016">Fortin and Gagnon (<a href="#ref-fortin2016" role="doc-biblioref">2016</a>)</span>.</p>
+<section id="indicators" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="indicators"><span class="header-section-number">7.2.1</span> Indicators</h3>
+<p>In order to measure the unmeasurable, we produce proxies (or <strong>indicators</strong>): quantifiable and measurable expressions of the different dimensions of a construct.</p>
+<p>Table 1. Examples of operational definitions in bibliometrics.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Definition</th>
+<th>Operational definition (proxy)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Research output</td>
+<td>Publication counts</td>
+</tr>
+<tr class="even">
+<td>Research impact</td>
+<td>Citation counts</td>
+</tr>
+<tr class="odd">
+<td>Collaboration</td>
+<td>Co-authorship</td>
+</tr>
+<tr class="even">
+<td>Social impact</td>
+<td>Mentions in the news, social media, policy, etc.</td>
+</tr>
+<tr class="odd">
+<td>Discipline</td>
+<td>Department affiliation? Classification of journals?</td>
+</tr>
+<tr class="even">
+<td>Multidisciplinarity</td>
+<td>- Number of disciplines represent in a team?<br>
+- Number of disciplines represented in a reference list?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="indices" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="indices"><span class="header-section-number">7.2.2</span> Indices</h3>
+<p>An index, or indices is typically a measure that combines multiple indicators to capture to measure a multidimensional construct in a single measure. An example from bibliometrics is the h-index. Another example is the happyness index. The dimensions of the <a href="https://www.happycounts.org/blog/what-is-the-happiness-index">happiness index</a>: <span class="citation" data-cites="musikanski2017">(<a href="#ref-musikanski2017" role="doc-biblioref">Musikanski et al. 2017</a>)</span></p>
+<ul>
+<li><strong>Psychological Well-Being:</strong> optimism, senses of purpose and of accomplishment;</li>
+<li><strong>Health</strong>: energy level and ability to perform everyday activities;</li>
+<li><strong>Time Balance</strong>: enjoyment, feeling rushed, and sense of leisure;</li>
+<li><strong>Community</strong>: sense of belonging, volunteerism, and sense of safety;</li>
+<li><strong>Social Support</strong>: satisfaction with friends and family, feeling loved, and feeling lonely;</li>
+<li><strong>Education, Arts, and Culture</strong>: access to cultural and educational events and diversity;</li>
+<li><strong>Environment</strong>: access to nature, pollution, and conservation;</li>
+<li><strong>Governance</strong>: trust in government, sense of corruption, and competency;</li>
+<li><strong>Material Well-Being</strong>: financial security and meeting basic needs; and</li>
+<li><strong>Work</strong>: compensation, autonomy, and productivity.</li>
+</ul>
+<p><img src="images/clipboard-3349867299.png" class="img-fluid" width="506"></p>
+</section>
+</section>
+<section id="measuring-concepts" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="measuring-concepts"><span class="header-section-number">7.3</span> Measuring concepts</h2>
+<p>The <strong>measure</strong> is the observation. It’s the value that is stored in a cell in a spreadsheet.</p>
+</section>
+<section id="measurement-scales" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="measurement-scales"><span class="header-section-number">7.4</span> Measurement scales</h2>
+<p>Table 2. Summary of characteristics of the four measurement scales.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Labels</th>
+<th style="text-align: center;">Meaningul order</th>
+<th style="text-align: center;">Proportional intervals</th>
+<th style="text-align: center;">Captures absolute value of 0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nominal scale</strong></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><strong>Ordinal scale</strong></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td><strong>Interval scale</strong></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><strong>Ratio scale</strong></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+</tbody>
+</table>
+<section id="nominal-scale" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="nominal-scale"><span class="header-section-number">7.4.1</span> Nominal scale</h3>
+<p>The nominal scale uses categories (labels) to classify objects, events, people, etc. The categories should be:</p>
+<ul>
+<li><strong>Exhaustive</strong>: it should be possible to assign all observations to one of the categories.</li>
+<li><strong>Mutually exclusive</strong>: no observations can be assigned to more than one category.</li>
+</ul>
+<p>The nominal scale reflects <strong>qualitative</strong> differences between categories and has no quantitative value.</p>
+<p>A <strong>dichotomous</strong> <strong>variable</strong> (yes/no, true/false) is an example of the nominal scale, there are only two categories possible and they are mutually exclusive.</p>
+</section>
+<section id="ordinal-scale" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="ordinal-scale"><span class="header-section-number">7.4.2</span> Ordinal scale</h3>
+<p>The ordinal scale introduces the notion of <strong>order</strong> or <strong>rank</strong> to the categories. It does not measure concepts in an absolute sense but in a <strong>relative</strong> sense (relative to the other categories). A Likert scale<span class="citation" data-cites="likert1932">(<a href="#ref-likert1932" role="doc-biblioref">Likert 1932</a>)</span> like this is an example:</p>
+<ol type="1">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neither agree nor disagree</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ol>
+</section>
+<section id="interval-scale" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="interval-scale"><span class="header-section-number">7.4.3</span> Interval scale</h3>
+<p>In an interval scale, the categories are not only distinct and ranked, but they are represented with <strong>units of measurement</strong> (meters, grams, degrees, seconds, litres, years, pages, etc.). This is a purely <strong>quantitative</strong> scale that uses <strong>numbers</strong> that are <strong>continuous</strong> and <strong>equidistant</strong>. The values are still relative, rather than absolute, and the zero is arbitrary and does not represent the absence of a phenomenon.</p>
+</section>
+<section id="ratio-scale" class="level3" data-number="7.4.4">
+<h3 data-number="7.4.4" class="anchored" data-anchor-id="ratio-scale"><span class="header-section-number">7.4.4</span> Ratio scale</h3>
+<p>The ratio (or proportion) scale has all the features of the other three but is <strong>absolute</strong> and has a <strong>true zero</strong> (the absence of the measured thing), and <strong>cannot be negative</strong>.</p>
+</section>
+</section>
+<section id="measurement-errors" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="measurement-errors"><span class="header-section-number">7.5</span> Measurement errors</h2>
+<section id="type-i-and-type-ii-errors" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="type-i-and-type-ii-errors"><span class="header-section-number">7.5.1</span> Type I and type II errors</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 34%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Negative in reality</th>
+<th>Positive in reality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Negative measurement</strong></td>
+<td>True negative</td>
+<td>False negative (type II error)</td>
+</tr>
+<tr class="even">
+<td><strong>Positive measurement</strong></td>
+<td>False positive (type I error)</td>
+<td>True positive</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="random-errors" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="random-errors"><span class="header-section-number">7.5.2</span> Random errors</h3>
+<p>Random errors are inaccurate measurements that happen by chance. They are caused by a wide range of factors that can affect the <strong>precision</strong> of a measurement. They are the noise in the signal. Random errors happen. To ensure they do not overly affect your measure/perception, a solution (if the study design and resources allow it) is to make more measurements, possibly at different times depending on the suspected source of the noise, so that the errors average out. This is part of the reason why large enough samples are needed to achieve statistical power and produce meaningful results!</p>
+</section>
+<section id="systematic-errors" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="systematic-errors"><span class="header-section-number">7.5.3</span> Systematic errors</h3>
+<p>Systematic errors affect the <strong>accuracy</strong> of measurements. They are not random and occur because of the faulty instrument or the inadequate use of an an instrument. For example, in bibliometrics research we use a databases that have a better coverage of scholarly outputs in journal form (so we systematically fail to measure other forms of research dissemination) published in english, in the global north and by large companies (so we systematically underestimate knowledge production, dissemination and use in some area, language, etc.). You can also think of a survey or an interview guide that asks a flawed question, or does not cover an important dimension of the phenomenon.</p>
+</section>
+<section id="validity-and-reliability-of-instruments" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="validity-and-reliability-of-instruments"><span class="header-section-number">7.5.4</span> Validity and reliability of instruments</h3>
+<p>in construction….</p>
+</section>
+<section id="reliability-of-instruments" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="reliability-of-instruments"><span class="header-section-number">7.5.5</span> Reliability of instruments</h3>
+<p>in construction….</p>
+</section>
+<section id="precision-and-accuracy" class="level3" data-number="7.5.6">
+<h3 data-number="7.5.6" class="anchored" data-anchor-id="precision-and-accuracy"><span class="header-section-number">7.5.6</span> Precision and accuracy</h3>
+<p>in construction….</p>
+</section>
+</section>
+<section id="references" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="references"><span class="header-section-number">7.6</span> References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-fortin2016" class="csl-entry" role="listitem">
+Fortin, Marie-Fabienne, and Johanne Gagnon. 2016. <em>Fondements Et Étapes Du Processus de Recherche: Méthodes Quantitatives Et Qualitatives</em>. 3e ed. Montréal, QC: Chenelière Éducation.
+</div>
+<div id="ref-likert1932" class="csl-entry" role="listitem">
+Likert, R. 1932. <span>“A Technique for the Measurement of Attitudes.”</span> <em>Archives of Psychology</em> 22 140: 55–55.
+</div>
+<div id="ref-musikanski2017" class="csl-entry" role="listitem">
+Musikanski, Laura, Scott Cloutier, Erica Bejarano, Davi Briggs, Julia Colbert, Gracie Strasser, and Steven Russell. 2017. <span>“Happiness Index Methodology.”</span> <em>Journal of Sustainable Social Change</em> 9 (1). <a href="https://doi.org/10.5590/JOSC.2017.09.1.02">https://doi.org/10.5590/JOSC.2017.09.1.02</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

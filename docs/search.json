@@ -78,7 +78,7 @@
     "href": "ch5.html",
     "title": "5  Research ethics",
     "section": "",
-    "text": "Under construction…",
+    "text": "5.1 Guiding principles\nAt the end of this chapter, you should be familiar with the Tri-Council Policy Statement on the Ethical Conduct for Research Involving Humans – TCPS 2 (2022). More specifically, you should be familiar with:\nThe three guiding principles of the TPSC 2 are:",
     "crumbs": [
       "Methodological phase",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
@@ -100,7 +100,7 @@
     "href": "ch7.html",
     "title": "7  Defining, operationalizing and measuring concepts",
     "section": "",
-    "text": "under construction…",
+    "text": "7.1 Learning objectives",
     "crumbs": [
       "Methodological phase",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
@@ -412,6 +412,248 @@
     "crumbs": [
       "Methodological phase",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#guiding-principles",
+    "href": "ch5.html#guiding-principles",
+    "title": "5  Research ethics",
+    "section": "",
+    "text": "Respect for persons\nConcern for welfare\nJustice",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#consent",
+    "href": "ch5.html#consent",
+    "title": "5  Research ethics",
+    "section": "5.2 Consent",
+    "text": "5.2 Consent",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#fairness-and-equity-in-research-participation",
+    "href": "ch5.html#fairness-and-equity-in-research-participation",
+    "title": "5  Research ethics",
+    "section": "5.3 Fairness and equity in research participation",
+    "text": "5.3 Fairness and equity in research participation",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#privacy-and-confidentiality",
+    "href": "ch5.html#privacy-and-confidentiality",
+    "title": "5  Research ethics",
+    "section": "5.4 Privacy and confidentiality",
+    "text": "5.4 Privacy and confidentiality",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#conflict-of-interest",
+    "href": "ch5.html#conflict-of-interest",
+    "title": "5  Research ethics",
+    "section": "5.5 Conflict of interest",
+    "text": "5.5 Conflict of interest",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#research-involving-the-first-nations-inuit-and-métis-peoples-of-canada",
+    "href": "ch5.html#research-involving-the-first-nations-inuit-and-métis-peoples-of-canada",
+    "title": "5  Research ethics",
+    "section": "5.6 Research involving the First Nations, Inuit and Métis Peoples of Canada",
+    "text": "5.6 Research involving the First Nations, Inuit and Métis Peoples of Canada",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#learning-objectives",
+    "href": "ch7.html#learning-objectives",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "",
+    "text": "Understand the concepts of operationalization and measurement.\nUnderstand the four basic scales of measurements.\nrecognize the different types of measurement errors.\nUnderstand the concepts of validity and reliability.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#defining-concepts",
+    "href": "ch7.html#defining-concepts",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.2 Defining concepts",
+    "text": "7.2 Defining concepts",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#operationalizing-concepts",
+    "href": "ch7.html#operationalizing-concepts",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.3 Operationalizing concepts",
+    "text": "7.3 Operationalizing concepts",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#measuring-concepts",
+    "href": "ch7.html#measuring-concepts",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.3 Measuring concepts",
+    "text": "7.3 Measuring concepts\nThe measure is the observation. It’s the value that is stored in a cell in a spreadsheet.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#section",
+    "href": "ch7.html#section",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.3 ",
+    "text": "7.3 \n\n7.3.0.1 \n\n\n7.3.1 Examples",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#section-1",
+    "href": "ch7.html#section-1",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.9 ",
+    "text": "7.9",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#section-2",
+    "href": "ch7.html#section-2",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.9 ",
+    "text": "7.9",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#section-3",
+    "href": "ch7.html#section-3",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.10 ",
+    "text": "7.10 \n\n\n\n\nMusikanski, Laura, Scott Cloutier, Erica Bejarano, Davi Briggs, Julia Colbert, Gracie Strasser, and Steven Russell. 2017. “Happiness Index Methodology.” Journal of Sustainable Social Change 9 (1). https://doi.org/10.5590/JOSC.2017.09.1.02.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#the-tcps-2---core-2022",
+    "href": "ch5.html#the-tcps-2---core-2022",
+    "title": "5  Research ethics",
+    "section": "5.7 The TCPS 2 - CORE 2022",
+    "text": "5.7 The TCPS 2 - CORE 2022",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#section",
+    "href": "ch5.html#section",
+    "title": "5  Research ethics",
+    "section": "5.8 ",
+    "text": "5.8",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Research ethics</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#measurement-errors",
+    "href": "ch7.html#measurement-errors",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.5 Measurement errors",
+    "text": "7.5 Measurement errors\n\n7.5.1 Type I and type II errors\n\n\n\n\n\n\n\n\n\nNegative in reality\nPositive in reality\n\n\n\n\nNegative measurement\nTrue negative\nFalse negative (type II error)\n\n\nPositive measurement\nFalse positive (type I error)\nTrue positive\n\n\n\n\n\n7.5.2 Random errors\nRandom errors are inaccurate measurements that happen by chance. They are caused by a wide range of factors that can affect the precision of a measurement. They are the noise in the signal. Random errors happen. To ensure they do not overly affect your measure/perception, a solution (if the study design and resources allow it) is to make more measurements, possibly at different times depending on the suspected source of the noise, so that the errors average out. This is part of the reason why large enough samples are needed to achieve statistical power and produce meaningful results!\n\n\n7.5.3 Systematic errors\nSystematic errors affect the accuracy of measurements. They are not random and occur because of the faulty instrument or the inadequate use of an an instrument. For example, in bibliometrics research we use a databases that have a better coverage of scholarly outputs in journal form (so we systematically fail to measure other forms of research dissemination) published in english, in the global north and by large companies (so we systematically underestimate knowledge production, dissemination and use in some area, language, etc.). You can also think of a survey or an interview guide that asks a flawed question, or does not cover an important dimension of the phenomenon.\n\n\n7.5.4 Validity and reliability of instruments\nin construction….\n\n\n7.5.5 Reliability of instruments\nin construction….\n\n\n7.5.6 Precision and accuracy\nin construction….",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#validity-and-reliability",
+    "href": "ch7.html#validity-and-reliability",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.7 Validity and reliability",
+    "text": "7.7 Validity and reliability",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#precision-and-sensitivity",
+    "href": "ch7.html#precision-and-sensitivity",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.8 Precision and sensitivity",
+    "text": "7.8 Precision and sensitivity",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#defining-and-operationalizing-concepts",
+    "href": "ch7.html#defining-and-operationalizing-concepts",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.2 Defining and operationalizing concepts",
+    "text": "7.2 Defining and operationalizing concepts\nThe operationalization of concepts is the process through which an abstract concept (construct) like learning, pain, happiness, success, quality, etc. is made observable and measurable Fortin and Gagnon (2016).\n\n7.2.1 Indicators\nIn order to measure the unmeasurable, we produce proxies (or indicators): quantifiable and measurable expressions of the different dimensions of a construct.\nTable 1. Examples of operational definitions in bibliometrics.\n\n\n\n\n\n\n\nDefinition\nOperational definition (proxy)\n\n\n\n\nResearch output\nPublication counts\n\n\nResearch impact\nCitation counts\n\n\nCollaboration\nCo-authorship\n\n\nSocial impact\nMentions in the news, social media, policy, etc.\n\n\nDiscipline\nDepartment affiliation? Classification of journals?\n\n\nMultidisciplinarity\n- Number of disciplines represent in a team?\n- Number of disciplines represented in a reference list?\n\n\n\n\n\n7.2.2 Indices\nAn index, or indices is typically a measure that combines multiple indicators to capture to measure a multidimensional construct in a single measure. An example from bibliometrics is the h-index. Another example is the happyness index. The dimensions of the happiness index: (Musikanski et al. 2017)\n\nPsychological Well-Being: optimism, senses of purpose and of accomplishment;\nHealth: energy level and ability to perform everyday activities;\nTime Balance: enjoyment, feeling rushed, and sense of leisure;\nCommunity: sense of belonging, volunteerism, and sense of safety;\nSocial Support: satisfaction with friends and family, feeling loved, and feeling lonely;\nEducation, Arts, and Culture: access to cultural and educational events and diversity;\nEnvironment: access to nature, pollution, and conservation;\nGovernance: trust in government, sense of corruption, and competency;\nMaterial Well-Being: financial security and meeting basic needs; and\nWork: compensation, autonomy, and productivity.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#measurement-scales",
+    "href": "ch7.html#measurement-scales",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.4 Measurement scales",
+    "text": "7.4 Measurement scales\nTable 2. Summary of characteristics of the four measurement scales.\n\n\n\n\n\n\n\n\n\n\n\nLabels\nMeaningul order\nProportional intervals\nCaptures absolute value of 0\n\n\n\n\nNominal scale\nX\n\n\n\n\n\nOrdinal scale\nX\nX\n\n\n\n\nInterval scale\nX\nX\nX\n\n\n\nRatio scale\nX\nX\nX\nX\n\n\n\n\n7.4.1 Nominal scale\nThe nominal scale uses categories (labels) to classify objects, events, people, etc. The categories should be:\n\nExhaustive: it should be possible to assign all observations to one of the categories.\nMutually exclusive: no observations can be assigned to more than one category.\n\nThe nominal scale reflects qualitative differences between categories and has no quantitative value.\nA dichotomous variable (yes/no, true/false) is an example of the nominal scale, there are only two categories possible and they are mutually exclusive.\n\n\n7.4.2 Ordinal scale\nThe ordinal scale introduces the notion of order or rank to the categories. It does not measure concepts in an absolute sense but in a relative sense (relative to the other categories). A Likert scale(Likert 1932) like this is an example:\n\nStrongly disagree\nDisagree\nNeither agree nor disagree\nAgree\nStrongly agree\n\n\n\n7.4.3 Interval scale\nIn an interval scale, the categories are not only distinct and ranked, but they are represented with units of measurement (meters, grams, degrees, seconds, litres, years, pages, etc.). This is a purely quantitative scale that uses numbers that are continuous and equidistant. The values are still relative, rather than absolute, and the zero is arbitrary and does not represent the absence of a phenomenon.\n\n\n7.4.4 Ratio scale\nThe ratio (or proportion) scale has all the features of the other three but is absolute and has a true zero (the absence of the measured thing), and cannot be negative.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#references",
+    "href": "ch7.html#references",
+    "title": "7  Defining, operationalizing and measuring concepts",
+    "section": "7.6 References",
+    "text": "7.6 References\n\n\n\n\nFortin, Marie-Fabienne, and Johanne Gagnon. 2016. Fondements Et Étapes Du Processus de Recherche: Méthodes Quantitatives Et Qualitatives. 3e ed. Montréal, QC: Chenelière Éducation.\n\n\nLikert, R. 1932. “A Technique for the Measurement of Attitudes.” Archives of Psychology 22 140: 55–55.\n\n\nMusikanski, Laura, Scott Cloutier, Erica Bejarano, Davi Briggs, Julia Colbert, Gracie Strasser, and Steven Russell. 2017. “Happiness Index Methodology.” Journal of Sustainable Social Change 9 (1). https://doi.org/10.5590/JOSC.2017.09.1.02.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
     ]
   }
 ]
