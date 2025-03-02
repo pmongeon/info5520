@@ -20,15 +20,15 @@ This book can be accessed directly from your browser (without going through Brig
 ## Schedule
 
 | Week | Section | Topic |
-|:--:|----|----|
+|:----------------------:|-----------------------|------------------------|
 | 1 | Introduction | Course overview, key concepts in research |
 | 2 | Conceptual phase | Literature review |
 | 3 | Conceptual phase | Research problems, purpose, and questions |
 | 4 | Methodological phase | Methodological designs, research ethics |
-| 5 | Methodological phase | Sampling, defining, operationalizing and measuring concepts. |
-| 6 | Methodological phase | Qualitative data collection- observations, interviews, focus groups. |
-| 7 | Methodological phase | Quantitative data collection - Surveys, structured observations. |
-| 8 | Empirical phase | Data collection |
+| 5 | Methodological phase | Sampling |
+| 6 | Methodological phase | Defining, operationalizing and measuring concepts |
+| 7 | Methodological phase | Qualitative data collection |
+| 8 | Methodological phase | Quantitative data collection |
 | 9 | Analytical phase | Qualitative data analysis |
 | 10 | Analytical phase | Descriptive and inferential statistics |
 | 11 | Reporting phase | Principle of effective written, visual and oral presentation of research. |

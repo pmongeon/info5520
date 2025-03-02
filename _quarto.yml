@@ -22,17 +22,13 @@ book:
         - ch7.qmd
         - ch8.qmd
         - ch9.qmd
-        - ch10.qmd
-    - part: "Empirical phase"
-      chapters:
-        - ch11.qmd
     - part: "Analytical phase"
       chapters:
-        - ch12.qmd
-        - ch13.qmd
+        - ch10.qmd
+        - ch11.qmd
     - part: "Reporting phase"
       chapters:
-        - ch14.qmd
+        - ch12.qmd
 
 
 bibliography: references.bib

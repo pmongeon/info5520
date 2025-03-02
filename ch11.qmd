@@ -2,7 +2,6 @@
 bibliography: references.bib
 ---
 
-# Data collection
+# Quantitative data analysis
 
 Under construction...
-

@@ -2,7 +2,7 @@
 bibliography: references.bib
 ---
 
-# Qualitative data analysis
+# Principles of effective communication of research
 
 Under construction...
 

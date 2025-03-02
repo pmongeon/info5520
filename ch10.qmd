@@ -2,6 +2,6 @@
 bibliography: references.bib
 ---
 
-# Quantitative data collection - structured observation
+# Qualitative data analysis
 
 Under construction...
