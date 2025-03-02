@@ -111,7 +111,7 @@
     "href": "ch8.html",
     "title": "8  Qualitative data collection",
     "section": "",
-    "text": "Under construction…",
+    "text": "8.1 Learning objectives\nAt the end of this chapter, you should have the necessary tools to:",
     "crumbs": [
       "Methodological phase",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Qualitative data collection</span>"
@@ -120,23 +120,23 @@
   {
     "objectID": "ch9.html",
     "href": "ch9.html",
-    "title": "9  Quantitative data collection – surveys",
+    "title": "9  Quantitative data collection",
     "section": "",
-    "text": "Under construction…",
+    "text": "9.1 Slides",
     "crumbs": [
       "Methodological phase",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection – surveys</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection</span>"
     ]
   },
   {
     "objectID": "ch10.html",
     "href": "ch10.html",
-    "title": "10  Quantitative data collection – strcutured observations",
+    "title": "10  Quantitative data collection - structured observation",
     "section": "",
     "text": "Under construction…",
     "crumbs": [
       "Methodological phase",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Quantitative data collection – strcutured observations</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Quantitative data collection - structured observation</span>"
     ]
   },
   {
@@ -654,6 +654,72 @@
     "crumbs": [
       "Methodological phase",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Defining, operationalizing and measuring concepts</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#surveys",
+    "href": "ch9.html#surveys",
+    "title": "9  Quantitative data collection",
+    "section": "9.2 Surveys",
+    "text": "9.2 Surveys\n\n9.2.1 General principles\n\n\n9.2.2 Survey design\n\n\n9.2.3 Pitfalls\n\n9.2.3.1 Survey-level\n\n\n9.2.3.2 Question-level\n\nLeading questions\n\nDouble-barreled questions\nAmbiguous questions\nLoaded questions\nToo many options\nLack of neutral options\n\n\n\n\n\n9.2.4 Tools for creating surveys\n\n9.2.4.1 Survey Monkey\n\n\n9.2.4.2 Qualtrics\n\n\n9.2.4.3 Google and Microsoft Forms",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#structured-observation",
+    "href": "ch9.html#structured-observation",
+    "title": "9  Quantitative data collection",
+    "section": "9.3 Structured observation",
+    "text": "9.3 Structured observation",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#references",
+    "href": "ch9.html#references",
+    "title": "9  Quantitative data collection",
+    "section": "9.4 References",
+    "text": "9.4 References",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html#learning-objectives",
+    "href": "ch8.html#learning-objectives",
+    "title": "8  Qualitative data collection",
+    "section": "",
+    "text": "List some of the main qualitative data collection methods.\nChoose an appropriate qualitative data collection methods for a study.",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Qualitative data collection</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html#qualitative-data-collection-methods",
+    "href": "ch8.html#qualitative-data-collection-methods",
+    "title": "8  Qualitative data collection",
+    "section": "8.2 Qualitative data collection methods",
+    "text": "8.2 Qualitative data collection methods\n\nUnstructured observation\nUnstructured interview\nSemi-structured interview\nFocus group\nCritical incident\nJournaling\n\n\n8.2.1 Unstructured observation\n\nNon-participant observation:\nParticipant observation:\n\n\n8.2.1.1 Collecting observation data\n\n\n\n8.2.2 Interviews\n\n8.2.2.1 Preparing a semi-structured interview\n\n\n8.2.2.2 Conducting a semi-structured interview\n\n\n8.2.2.3 Transcribing a semi-structured interview\n\n\n\n8.2.3 Focus groups\n\n\n8.2.4 Critical incident\n\n\n8.2.5 Journaling",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Qualitative data collection</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#slides",
+    "href": "ch9.html#slides",
+    "title": "9  Quantitative data collection",
+    "section": "",
+    "text": "Click here to open the slides in a new tab",
+    "crumbs": [
+      "Methodological phase",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection</span>"
     ]
   }
 ]

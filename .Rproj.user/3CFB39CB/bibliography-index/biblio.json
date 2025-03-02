@@ -4743,6 +4743,76 @@
             "publisher-place": "Hillsdale, N.J",
             "title": "Statistical power analysis for the behavioral sciences",
             "type": "book"
+        },
+        {
+            "DOI": "10.5590/JOSC.2017.09.1.02",
+            "URL": "https://scholarworks.waldenu.edu/jsc/vol9/iss1/2",
+            "author": [
+                {
+                    "family": "Musikanski",
+                    "given": "Laura"
+                },
+                {
+                    "family": "Cloutier",
+                    "given": "Scott"
+                },
+                {
+                    "family": "Bejarano",
+                    "given": "Erica"
+                },
+                {
+                    "family": "Briggs",
+                    "given": "Davi"
+                },
+                {
+                    "family": "Colbert",
+                    "given": "Julia"
+                },
+                {
+                    "family": "Strasser",
+                    "given": "Gracie"
+                },
+                {
+                    "family": "Russell",
+                    "given": "Steven"
+                }
+            ],
+            "container-title": "Journal of Sustainable Social Change",
+            "id": "musikanski2017",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "title": "Happiness index methodology",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "author": [
+                {
+                    "family": "Likert",
+                    "given": "R."
+                }
+            ],
+            "container-title": "Archives of Psychology",
+            "id": "likert1932",
+            "issued": {
+                "date-parts": [
+                    [
+                        1932
+                    ]
+                ]
+            },
+            "page": "55-55",
+            "title": "A technique for the measurement of attitudes",
+            "type": "article-journal",
+            "volume": "22 140"
         }
     ],
     "project_biblios": [

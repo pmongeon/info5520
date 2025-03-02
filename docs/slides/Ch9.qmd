@@ -1,0 +1,219 @@
+---
+title: "The methodological phase"
+subtitle: "Part 5: Data collection"
+format: 
+  revealjs:
+#    smaller: true
+    scrollable: true
+    slide-number: true
+    show-slide-number: all
+    show-notes: false
+    chalkboard: true
+    footer: '<a href="https://pmongeon.github.io/info5520/ch9.html">INFO 5520 - Research Methods - Chapter 9</a>'
+bibliography: ../../references.bib
+---
+
+## Plan
+
+-   Quantitative data collection: key concepts
+-   Surveys
+-   Structured observations
+-   Secondary data
+
+## The methodological phase
+
+-   Ethical considerations (TCPS 2: CORE 2022).
+
+-   Research designs.
+
+-   Sampling.
+
+-   Concept definition and operationalization.
+
+-   Qualitative data collection.
+
+-   Quantitative data collection **\<- you are here**
+
+# Quantitative data collection
+
+## What is it?
+
+-   One way to think about quantitative data collection is that the concepts are usually defined and operationalized before the data is collected and a set of variables established (think an spreadsheet with column names, but no data). The quantitative data collection is then a process through which populates the dataset by creating rows in the spreadsheet.
+-   Typically most (but not necessarily all) data collectied is in one of the four measurement scale (see chapter 7).
+
+## Three types of quantitative data collection
+
+-   Surveys
+-   Structured observation
+-   Secondary data
+
+# Surveys
+
+## Advantages
+
+-   Cost
+-   Reach
+-   Standardization
+-   Anonymity
+-   Flexibility
+
+## Disadvantages
+
+-   Limited depth
+-   Response bias
+-   Self-selection bias
+-   Low participation
+-   Misinterpretation
+-   Rigidity
+-   Designing a good survey can be challenging (yet it is crucial)
+
+## Components of a survey
+
+-   Title and introduction
+-   Instructions
+-   Demographic questions
+-   Survey questions
+-   Conclusion
+-   Contact information
+
+## **Issues with survey questions**
+
+-   Leading question
+-   Double-barreled questions
+-   Ambiguous questions
+-   Loaded questions
+-   Too many options
+-   Lack of neutral options
+-   Overlapping options
+
+## **Issues with survey design**
+
+-   Survey is too long.
+-   Lack of consistency (e.g., using different tone, different scales, for different questions).
+-   Lack of structure (e.g., question order not making sense).
+-   Does not cover all the research questions.
+
+## **Issues with survey invitation, introduction, or instructions.**
+
+-   Information overload
+-   Same issues as the questions
+    -   Introduction should not be loaded, leading, or ambiguous.
+
+## What's wrong with this question?
+
+-   Don't you think the library should extend its hours?
+-   How satisfied are you with the library's book collection and its online resources?
+-   How often do you visit the library?
+-   Why do you never use the library's e-books?
+-   Do you disagree that the library should not reduce its staff?
+-   Considering the various services offered by the library, such as book lending, digital resources, community events, and study spaces, how would you rate the overall effectiveness of the library in meeting your needs?
+
+**Question**: "How satisfied are you with the library's services?"
+
+-   Extremely Satisfied
+-   Very Satisfied
+-   Satisfied
+-   Somewhat Satisfied
+-   Neutral
+-   Somewhat Dissatisfied
+-   Dissatisfied
+-   Very Dissatisfied
+-   Extremely Dissatisfied
+-   No Opinion
+
+**Better scale**
+
+-   Very Satisfied
+-   Satisfied
+-   Neutral
+-   Dissatisfied
+-   Very Dissatisfied
+
+**Question**: "How many books do you borrow from the library each month?"
+
+-   0-2
+-   2-4
+-   4-6
+-   6-8
+-   8-10
+
+**Better options**
+
+-   0-2
+-   3-5
+-   6-8
+-   9-11
+-   12 or more
+
+## Final tips
+
+-   Keep it simple!
+-   Don't forget to do a pre-test!
+
+## Tools for creating surveys {.smaller}
+
+-   Microsoft Forms (<https://forms.microsoft.com>)
+-   Google forms (<https://docs.google.com/forms/>)
+-   Survey Monkey (<https://www.surveymonkey.com/>)
+    -   Free plan too limited (10 questions, 100 responses max).
+-   Typeform (<https://www.typeform.com/>)
+    -   Free plan to limited (10 questions, 10 responses per month).
+-   Opinio (<https://www.objectplanet.com/opinio/>).
+    -   Dalhousie has a subscription: <https://surveys.dal.ca/>
+-   Qualtrics (<https://www.qualtrics.com/>)
+    -   Other popular commercial product (like Opinio) used by some Canadian universities.
+
+## Example studies {.smaller}
+
+Robertson, M. E., Chu, S. M., Cloutier, A., Mongeon, P., Driscoll, D. A., Heer, T., & Westwood, A. R. (2023). Interference in science: Scientists’ perspectives on their ability to communicate and conduct environmental research in Canada. *FACETS*, *8*, 1–31. <https://doi.org/10.1139/facets-2023-0005>
+
+Rothfus, M. A., MacLeod, L., Gillis, L., & MacPherson, E. (2024). Researcher Perspectives on Obstacles and Facilitators of Open Scholarship at a Canadian University. *Partnership: Canadian Journal of Library and Information Practice and Research / Partnership : Revue Canadienne de La Pratique et de La Recherche En Bibliothéconomie et Sciences de l’information*, *19*(1), 1–44. <https://doi.org/10.21083/partnership.v19i1.7596>
+
+# Structured observation
+
+## What is it?
+
+-   Involves systematically watching and recording behaviours or events as they occur, using a predefined coding system
+    -   Kind of like filling a survey yourself instead, based on your observations, of asking participants to answer questions.
+
+## Advantages
+
+-   Objective data
+-   Contextual insights
+-   Real-time recording
+
+## Disadvantages
+
+-   Time-consuming
+-   Observer effect
+-   Limited scope
+
+# Secondary data
+
+## What is it? {.smaller}
+
+-   Information that has already been collected, processed, and published by others. Can be quantitative (structured) or qualitative (unstructured) data.
+-   Examples:
+    -   Government reports and statistics
+    -   Business reports and statistics
+    -   Databases
+    -   Academic research
+    -   Historical records
+    -   Organizational records
+
+## When to use it?
+
+-   When it exists and suits your need!
+
+## Advantages
+
+-   Cost-effective (depending on the data source. Some databases can be very expensive!)
+-   Accessibility
+-   Longitudinal analysis
+
+## Disadvantages
+
+-   Relevance
+-   Quality
+-   Lack of control
+-   Data format can be an issue

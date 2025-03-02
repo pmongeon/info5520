@@ -4,4 +4,30 @@ bibliography: references.bib
 
 # Research ethics
 
-Under construction...
+At the end of this chapter, you should be familiar with the [Tri-Council Policy Statement on the Ethical Conduct for Research Involving Humans – TCPS 2 (2022)](https://ethics.gc.ca/eng/policy-politique_tcps2-eptc2_2022.html). More specifically, you should be familiar with:
+
+-   The three fundamental principles of ethics for research involving humans and how to apply them in the design and conduct of your research.
+-   Your responsibilities as a researcher.
+-   The responsibilities of Research Ethics Board (REB) at Dalhousie and in other universities in Canada.
+
+## Guiding principles
+
+The three guiding principles of the TPSC 2 are:
+
+-   **Respect for persons**
+-   **Concern for welfare**
+-   **Justice**
+
+## Consent
+
+## Fairness and equity in research participation
+
+## Privacy and confidentiality
+
+## Conflict of interest
+
+## Research involving the First Nations, Inuit and Métis Peoples of Canada
+
+## The TCPS 2 - CORE 2022
+
+## 

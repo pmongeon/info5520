@@ -2,7 +2,15 @@
 bibliography: references.bib
 ---
 
-# Quantitative data collection – surveys
+# Quantitative data collection
 
-Under construction...
 
+## Slides
+
+```{=html}
+<iframe width="780" height="500" src="https://pmongeon.github.io/info5520/slides/Ch9.html" title="Slides - Week 7"></iframe>
+```
+
+```{=html}
+<a href="https://pmongeon.github.io/info5520/slides/Ch9.html#/title-slide/" target="_blank" rel="noopener noreferrer">Click here to open the slides in a new tab</a> 
+```

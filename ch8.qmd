@@ -4,5 +4,41 @@ bibliography: references.bib
 
 # Qualitative data collection
 
-Under construction...
+## Learning objectives
 
+At the end of this chapter, you should have the necessary tools to:
+
+-   List some of the main qualitative data collection methods.
+-   Choose an appropriate qualitative data collection methods for a study.
+-   
+
+## Qualitative data collection methods
+
+-   Unstructured observation
+-   Unstructured interview
+-   Semi-structured interview
+-   Focus group
+-   Critical incident
+-   Journaling
+
+### Unstructured observation
+
+-   **Non-participant observation:**
+
+-   **Participant observation:**
+
+#### Collecting observation data
+
+### Interviews
+
+#### Preparing a semi-structured interview
+
+#### Conducting a semi-structured interview
+
+#### Transcribing a semi-structured interview
+
+### Focus groups
+
+### Critical incident
+
+### Journaling
