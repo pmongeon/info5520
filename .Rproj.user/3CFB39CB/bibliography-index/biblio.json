@@ -4813,6 +4813,36 @@
             "title": "A technique for the measurement of attitudes",
             "type": "article-journal",
             "volume": "22 140"
+        },
+        {
+            "author": [
+                {
+                    "family": "Miles",
+                    "given": "Matthew B."
+                },
+                {
+                    "family": "Huberman",
+                    "given": "A. M."
+                },
+                {
+                    "family": "Saldaña",
+                    "given": "Johnny"
+                }
+            ],
+            "edition": "Fourth edition",
+            "id": "miles2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "SAGE",
+            "publisher-place": "Los Angeles",
+            "title": "Qualitative data analysis: A methods sourcebook",
+            "title-short": "Qualitative data analysis",
+            "type": "book"
         }
     ],
     "project_biblios": [

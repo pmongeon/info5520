@@ -4,4 +4,458 @@ bibliography: references.bib
 
 # Qualitative data analysis
 
-Under construction...
+## Learning objectives
+
+At the end of the chapter, the reader should:
+
+-   Understand the qualitative data analysis process.
+-   Know how to develop a codebook.
+-   Know how to perform qualitative data coding.
+-   Know how to perform an intercoder reliability test.
+-   Know how to draw insights from qualitative coding.
+
+## Core principles of qualitative data analysis
+
+Qualitative data analysis is about creating/extracting meaning from or making sense of unstructured qualitative data such as text, images, and videos. Depending on the topic and the availability or not of a theoretical or conceptual framework to guide the analysis, you may be starting with a set of themes or concepts that you are looking to identify in the data, or you may be going in with little or no a prioris.
+
+The qualitative data analysis process generally looks like this:
+
+1.  Creating a preliminary codebook (optional).
+2.  Segmenting the data.
+3.  First cycle coding.
+4.  Expanding/finalizing codebook.
+5.  Second cycle coding.
+6.  Intercoder or intracoder reliability testing (not always necessary).
+7.  Repeating step 3-4-5-6 until stabilization/agreement.
+8.  Drawing conclusions.
+
+Because the nature of the codes in the codebook will depend on the coding performed, we will first look at the processes of segmenting and coding the data.
+
+## Segmenting the data
+
+This step involves dividing your data (e.g., a text, an interview transcript) into chunks that will then be coded. The segments could be very large (an entire document, a chapter, a page, a paragraph), or very small (sentences, lines of text, single words). This choice is generally driven by the nature of your questions, methodological design, and data. For instance, if you are coding an interview in which the interviewer and the interviewees exchange questions and answers, this can offer a natural segmentation of the text and you may decide to use the participant's answer as your segment.
+
+## First cycle of coding
+
+In their book *Qualitative Data Analysis: A methods sourcebook*, @miles2020 identify 18 different types of coding, which they divide into six categories (elemental, affective, literary, exploratory, procedural, and grammatical). This may be an overwhelming number of coding methods to choose from, but in reality your coding method will likely be dictated to some degree by the topic, your research objectives, your methods, and preexisting theoretical or conceptual framework. We are listing the different coding methods here mainly to give you an idea of the flexibility of qualitative data analysis, so that you avoid locking yourself into a preconceived, narrow idea of how coding is supposed to be done.
+
+### Elemental methods
+
+-   **Descriptive coding:** using codes (usually nouns) that describe what the segment of data is about, its topic. (e.g., "businesses", "books", "activities", "colleagues").
+
+-   **In Vivo coding:** using the words used by participants as codes.
+
+-   **Process coding:** using active words (ending in "ing") to code for processes and actions (e.g., "spending time with each other", "listening", "taking the lead").
+
+-   **Concept coding:** codes that represent higher level meaning, which is not explicit in the data. (e.g., "existential dread", "the American dream")
+
+### Affective methods
+
+-   **Emotion coding:** usingcodes that represent emotions recalled, felt, or discussed by the participants (e.g., "hate", "love", "worry", "hope")
+
+-   **Values coding:** usingcodes that represent the participant's values (V), attitudes (A) and beliefs (B). The codes will usually distinguish between the three, using (e.g., "V: respect", "B: hard work leads to success", "A: Open-Mindedness").
+
+-   **Evaluation coding:** adding tags to codes with + or - to represent positivity or negativity (e.g., "+ successful candidates", "- mistakes made", "+ lessons learned")
+
+### Literary method
+
+-   **Dramaturgical coding:** using prefixes to assign categories to codes:
+
+    -   Objectives (e.g. "OBJ: Marrying Peach")
+
+    -   Conflicts (e.g., "CON: Control over Mushroom Kingdom")
+
+    -   Tactics (e.g., "TAC: Kidnapping Peach")
+
+    -   Attitudes (e.g., "ATT: Courage")
+
+    -   Emotions (e.g., "EMO: Fear")
+
+    -   Subtexts (SUB): things that are implied and not explicitly stated.
+
+### Exploratory method
+
+-   **Holistic coding:** Applying codes to large chunks of data (as opposed to more detailed coding). Often used as a preliminary step before doing more detailed coding.
+
+-   **Provisional coding:** Begins with an a priori list of codes (based on previous research), which are then revised, deleted, expanded.
+
+-   **Hypothesis coding:** Coding based on an a priori hypothesis that the researcher wants to verify using qualitative data.
+
+### Procedural methods
+
+-   **Protocol coding:** Using a standardized coding scheme.
+
+-   **Causation coding:** Coding aimed at capturing causal relationships in the data. The goal is to identify combinations of codes, such that CODE 1 -\> CODE 2 -\> CODE 3.
+
+### Grammatical methods
+
+-   **Attribute coding:** codes capturing the attributes of participant, the case, the interview, context, etc.
+
+-   **Magnitude coding:** Tags added to codes to signify their magnitude (e.g., MAJOR/MODERATE/MINOR, 0 = no, 1 = possibly, and 2 = clearly, or ++ = very effective, + = effective, +- = mixed).
+
+-   **Subcoding:** Second order tag that represents the hierarchical nature of codes (e.g., Course - design, Course - teaching, Course - evaluation).
+
+-   **Simultaneous coding:** When two different codes are applied to the same chunk of data.
+
+### A standalone method
+
+-   **Theming the data:** coding with categories or themes similar to those who are employed to cluster codes in second cycle coding (see below).
+
+## Tools for coding
+
+#### NVIVO
+
+NVivo is a popular and powerful software for qualitative data analysis, but it may require a significant investment of time and money to fully utilize its capabilities.
+
+Pros:
+
+-   **Organized data analysis**: NVivo provides a structured approach to organizing and analyzing qualitative data, making it easier to manage large datasets.
+-   **Supports multiple formats**: It can handle various data formats, including text, audio, video, and social media content.
+-   **Advanced features**: NVivo includes AI-powered autocoding and sentiment analysis, which can speed up the research process.
+-   **Visualization tools**: The software offers robust visualization options, helping to create clear and insightful graphics.
+-   **Collaboration**: NVivo supports team collaboration, allowing multiple users to work on the same project simultaneously.
+
+Cons:
+
+-   **Steep learning curve**: The software can be complex and may require significant time to learn and master.
+-   **High cost**: NVivo can be expensive, especially for individual users or small organizations.
+-   **Limited free trial**: NVivo offers a limited free trial, and there is no free version available.
+-   **interface clutter**: The interface can be overwhelming for new users, making it difficult to navigate.
+
+#### QDA Miner
+
+QDA Miner is another powerful tool for qualitative data analysis, especially if you are looking for a cost-effective and user-friendly option.
+
+Pros:
+
+-   **User-friendly interface**: QDA Miner is known for its intuitive design, making it accessible for both novice and experienced researchers.
+-   **Versatile data handling**: It supports various data formats, including text, audio, and video, allowing for comprehensive analysis.
+-   **Integration with other tools**: QDA Miner integrates well with other software like WordStat and SimStat, which is beneficial for mixed methods research.
+-   **Robust reporting features**: The software offers strong reporting capabilities, enabling users to generate detailed analysis reports.
+-   **Cost-effective**: Compared to some other qualitative data analysis tools, QDA Miner is relatively affordable and offers a free version.
+
+Cons:
+
+-   **Limited advanced features**: While it is user-friendly, QDA Miner may lack some of the advanced features found in other software like NVivo.
+-   **Learning curve**: Although it is generally user-friendly, there can still be a learning curve for those new to qualitative data analysis software.
+-   **Limited collaboration tools**: QDA Miner may not offer as robust collaboration features as some other tools, which can be a drawback for team projects.
+
+#### LibreQDA
+
+[LibreQDA](https://libreqda.org/) is a free software developed by the [Plateforme en humanités numériques](https://www.usherbrooke.ca/flsh/recherche/centres-groupes-et-equipes-de-recherche/phun) of the University of Sherbrooke. It is more limited than NVIVO and QDA Miner, but it's free. According to its [documentation](#0){style="font-size: 11pt;"}, it allows users to :
+
+-   Importing a variety of text files (`.pdf`, `.docx`, `.odt`, `.txt` and more);
+-   Coding words, sentences or paragraphs using codes manually set by the user;
+-   Finding and analyzing themes of interest;
+-   Exporting a subset of coded selections or the project as a whole.
+
+Some of its main limitations are:
+
+-   Can't process images, audio or video;
+-   Converts all documents to a nearly raw text format, which can result in files that are difficult to read if source documents had complex formatting;
+-   Instantly applies changes to each project for all team members, which can influence their reading and analysis of the documents;
+-   Does not provide any advanced modules to explore the co-occurence of codes, such as a summary view of the contents in a matrix.
+
+## The Codebook
+
+### A priori codes
+
+It may be useful to establish an a priori set of codes so that the researcher(s). These a priori codes should be drawn from, again, your topic, your research objectives, your methods, and preexisting theoretical or conceptual frameworks.
+
+### Revising codes
+
+When doing the first cycle of coding, it's better to create too many codes than not enough codes. It's also best to slightly "overcode" (adding codes that might end up being dropped later) than to "undercode" (not coding some segments that contain meaningful data). This will allow you to work with a comprehensive set of codes at the revision stages. This is when codes get adjusted, refined, combined, or divided into subcodes.
+
+### Defining codes
+
+Every code should have a definition that differentiates it from other codes and that can help coders apply code the data. In addition to the definition, an example of a data chunk to which the code would apply should be included.
+
+### Example
+
+Here is an example of a codebook from a study (not yet published) on librarian experience and perceptions about the process of unbundling the "big deal" (journal subscriptions from large commercial publishers). Note that ideally this codebook would have included a definition of each code, as well as an example chunk of data to which the code was applied.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+
+library(kableExtra)
+library(tidyverse)
+
+tibble(Codes = c("Decision-making",
+                 "Confidence in decisions",
+                 "Factors involved in decision-making",
+                 "Librarians’ involvement in decisions",
+                 "Attitude towards cancellation",
+                 "Attitude towards Big Deals",
+                 "Consultation with librarians",
+                 "Consultations with faculty",
+                 "Context",
+                 "Cancellation process",
+                 "Fear of faculty response",
+                 "Librarian opposition",
+                 "Mitigation",
+                 "Faculty response",
+                 "Faculty awareness of publishing situation",
+                 "Consultation with faculty",
+                 "Relationship with faculty",
+                 "Need for behavioural change",
+                 "Alternative means of access",
+                 "Open access",
+                 "Consultation or collaboration with other institutions",
+                 "Liaising with top university admin",
+                 "Communications with faculty/librarians",
+                 "Team members",
+                 "Lessons learned",
+                 "Strategy",
+                 "Covid impact",
+                 "Transformative agreements",
+                 "Confidence in data/leaders",
+                 "Methodology",
+                 "Assessing value",
+                 "Measures",
+                 "Faculty survey",
+                 "Lessons learned",
+                 "Analysis",
+                 "Challenges",
+                 "Tools",
+                 "Balancing impact",
+                 "Outcome",
+                 "Work role",
+                 "Role in cancellation",
+                 "Experience",
+                 "Librarian knowledge",
+                 "Practice",
+                 "Organizational structure",
+                 "Managerial style")) %>% 
+  kbl() %>% 
+  kable_classic()
+
+
+```
+
+## Second cycle coding
+
+In second cycle coding, we are assigning meaning to the codes. The goal here is to cluster codes in meaningful themes that will later guide the interpretation of the data and produce answers ot the research questions. According to @miles2020 These clusters of codes can represent:
+
+-   Categories or themes
+-   Causes of explanations
+-   Relationships
+-   Concepts of theoretical constructs
+
+These clusters then allow us to finalize our code book.
+
+### Finalized code book example
+
+Again, this codebook would ideally have included a definition of each code, as well as an example chunk of data to which the code was applied.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+
+library(kableExtra)
+library(tidyverse)
+
+tibble(themes = c(rep("Decision making",10),
+                 rep("Faculty response",10),
+                 rep("Strategy",8),
+                 rep("Data analysis",11),
+                 rep("Roles and experience",7)),
+       Codes = c("Decision-making",
+                 "Confidence in decisions",
+                 "Factors involved in decision-making",
+                 "Librarians’ involvement in decisions",
+                 "Attitude towards cancellation",
+                 "Attitude towards Big Deals",
+                 "Consultation with librarians",
+                 "Consultations with faculty",
+                 "Context",
+                 "Cancellation process",
+                 "Fear of faculty response",
+                 "Librarian opposition",
+                 "Mitigation",
+                 "Faculty response",
+                 "Faculty awareness of publishing situation",
+                 "Consultation with faculty",
+                 "Relationship with faculty",
+                 "Need for behavioural change",
+                 "Alternative means of access",
+                 "Open access",
+                 "Consultation or collaboration with other institutions",
+                 "Liaising with top university admin",
+                 "Communications with faculty/librarians",
+                 "Team members",
+                 "Lessons learned",
+                 "Strategy",
+                 "Covid impact",
+                 "Transformative agreements",
+                 "Confidence in data/leaders",
+                 "Methodology",
+                 "Assessing value",
+                 "Measures",
+                 "Faculty survey",
+                 "Lessons learned",
+                 "Analysis",
+                 "Challenges",
+                 "Tools",
+                 "Balancing impact",
+                 "Outcome",
+                 "Work role",
+                 "Role in cancellation",
+                 "Experience",
+                 "Librarian knowledge",
+                 "Practice",
+                 "Organizational structure",
+                 "Managerial style")) %>% 
+  kbl() %>% 
+  collapse_rows(columns = 1, valign = "top") %>% 
+  kable_classic()
+```
+
+## Intercoder reliability
+
+Intercoder reliability, also known as interrater reliability, is a measure of the consistency or agreement between different coders for the same data. This can be achieved by developing clear coding instructions, training coders, conducting pilot sessions to refine the coding scheme, and regularly discussing discrepancies to achieve consensus.
+
+There are different statistical methods for measuring intercoder reliability, the most common being Cohen's Kappa, Krippendorff's Alpha, or percentage agreement. A high value for either of these indicators suggests that the coding process is reliable and that the findings are not biased by individual coder differences.
+
+### Cohen's Kappa
+
+$$k = (p_o – p_e) / (1 – p_e)$$
+
+where, P~o~ is the relative observed agreement between raters and P~e~ is the probability of chance agreement.
+
+*k* ranges between 0 and 1 and is interpreted like this:
+
+| Cohen's Kappa (k) | Degree of agreement |
+|-------------------|---------------------|
+| 0                 | None                |
+| 0.01-0.20         | Slight              |
+| 0.21-0.40         | Fair                |
+| 0.41-0.60         | Moderate            |
+| 0.61-0.80         | Substantial         |
+| 0.81-0.99         | Good                |
+| 1                 | Perfect             |
+
+<br><br> Here is an example:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library('irr')
+data("diagnoses", package = "irr")
+diagnoses %>% 
+  kbl()
+```
+
+```{r echo = FALSE}
+kappam.light(diagnoses)
+```
+
+### Krippendorff's Alpha
+
+Whereas Cohen's Kappa is mainly used for nominal data, Krippendorff's Alpha can handle various types of data, including nominal, ordinal, interval, and ratio scales. It also handles missing data better than the Cohen's Kappa.
+
+Here's an example:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library('irr')
+ coded_data<-matrix(c(1,1,NA,1,2,2,3,2,3,3,3,3,3,3,3,3,2,2,2,2,1,2,3,4,4,4,4,4,1,1,2,1,2,2,2,2,NA,5,5,5,NA,NA,1,1,NA,NA,3,NA),nrow=4)
+ 
+ as_tibble(coded_data) %>% 
+    rowid_to_column("coder") %>% 
+    kbl()
+```
+
+Krippendorf's Alpha based on the **nominal** scale
+
+```{r echo=FALSE}
+kripp.alpha(coded_data)
+```
+
+Krippendorf's Alpha based on the **ordinal** scale
+
+```{r echo=FALSE}
+kripp.alpha(coded_data,"ordinal")
+```
+
+Krippendorf's Alpha based on the **interval** scale
+
+```{r echo=FALSE}
+kripp.alpha(coded_data,"interval")
+```
+
+Krippendorf's Alpha based on the **ratio** scale
+
+```{r echo=FALSE}
+kripp.alpha(coded_data,"ratio") 
+```
+
+### Percentage agreement
+
+The percentage agreement is a more simple methods that is simply, as its name suggest, the percentage of codes for which all coders are in agreement. Here's 20 codes from 4 different coders.
+
+```{r echo = FALSE}
+data(video) 
+video %>% 
+  kbl()
+```
+
+We can then calculate the percentage simple percentage agreement.
+
+```{r echo = FALSE}
+agree(video)
+```
+
+If we want, we can change the tolerance level so that slight disagreement is still considered an agreement. For example, if we have a tolerance of 1, then all the cases where all coders rated 3 or 4 will be considered as agreements.
+
+```{r echo = FALSE}
+agree(video, tolerance = 1)
+```
+
+## Drawing insights
+
+One we have finalized the first and second cycle coding process, it is time to interpret to interpret the data and use the codes to construct meaning in order to answer the research questions and fulfill the broader objectives of the study. @miles2020 suggest a list of tatics for generating meaning:
+
+-   Noting patterns, themes
+-   Seeing plausibility
+-   Clustering
+-   Making metaphors
+-   Counting
+-   Contrasting/comparing
+-   Subsuming particulars into the general
+-   Factoring
+-   Noting relations
+-   Finding mediating variables
+-   Building a logical chain of evidence
+-   Making conceptual/theoretical coherence
+
+## Assessing the qualitative data analysis process
+
+### Confirmability
+
+-   The methods are clearly described.
+-   The conclusions are supported by the data.
+-   The researcher's personal assumptions, values and potential biases are transparently reported.
+-   Competing conclusions have been considered.
+
+### Dependability
+
+-   The research questions are clear and the methods align with them.
+-   The theoretical framework is well defined.
+-   Data was collected across various settings, times, respondents, etc.
+-   Intercoder reliability checks were made with good results.
+
+### Credibility
+
+-   Descriptions are contextualized, rich, and meaningful.
+-   The reported insights are plausible.
+-   The data is linked to concepts in prior or emerging theory.
+
+### Transferability
+
+-   The sample and its characteristics are described enough to allow comparison with other samples
+-   The limitations related to the sample size or composition are discussed.
+-   The processes and outcomes are applicable to comparable settings.
+-   The findings are connected to theory,
+-   New theories and their transferability are clearly stated.
+
+## Exercise
+
+To practice qualitative data analysis, we are going to use the [TQRMUL dataset](https://tqrmul.com/dataset/), which consists of video and audio recordings together with transcripts of five interviews with undergraduate students on the subject of friendship.
+
+**Details upcoming....**
+
+## References

@@ -133,7 +133,7 @@
     "href": "ch10.html",
     "title": "10  Qualitative data analysis",
     "section": "",
-    "text": "Under construction…",
+    "text": "10.1 Learning objectives\nAt the end of the chapter, the reader should:",
     "crumbs": [
       "Analytical phase",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
@@ -720,6 +720,182 @@
     "crumbs": [
       "Methodological phase",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quantitative data collection</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#coding",
+    "href": "ch10.html#coding",
+    "title": "10  Qualitative data analysis",
+    "section": "10.2 Coding",
+    "text": "10.2 Coding",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#intercoder-reliability",
+    "href": "ch10.html#intercoder-reliability",
+    "title": "10  Qualitative data analysis",
+    "section": "10.8 Intercoder reliability",
+    "text": "10.8 Intercoder reliability\nIntercoder reliability, also known as interrater reliability, is a measure of the consistency or agreement between different coders for the same data. This can be achieved by developing clear coding instructions, training coders, conducting pilot sessions to refine the coding scheme, and regularly discussing discrepancies to achieve consensus.\nThere are different statistical methods for measuring intercoder reliability, the most common being Cohen’s Kappa, Krippendorff’s Alpha, or percentage agreement. A high value for either of these indicators suggests that the coding process is reliable and that the findings are not biased by individual coder differences.\n\n10.8.1 Cohen’s Kappa\n\\[k = (p_o – p_e) / (1 – p_e)\\]\nwhere, Po is the relative observed agreement between raters and Pe is the probability of chance agreement.\nk ranges between 0 and 1 and is interpreted like this:\n\n\n\nCohen’s Kappa (k)\nDegree of agreement\n\n\n\n\n0\nNone\n\n\n0.01-0.20\nSlight\n\n\n0.21-0.40\nFair\n\n\n0.41-0.60\nModerate\n\n\n0.61-0.80\nSubstantial\n\n\n0.81-0.99\nGood\n\n\n1\nPerfect\n\n\n\n Here is an example:\n\n\n\n\n\nrater1\nrater2\nrater3\nrater4\nrater5\nrater6\n\n\n\n\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n2. Personality Disorder\n2. Personality Disorder\n2. Personality Disorder\n5. Other\n5. Other\n5. Other\n\n\n2. Personality Disorder\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n5. Other\n\n\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n\n\n2. Personality Disorder\n2. Personality Disorder\n2. Personality Disorder\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n1. Depression\n1. Depression\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n\n\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n5. Other\n5. Other\n\n\n1. Depression\n1. Depression\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n4. Neurosis\n\n\n1. Depression\n1. Depression\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n\n\n1. Depression\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n1. Depression\n2. Personality Disorder\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n2. Personality Disorder\n2. Personality Disorder\n2. Personality Disorder\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n\n\n1. Depression\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n2. Personality Disorder\n2. Personality Disorder\n4. Neurosis\n4. Neurosis\n4. Neurosis\n5. Other\n\n\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n5. Other\n\n\n1. Depression\n1. Depression\n1. Depression\n4. Neurosis\n5. Other\n5. Other\n\n\n1. Depression\n1. Depression\n1. Depression\n1. Depression\n1. Depression\n2. Personality Disorder\n\n\n2. Personality Disorder\n2. Personality Disorder\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n1. Depression\n3. Schizophrenia\n3. Schizophrenia\n5. Other\n5. Other\n5. Other\n\n\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n\n\n2. Personality Disorder\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n2. Personality Disorder\n2. Personality Disorder\n4. Neurosis\n5. Other\n5. Other\n5. Other\n\n\n1. Depression\n1. Depression\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n1. Depression\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n5. Other\n\n\n2. Personality Disorder\n2. Personality Disorder\n2. Personality Disorder\n2. Personality Disorder\n2. Personality Disorder\n4. Neurosis\n\n\n1. Depression\n1. Depression\n1. Depression\n1. Depression\n5. Other\n5. Other\n\n\n2. Personality Disorder\n2. Personality Disorder\n4. Neurosis\n4. Neurosis\n4. Neurosis\n4. Neurosis\n\n\n1. Depression\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n3. Schizophrenia\n\n\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n5. Other\n\n\n\n\n\n\n\n\n\n Light's Kappa for m Raters\n\n Subjects = 30 \n   Raters = 6 \n    Kappa = 0.459 \n\n        z = 2.31 \n  p-value = 0.0211 \n\n\n\n\n10.8.2 Krippendorff’s Alpha\nWhereas Cohen’s Kappa is mainly used for nominal data, Krippendorff’s Alpha can handle various types of data, including nominal, ordinal, interval, and ratio scales. It also handles missing data better than the Cohen’s Kappa.\nHere’s an example:\n\n\n\n\n\ncoder\nV1\nV2\nV3\nV4\nV5\nV6\nV7\nV8\nV9\nV10\nV11\nV12\n\n\n\n\n1\n1\n2\n3\n3\n2\n1\n4\n1\n2\nNA\nNA\nNA\n\n\n2\n1\n2\n3\n3\n2\n2\n4\n1\n2\n5\nNA\nNA\n\n\n3\nNA\n3\n3\n3\n2\n3\n4\n2\n2\n5\n1\n3\n\n\n4\n1\n2\n3\n3\n2\n4\n4\n1\n2\n5\n1\nNA\n\n\n\n\n\n\n\nKrippendorf’s Alpha based on the nominal scale\n\n\n Krippendorff's alpha\n\n Subjects = 12 \n   Raters = 4 \n    alpha = 0.743 \n\n\nKrippendorf’s Alpha based on the ordinal scale\n\n\n Krippendorff's alpha\n\n Subjects = 12 \n   Raters = 4 \n    alpha = 0.815 \n\n\nKrippendorf’s Alpha based on the interval scale\n\n\n Krippendorff's alpha\n\n Subjects = 12 \n   Raters = 4 \n    alpha = 0.849 \n\n\nKrippendorf’s Alpha based on the ratio scale\n\n\n Krippendorff's alpha\n\n Subjects = 12 \n   Raters = 4 \n    alpha = 0.797 \n\n\n\n\n10.8.3 Percentage agreement\nThe percentage agreement is a more simple methods that is simply, as its name suggest, the percentage of codes for which all coders are in agreement. Here’s 20 codes from 4 different coders.\n\n\n\n\n\nrater1\nrater2\nrater3\nrater4\n\n\n\n\n4\n4\n3\n4\n\n\n4\n4\n4\n5\n\n\n4\n4\n5\n5\n\n\n4\n4\n4\n4\n\n\n4\n3\n2\n4\n\n\n4\n4\n3\n4\n\n\n4\n3\n2\n5\n\n\n4\n4\n3\n4\n\n\n4\n3\n3\n4\n\n\n4\n3\n3\n4\n\n\n4\n4\n3\n4\n\n\n4\n3\n3\n4\n\n\n4\n4\n4\n4\n\n\n4\n4\n4\n4\n\n\n4\n4\n3\n4\n\n\n4\n4\n4\n4\n\n\n4\n4\n4\n4\n\n\n4\n4\n4\n4\n\n\n4\n4\n4\n4\n\n\n4\n5\n5\n4\n\n\n\n\n\n\n\nWe can then calculate the percentage simple percentage agreement.\n\n\n Percentage agreement (Tolerance=0)\n\n Subjects = 20 \n   Raters = 4 \n  %-agree = 35 \n\n\nIf we want, we can change the tolerance level so that slight disagreement is still considered an agreement. For example, if we have a tolerance of 1, then all the cases where all coders rated 3 or 4 will be considered as agreements.\n\n\n Percentage agreement (Tolerance=1)\n\n Subjects = 20 \n   Raters = 4 \n  %-agree = 90",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#tools",
+    "href": "ch10.html#tools",
+    "title": "10  Qualitative data analysis",
+    "section": "10.4 Tools",
+    "text": "10.4 Tools\n\n10.4.1 NVIVO\nNVivo is a popular and powerful software for qualitative data analysis but it may require a significant investment of time and money to fully utilize its capabilities.\nPros:\n\nOrganized Data Analysis: NVivo provides a structured approach to organizing and analyzing qualitative data, making it easier to manage large datasets\nSupports Multiple Formats: It can handle various data formats, including text, audio, video, and social media content\nAdvanced Features: NVivo includes AI-powered autocoding and sentiment analysis, which can speed up the research process\nVisualization Tools: The software offers robust visualization options, helping to create clear and insightful graphics\nCollaboration: NVivo supports team collaboration, allowing multiple users to work on the same project simultaneously\n\nCons:\n\nSteep Learning Curve: The software can be complex and may require significant time to learn and master\nHigh Cost: NVivo can be expensive, especially for individual users or small organizations\nPerformance Issues: Some users report that the software can be slow and occasionally frustrating to use\nLimited Free Trial: NVivo offers a limited free trial, and there is no free version available\ninterface Clutter: The interface can be overwhelming for new users, making it difficult to navigate\n\n\n\n10.4.2 QDA Miner\n\n\n10.4.3 LibreQDA\nLibreQDA is a free software developed by the Plateforme en humanités numériques of the University of Sherbrooke. It is more limited than NVIVO and QDA Miner, but it’s free. According to its documentation, it allows users to :\n\nImporting a variety of text files (.pdf, .docx, .odt, .txt and more);\nCoding words, sentences or paragraphs using codes manually set by the user;\nFinding and analyzing themes of interest;\nExporting a subset of coded selections or the project as a whole.\n\nSome of its main limitations are:\n\nCan’t process images, audio or video;\nConverts all documents to a nearly raw text format, which can result in files that are difficult to read if source documents had complex formatting;\nInstantly applies changes to each project for all team members, which can influence their reading and analysis of the documents;\nDoes not provide any advanced modules to explore the co-occurence of codes, such as a summary view of the contents in a matrix.\n\n\n\n10.4.4 Excel",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#learning-objectives",
+    "href": "ch10.html#learning-objectives",
+    "title": "10  Qualitative data analysis",
+    "section": "",
+    "text": "Understand the qualitative data analysis process.\nKnow how to develop a codebook.\nKnow how to perform qualitative data coding.\nKnow how to perform an intercoder reliability test.\nKnow how to draw insights from qualitative coding.",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#core-principles-of-qualitative-data-analysis",
+    "href": "ch10.html#core-principles-of-qualitative-data-analysis",
+    "title": "10  Qualitative data analysis",
+    "section": "10.2 Core principles of qualitative data analysis",
+    "text": "10.2 Core principles of qualitative data analysis\nQualitative data analysis is about creating/extracting meaning from or making sense of unstructured qualitative data such as text, images, and videos. Depending on the topic and the availability or not of a theoretical or conceptual framework to guide the analysis, you may be starting with a set of themes or concepts that you are looking to identify in the data, or you may be going in with little or no a prioris.\nThe qualitative data analysis process generally looks like this:\n\nCreating a preliminary codebook (optional).\nSegmenting the data.\nFirst cycle coding.\nExpanding/finalizing codebook.\nSecond cycle coding.\nIntercoder or intracoder reliability testing (not always necessary).\nRepeating step 3-4-5-6 until stabilization/agreement.\nDrawing conclusions.\n\nBecause the nature of the codes in the codebook will depend on the coding performed, we will first look at the processes of segmenting and coding the data.",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#the-coding-process",
+    "href": "ch10.html#the-coding-process",
+    "title": "10  Qualitative data analysis",
+    "section": "10.3 The coding process",
+    "text": "10.3 The coding process\n\n10.3.1 Types of coding\nIn their book Qualitative Data Analysis: A methods sourcebook, Miles et al. Miles, Huberman, and Saldaña (2020) identify 18 different types of coding, which they divide in six categories (elemental, affective, literary, exploratory, procedural, and grammatical).\n\n10.3.1.1 Elemental methods\n\nDescriptive coding: using codes (usually nouns) that describe what the segment of data is about, its topic. (e.g., “businesses”, “books”, “activities”, “colleagues”).\nIn Vivo coding: using the words used by participants as codes.\nProcess coding: using active words (ending in “ing”) to code for processes and actions (e.g., “spending time with each other”, “listening”, “taking the lead”).\nConcept coding: codes that represent higher level meaning, which is not explicit in the data. (e.g., “existential dread”, “the American dream”)\n\n\n\n10.3.1.2 Affective methods\n\nEmotion coding: usingcodes that represent emotions recalled, felt, or discussed by the participants (e.g., “hate”, “love”, “worry”, “hope”)\nValues coding: usingcodes that represent the participant’s values (V), attitudes (A) and beliefs (B). The codes will usually distinguish between the three, using (e.g., “V: respect”, “B: hard work leads to success”, “A: Open-Mindedness”).\nEvaluation coding: adding tags to codes with + or - to represent positivity or negativity (e.g., “+ successful candidates”, “- mistakes made”, “+ lessons learned”)\n\n\n\n10.3.1.3 Literary method\n\nDramaturgical coding: using prefixes to assign categories to codes:\n\nObjectives (e.g. “OBJ: Marrying Peach”)\nConflicts (e.g., “CON: Control over Mushroom Kingdom”)\nTactics (e.g., “TAC: Kidnapping Peach”)\nAttitudes (e.g., “ATT: Courage”)\nEmotions (e.g., “EMO: Fear”)\nSubtexts (SUB): things that are implied and not explicitly stated.\n\n\n\n\n10.3.1.4 Exploratory method\n\nHolistic coding:\nProvisional coding:\nHypothesis coding:\n\n\n\n10.3.1.5 Procedural methods\n\nProtocol coding:\nCausation coding:\n\n\n\n10.3.1.6 Grammatical methods\n\nAttribute coding: codes capturing the attributes of participant, the case, the interview, context, etc.\nMagnitude coding:\nSubcoding:\nSimultaneous coding:\n\n\n\n10.3.1.7 A standalone method\n\nTheming the data:\n\n\n\n\n10.3.2 The coding process\n\n\n10.3.3 Data units\n\n\n10.3.4 Codebook\n\n\n10.3.5 Intercoder reliability\n\n\n10.3.6 Tools for coding\n\n10.3.6.1 NVIVO\nNVivo is a popular and powerful software for qualitative data analysis, but it may require a significant investment of time and money to fully utilize its capabilities.\nPros:\n\nOrganized data analysis: NVivo provides a structured approach to organizing and analyzing qualitative data, making it easier to manage large datasets\nSupports multiple formats: It can handle various data formats, including text, audio, video, and social media content\nAdvanced features: NVivo includes AI-powered autocoding and sentiment analysis, which can speed up the research process\nVisualization tools: The software offers robust visualization options, helping to create clear and insightful graphics\nCollaboration: NVivo supports team collaboration, allowing multiple users to work on the same project simultaneously\n\nCons:\n\nSteep learning curve: The software can be complex and may require significant time to learn and master\nHigh cost: NVivo can be expensive, especially for individual users or small organizations\nLimited free trial: NVivo offers a limited free trial, and there is no free version available\ninterface clutter: The interface can be overwhelming for new users, making it difficult to navigate\n\n\n\n10.3.6.2 QDA Miner\nQDA Miner is another powerful tool for qualitative data analysis, especially if you are looking for a cost-effective and user-friendly option.\nPros:\n\nUser-friendly interface: QDA Miner is known for its intuitive design, making it accessible for both novice and experienced researchers.\nVersatile data handling: It supports various data formats, including text, audio, and video, allowing for comprehensive analysis.\nIntegration with other tools: QDA Miner integrates well with other software like WordStat and SimStat, which is beneficial for mixed methods research.\nRobust reporting features: The software offers strong reporting capabilities, enabling users to generate detailed analysis reports.\nCost-effective: Compared to some other qualitative data analysis tools, QDA Miner is relatively affordable and offers a free version.\n\nCons:\n\nLimited advanced features: While it is user-friendly, QDA Miner may lack some of the advanced features found in other software like NVivo.\nLearning curve: Although it is generally user-friendly, there can still be a learning curve for those new to qualitative data analysis software.\nLimited collaboration tools: QDA Miner may not offer as robust collaboration features as some other tools, which can be a drawback for team projects.\n\n\n\n10.3.6.3 LibreQDA\nLibreQDA is a free software developed by the Plateforme en humanités numériques of the University of Sherbrooke. It is more limited than NVIVO and QDA Miner, but it’s free. According to its documentation, it allows users to :\n\nImporting a variety of text files (.pdf, .docx, .odt, .txt and more);\nCoding words, sentences or paragraphs using codes manually set by the user;\nFinding and analyzing themes of interest;\nExporting a subset of coded selections or the project as a whole.\n\nSome of its main limitations are:\n\nCan’t process images, audio or video;\nConverts all documents to a nearly raw text format, which can result in files that are difficult to read if source documents had complex formatting;\nInstantly applies changes to each project for all team members, which can influence their reading and analysis of the documents;\nDoes not provide any advanced modules to explore the co-occurence of codes, such as a summary view of the contents in a matrix.\n\n\n\n10.3.6.4 Excel",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#drawing-conclusions",
+    "href": "ch10.html#drawing-conclusions",
+    "title": "10  Qualitative data analysis",
+    "section": "10.4 Drawing conclusions",
+    "text": "10.4 Drawing conclusions",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#assessing-the-qualitative-data-analysis-process",
+    "href": "ch10.html#assessing-the-qualitative-data-analysis-process",
+    "title": "10  Qualitative data analysis",
+    "section": "10.10 Assessing the qualitative data analysis process",
+    "text": "10.10 Assessing the qualitative data analysis process\n\n10.10.1 Confirmability\n\nThe methods are clearly described.\nThe conclusions are supported by the data.\nThe researcher’s personal assumptions, values and potential biases are transparently reported.\nCompeting conclusions have been considered.\n\n\n\n10.10.2 Dependability\n\nThe research questions are clear and the methods align with them.\nThe theoretical framework is well defined.\nData was collected across various settings, times, respondents, etc.\nIntercoder reliability checks were made with good results.\n\n\n\n10.10.3 Credibility\n\nDescriptions are contextualized, rich, and meaningful.\nThe reported insights are plausible.\nThe data is linked to concepts in prior or emerging theory.\n\n\n\n10.10.4 Transferability\n\nThe sample and its characteristics are described enough to allow comparison with other samples\nThe limitations related to the sample size or composition are discussed.\nThe processes and outcomes are applicable to comparable settings.\nThe findings are connected to theory,\nNew theories and their transferability are clearly stated.",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#exercise",
+    "href": "ch10.html#exercise",
+    "title": "10  Qualitative data analysis",
+    "section": "10.11 Exercise",
+    "text": "10.11 Exercise\nTo practice qualitative data analysis, we are going to use the TQRMUL dataset, which consists of video and audio recordings together with transcripts of five interviews with undergraduate students on the subject of friendship.\nDetails upcoming….",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#segmenting-the-data",
+    "href": "ch10.html#segmenting-the-data",
+    "title": "10  Qualitative data analysis",
+    "section": "10.3 Segmenting the data",
+    "text": "10.3 Segmenting the data\nThis step involves dividing your data (e.g., a text, an interview transcript) into chunks that will then be coded. The segments could be very large (an entire document, a chapter, a page, a paragraph), or very small (sentences, lines of text, single words). This choice is generally driven by the nature of your questions, methodological design, and data. For instance, if you are coding an interview in which the interviewer and the interviewees exchange questions and answers, this can offer a natural segmentation of the text and you may decide to use the participant’s answer as your segment.",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#first-cycle-of-coding",
+    "href": "ch10.html#first-cycle-of-coding",
+    "title": "10  Qualitative data analysis",
+    "section": "10.4 First cycle of coding",
+    "text": "10.4 First cycle of coding\nIn their book Qualitative Data Analysis: A methods sourcebook, Miles, Huberman, and Saldaña (2020) identify 18 different types of coding, which they divide into six categories (elemental, affective, literary, exploratory, procedural, and grammatical). This may be an overwhelming number of coding methods to choose from, but in reality your coding method will likely be dictated to some degree by the topic, your research objectives, your methods, and preexisting theoretical or conceptual framework. We are listing the different coding methods here mainly to give you an idea of the flexibility of qualitative data analysis, so that you avoid locking yourself into a preconceived, narrow idea of how coding is supposed to be done.\n\n10.4.1 Elemental methods\n\nDescriptive coding: using codes (usually nouns) that describe what the segment of data is about, its topic. (e.g., “businesses”, “books”, “activities”, “colleagues”).\nIn Vivo coding: using the words used by participants as codes.\nProcess coding: using active words (ending in “ing”) to code for processes and actions (e.g., “spending time with each other”, “listening”, “taking the lead”).\nConcept coding: codes that represent higher level meaning, which is not explicit in the data. (e.g., “existential dread”, “the American dream”)\n\n\n\n10.4.2 Affective methods\n\nEmotion coding: usingcodes that represent emotions recalled, felt, or discussed by the participants (e.g., “hate”, “love”, “worry”, “hope”)\nValues coding: usingcodes that represent the participant’s values (V), attitudes (A) and beliefs (B). The codes will usually distinguish between the three, using (e.g., “V: respect”, “B: hard work leads to success”, “A: Open-Mindedness”).\nEvaluation coding: adding tags to codes with + or - to represent positivity or negativity (e.g., “+ successful candidates”, “- mistakes made”, “+ lessons learned”)\n\n\n\n10.4.3 Literary method\n\nDramaturgical coding: using prefixes to assign categories to codes:\n\nObjectives (e.g. “OBJ: Marrying Peach”)\nConflicts (e.g., “CON: Control over Mushroom Kingdom”)\nTactics (e.g., “TAC: Kidnapping Peach”)\nAttitudes (e.g., “ATT: Courage”)\nEmotions (e.g., “EMO: Fear”)\nSubtexts (SUB): things that are implied and not explicitly stated.\n\n\n\n\n10.4.4 Exploratory method\n\nHolistic coding: Applying codes to large chunks of data (as opposed to more detailed coding). Often used as a preliminary step before doing more detailed coding.\nProvisional coding: Begins with an a priori list of codes (based on previous research), which are then revised, deleted, expanded.\nHypothesis coding: Coding based on an a priori hypothesis that the researcher wants to verify using qualitative data.\n\n\n\n10.4.5 Procedural methods\n\nProtocol coding: Using a standardized coding scheme.\nCausation coding: Coding aimed at capturing causal relationships in the data. The goal is to identify combinations of codes, such that CODE 1 -&gt; CODE 2 -&gt; CODE 3.\n\n\n\n10.4.6 Grammatical methods\n\nAttribute coding: codes capturing the attributes of participant, the case, the interview, context, etc.\nMagnitude coding: Tags added to codes to signify their magnitude (e.g., MAJOR/MODERATE/MINOR, 0 = no, 1 = possibly, and 2 = clearly, or ++ = very effective, + = effective, +- = mixed).\nSubcoding: Second order tag that represents the hierarchical nature of codes (e.g., Course - design, Course - teaching, Course - evaluation).\nSimultaneous coding: When two different codes are applied to the same chunk of data.\n\n\n\n10.4.7 A standalone method\n\nTheming the data: coding with categories or themes similar to those who are employed to cluster codes in second cycle coding (see below).",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#the-codebook",
+    "href": "ch10.html#the-codebook",
+    "title": "10  Qualitative data analysis",
+    "section": "10.6 The Codebook",
+    "text": "10.6 The Codebook\n\n10.6.1 A priori codes\nIt may be useful to establish an a priori set of codes so that the researcher(s). These a priori codes should be drawn from, again, your topic, your research objectives, your methods, and preexisting theoretical or conceptual frameworks.\n\n\n10.6.2 Revising codes\nWhen doing the first cycle of coding, it’s better to create too many codes than not enough codes. It’s also best to slightly “overcode” (adding codes that might end up being dropped later) than to “undercode” (not coding some segments that contain meaningful data). This will allow you to work with a comprehensive set of codes at the revision stages. This is when codes get adjusted, refined, combined, or divided into subcodes.\n\n\n10.6.3 Defining codes\nEvery code should have a definition that differentiates it from other codes and that can help coders apply code the data. In addition to the definition, an example of a data chunk to which the code would apply should be included.\n\n\n10.6.4 Example\nHere is an example of a codebook from a study (not yet published) on librarian experience and perceptions about the process of unbundling the “big deal” (journal subscriptions from large commercial publishers). Note that ideally this codebook would have included a definition of each code, as well as an example chunk of data to which the code was applied.\n\n\n\n\n\nCodes\n\n\n\n\nDecision-making\n\n\nConfidence in decisions\n\n\nFactors involved in decision-making\n\n\nLibrarians’ involvement in decisions\n\n\nAttitude towards cancellation\n\n\nAttitude towards Big Deals\n\n\nConsultation with librarians\n\n\nConsultations with faculty\n\n\nContext\n\n\nCancellation process\n\n\nFear of faculty response\n\n\nLibrarian opposition\n\n\nMitigation\n\n\nFaculty response\n\n\nFaculty awareness of publishing situation\n\n\nConsultation with faculty\n\n\nRelationship with faculty\n\n\nNeed for behavioural change\n\n\nAlternative means of access\n\n\nOpen access\n\n\nConsultation or collaboration with other institutions\n\n\nLiaising with top university admin\n\n\nCommunications with faculty/librarians\n\n\nTeam members\n\n\nLessons learned\n\n\nStrategy\n\n\nCovid impact\n\n\nTransformative agreements\n\n\nConfidence in data/leaders\n\n\nMethodology\n\n\nAssessing value\n\n\nMeasures\n\n\nFaculty survey\n\n\nLessons learned\n\n\nAnalysis\n\n\nChallenges\n\n\nTools\n\n\nBalancing impact\n\n\nOutcome\n\n\nWork role\n\n\nRole in cancellation\n\n\nExperience\n\n\nLibrarian knowledge\n\n\nPractice\n\n\nOrganizational structure\n\n\nManagerial style",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#second-cycle-coding",
+    "href": "ch10.html#second-cycle-coding",
+    "title": "10  Qualitative data analysis",
+    "section": "10.7 Second cycle coding",
+    "text": "10.7 Second cycle coding\nIn second cycle coding, we are assigning meaning to the codes. The goal here is to cluster codes in meaningful themes that will later guide the interpretation of the data and produce answers ot the research questions. According to Miles, Huberman, and Saldaña (2020) These clusters of codes can represent:\n\nCategories or themes\nCauses of explanations\nRelationships\nConcepts of theoretical constructs\n\nThese clusters then allow us to finalize our code book.\n\n10.7.1 Finalized code book example\nAgain, this codebook would ideally have included a definition of each code, as well as an example chunk of data to which the code was applied.\n\n\n\n\n\nthemes\nCodes\n\n\n\n\nDecision making\nDecision-making\n\n\nConfidence in decisions\n\n\nFactors involved in decision-making\n\n\nLibrarians’ involvement in decisions\n\n\nAttitude towards cancellation\n\n\nAttitude towards Big Deals\n\n\nConsultation with librarians\n\n\nConsultations with faculty\n\n\nContext\n\n\nCancellation process\n\n\nFaculty response\nFear of faculty response\n\n\nLibrarian opposition\n\n\nMitigation\n\n\nFaculty response\n\n\nFaculty awareness of publishing situation\n\n\nConsultation with faculty\n\n\nRelationship with faculty\n\n\nNeed for behavioural change\n\n\nAlternative means of access\n\n\nOpen access\n\n\nStrategy\nConsultation or collaboration with other institutions\n\n\nLiaising with top university admin\n\n\nCommunications with faculty/librarians\n\n\nTeam members\n\n\nLessons learned\n\n\nStrategy\n\n\nCovid impact\n\n\nTransformative agreements\n\n\nData analysis\nConfidence in data/leaders\n\n\nMethodology\n\n\nAssessing value\n\n\nMeasures\n\n\nFaculty survey\n\n\nLessons learned\n\n\nAnalysis\n\n\nChallenges\n\n\nTools\n\n\nBalancing impact\n\n\nOutcome\n\n\nRoles and experience\nWork role\n\n\nRole in cancellation\n\n\nExperience\n\n\nLibrarian knowledge\n\n\nPractice\n\n\nOrganizational structure\n\n\nManagerial style",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#tools-for-coding",
+    "href": "ch10.html#tools-for-coding",
+    "title": "10  Qualitative data analysis",
+    "section": "10.5 Tools for coding",
+    "text": "10.5 Tools for coding\n\n10.5.0.1 NVIVO\nNVivo is a popular and powerful software for qualitative data analysis, but it may require a significant investment of time and money to fully utilize its capabilities.\nPros:\n\nOrganized data analysis: NVivo provides a structured approach to organizing and analyzing qualitative data, making it easier to manage large datasets.\nSupports multiple formats: It can handle various data formats, including text, audio, video, and social media content.\nAdvanced features: NVivo includes AI-powered autocoding and sentiment analysis, which can speed up the research process.\nVisualization tools: The software offers robust visualization options, helping to create clear and insightful graphics.\nCollaboration: NVivo supports team collaboration, allowing multiple users to work on the same project simultaneously.\n\nCons:\n\nSteep learning curve: The software can be complex and may require significant time to learn and master.\nHigh cost: NVivo can be expensive, especially for individual users or small organizations.\nLimited free trial: NVivo offers a limited free trial, and there is no free version available.\ninterface clutter: The interface can be overwhelming for new users, making it difficult to navigate.\n\n\n\n10.5.0.2 QDA Miner\nQDA Miner is another powerful tool for qualitative data analysis, especially if you are looking for a cost-effective and user-friendly option.\nPros:\n\nUser-friendly interface: QDA Miner is known for its intuitive design, making it accessible for both novice and experienced researchers.\nVersatile data handling: It supports various data formats, including text, audio, and video, allowing for comprehensive analysis.\nIntegration with other tools: QDA Miner integrates well with other software like WordStat and SimStat, which is beneficial for mixed methods research.\nRobust reporting features: The software offers strong reporting capabilities, enabling users to generate detailed analysis reports.\nCost-effective: Compared to some other qualitative data analysis tools, QDA Miner is relatively affordable and offers a free version.\n\nCons:\n\nLimited advanced features: While it is user-friendly, QDA Miner may lack some of the advanced features found in other software like NVivo.\nLearning curve: Although it is generally user-friendly, there can still be a learning curve for those new to qualitative data analysis software.\nLimited collaboration tools: QDA Miner may not offer as robust collaboration features as some other tools, which can be a drawback for team projects.\n\n\n\n10.5.0.3 LibreQDA\nLibreQDA is a free software developed by the Plateforme en humanités numériques of the University of Sherbrooke. It is more limited than NVIVO and QDA Miner, but it’s free. According to its documentation, it allows users to :\n\nImporting a variety of text files (.pdf, .docx, .odt, .txt and more);\nCoding words, sentences or paragraphs using codes manually set by the user;\nFinding and analyzing themes of interest;\nExporting a subset of coded selections or the project as a whole.\n\nSome of its main limitations are:\n\nCan’t process images, audio or video;\nConverts all documents to a nearly raw text format, which can result in files that are difficult to read if source documents had complex formatting;\nInstantly applies changes to each project for all team members, which can influence their reading and analysis of the documents;\nDoes not provide any advanced modules to explore the co-occurence of codes, such as a summary view of the contents in a matrix.",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#drawing-insights",
+    "href": "ch10.html#drawing-insights",
+    "title": "10  Qualitative data analysis",
+    "section": "10.9 Drawing insights",
+    "text": "10.9 Drawing insights\nOne we have finalized the first and second cycle coding process, it is time to interpret to interpret the data and use the codes to construct meaning in order to answer the research questions and fulfill the broader objectives of the study. Miles, Huberman, and Saldaña (2020) suggest a list of tatics for generating meaning:\n\nNoting patterns, themes\nSeeing plausibility\nClustering\nMaking metaphors\nCounting\nContrasting/comparing\nSubsuming particulars into the general\nFactoring\nNoting relations\nFinding mediating variables\nBuilding a logical chain of evidence\nMaking conceptual/theoretical coherence",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#references",
+    "href": "ch10.html#references",
+    "title": "10  Qualitative data analysis",
+    "section": "10.12 References",
+    "text": "10.12 References\n\n\n\n\nMiles, Matthew B., A. M. Huberman, and Johnny Saldaña. 2020. Qualitative Data Analysis: A Methods Sourcebook. Fourth edition. Los Angeles: SAGE.",
+    "crumbs": [
+      "Analytical phase",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Qualitative data analysis</span>"
     ]
   }
 ]

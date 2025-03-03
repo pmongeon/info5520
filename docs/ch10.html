@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,7 +88,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="include/webex.css">
 </head>
@@ -245,8 +298,54 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">10.1</span> Learning objectives</a></li>
+  <li><a href="#core-principles-of-qualitative-data-analysis" id="toc-core-principles-of-qualitative-data-analysis" class="nav-link" data-scroll-target="#core-principles-of-qualitative-data-analysis"><span class="header-section-number">10.2</span> Core principles of qualitative data analysis</a></li>
+  <li><a href="#segmenting-the-data" id="toc-segmenting-the-data" class="nav-link" data-scroll-target="#segmenting-the-data"><span class="header-section-number">10.3</span> Segmenting the data</a></li>
+  <li><a href="#first-cycle-of-coding" id="toc-first-cycle-of-coding" class="nav-link" data-scroll-target="#first-cycle-of-coding"><span class="header-section-number">10.4</span> First cycle of coding</a>
+  <ul class="collapse">
+  <li><a href="#elemental-methods" id="toc-elemental-methods" class="nav-link" data-scroll-target="#elemental-methods"><span class="header-section-number">10.4.1</span> Elemental methods</a></li>
+  <li><a href="#affective-methods" id="toc-affective-methods" class="nav-link" data-scroll-target="#affective-methods"><span class="header-section-number">10.4.2</span> Affective methods</a></li>
+  <li><a href="#literary-method" id="toc-literary-method" class="nav-link" data-scroll-target="#literary-method"><span class="header-section-number">10.4.3</span> Literary method</a></li>
+  <li><a href="#exploratory-method" id="toc-exploratory-method" class="nav-link" data-scroll-target="#exploratory-method"><span class="header-section-number">10.4.4</span> Exploratory method</a></li>
+  <li><a href="#procedural-methods" id="toc-procedural-methods" class="nav-link" data-scroll-target="#procedural-methods"><span class="header-section-number">10.4.5</span> Procedural methods</a></li>
+  <li><a href="#grammatical-methods" id="toc-grammatical-methods" class="nav-link" data-scroll-target="#grammatical-methods"><span class="header-section-number">10.4.6</span> Grammatical methods</a></li>
+  <li><a href="#a-standalone-method" id="toc-a-standalone-method" class="nav-link" data-scroll-target="#a-standalone-method"><span class="header-section-number">10.4.7</span> A standalone method</a></li>
+  </ul></li>
+  <li><a href="#tools-for-coding" id="toc-tools-for-coding" class="nav-link" data-scroll-target="#tools-for-coding"><span class="header-section-number">10.5</span> Tools for coding</a></li>
+  <li><a href="#the-codebook" id="toc-the-codebook" class="nav-link" data-scroll-target="#the-codebook"><span class="header-section-number">10.6</span> The Codebook</a>
+  <ul class="collapse">
+  <li><a href="#a-priori-codes" id="toc-a-priori-codes" class="nav-link" data-scroll-target="#a-priori-codes"><span class="header-section-number">10.6.1</span> A priori codes</a></li>
+  <li><a href="#revising-codes" id="toc-revising-codes" class="nav-link" data-scroll-target="#revising-codes"><span class="header-section-number">10.6.2</span> Revising codes</a></li>
+  <li><a href="#defining-codes" id="toc-defining-codes" class="nav-link" data-scroll-target="#defining-codes"><span class="header-section-number">10.6.3</span> Defining codes</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">10.6.4</span> Example</a></li>
+  </ul></li>
+  <li><a href="#second-cycle-coding" id="toc-second-cycle-coding" class="nav-link" data-scroll-target="#second-cycle-coding"><span class="header-section-number">10.7</span> Second cycle coding</a>
+  <ul class="collapse">
+  <li><a href="#finalized-code-book-example" id="toc-finalized-code-book-example" class="nav-link" data-scroll-target="#finalized-code-book-example"><span class="header-section-number">10.7.1</span> Finalized code book example</a></li>
+  </ul></li>
+  <li><a href="#intercoder-reliability" id="toc-intercoder-reliability" class="nav-link" data-scroll-target="#intercoder-reliability"><span class="header-section-number">10.8</span> Intercoder reliability</a>
+  <ul class="collapse">
+  <li><a href="#cohens-kappa" id="toc-cohens-kappa" class="nav-link" data-scroll-target="#cohens-kappa"><span class="header-section-number">10.8.1</span> Cohen’s Kappa</a></li>
+  <li><a href="#krippendorffs-alpha" id="toc-krippendorffs-alpha" class="nav-link" data-scroll-target="#krippendorffs-alpha"><span class="header-section-number">10.8.2</span> Krippendorff’s Alpha</a></li>
+  <li><a href="#percentage-agreement" id="toc-percentage-agreement" class="nav-link" data-scroll-target="#percentage-agreement"><span class="header-section-number">10.8.3</span> Percentage agreement</a></li>
+  </ul></li>
+  <li><a href="#drawing-insights" id="toc-drawing-insights" class="nav-link" data-scroll-target="#drawing-insights"><span class="header-section-number">10.9</span> Drawing insights</a></li>
+  <li><a href="#assessing-the-qualitative-data-analysis-process" id="toc-assessing-the-qualitative-data-analysis-process" class="nav-link" data-scroll-target="#assessing-the-qualitative-data-analysis-process"><span class="header-section-number">10.10</span> Assessing the qualitative data analysis process</a>
+  <ul class="collapse">
+  <li><a href="#confirmability" id="toc-confirmability" class="nav-link" data-scroll-target="#confirmability"><span class="header-section-number">10.10.1</span> Confirmability</a></li>
+  <li><a href="#dependability" id="toc-dependability" class="nav-link" data-scroll-target="#dependability"><span class="header-section-number">10.10.2</span> Dependability</a></li>
+  <li><a href="#credibility" id="toc-credibility" class="nav-link" data-scroll-target="#credibility"><span class="header-section-number">10.10.3</span> Credibility</a></li>
+  <li><a href="#transferability" id="toc-transferability" class="nav-link" data-scroll-target="#transferability"><span class="header-section-number">10.10.4</span> Transferability</a></li>
+  </ul></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">10.11</span> Exercise</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">10.12</span> References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -270,9 +369,1193 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Under construction…</p>
+<section id="learning-objectives" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">10.1</span> Learning objectives</h2>
+<p>At the end of the chapter, the reader should:</p>
+<ul>
+<li>Understand the qualitative data analysis process.</li>
+<li>Know how to develop a codebook.</li>
+<li>Know how to perform qualitative data coding.</li>
+<li>Know how to perform an intercoder reliability test.</li>
+<li>Know how to draw insights from qualitative coding.</li>
+</ul>
+</section>
+<section id="core-principles-of-qualitative-data-analysis" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="core-principles-of-qualitative-data-analysis"><span class="header-section-number">10.2</span> Core principles of qualitative data analysis</h2>
+<p>Qualitative data analysis is about creating/extracting meaning from or making sense of unstructured qualitative data such as text, images, and videos. Depending on the topic and the availability or not of a theoretical or conceptual framework to guide the analysis, you may be starting with a set of themes or concepts that you are looking to identify in the data, or you may be going in with little or no a prioris.</p>
+<p>The qualitative data analysis process generally looks like this:</p>
+<ol type="1">
+<li>Creating a preliminary codebook (optional).</li>
+<li>Segmenting the data.</li>
+<li>First cycle coding.</li>
+<li>Expanding/finalizing codebook.</li>
+<li>Second cycle coding.</li>
+<li>Intercoder or intracoder reliability testing (not always necessary).</li>
+<li>Repeating step 3-4-5-6 until stabilization/agreement.</li>
+<li>Drawing conclusions.</li>
+</ol>
+<p>Because the nature of the codes in the codebook will depend on the coding performed, we will first look at the processes of segmenting and coding the data.</p>
+</section>
+<section id="segmenting-the-data" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="segmenting-the-data"><span class="header-section-number">10.3</span> Segmenting the data</h2>
+<p>This step involves dividing your data (e.g., a text, an interview transcript) into chunks that will then be coded. The segments could be very large (an entire document, a chapter, a page, a paragraph), or very small (sentences, lines of text, single words). This choice is generally driven by the nature of your questions, methodological design, and data. For instance, if you are coding an interview in which the interviewer and the interviewees exchange questions and answers, this can offer a natural segmentation of the text and you may decide to use the participant’s answer as your segment.</p>
+</section>
+<section id="first-cycle-of-coding" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="first-cycle-of-coding"><span class="header-section-number">10.4</span> First cycle of coding</h2>
+<p>In their book <em>Qualitative Data Analysis: A methods sourcebook</em>, <span class="citation" data-cites="miles2020">Miles, Huberman, and Saldaña (<a href="#ref-miles2020" role="doc-biblioref">2020</a>)</span> identify 18 different types of coding, which they divide into six categories (elemental, affective, literary, exploratory, procedural, and grammatical). This may be an overwhelming number of coding methods to choose from, but in reality your coding method will likely be dictated to some degree by the topic, your research objectives, your methods, and preexisting theoretical or conceptual framework. We are listing the different coding methods here mainly to give you an idea of the flexibility of qualitative data analysis, so that you avoid locking yourself into a preconceived, narrow idea of how coding is supposed to be done.</p>
+<section id="elemental-methods" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="elemental-methods"><span class="header-section-number">10.4.1</span> Elemental methods</h3>
+<ul>
+<li><p><strong>Descriptive coding:</strong> using codes (usually nouns) that describe what the segment of data is about, its topic. (e.g., “businesses”, “books”, “activities”, “colleagues”).</p></li>
+<li><p><strong>In Vivo coding:</strong> using the words used by participants as codes.</p></li>
+<li><p><strong>Process coding:</strong> using active words (ending in “ing”) to code for processes and actions (e.g., “spending time with each other”, “listening”, “taking the lead”).</p></li>
+<li><p><strong>Concept coding:</strong> codes that represent higher level meaning, which is not explicit in the data. (e.g., “existential dread”, “the American dream”)</p></li>
+</ul>
+</section>
+<section id="affective-methods" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="affective-methods"><span class="header-section-number">10.4.2</span> Affective methods</h3>
+<ul>
+<li><p><strong>Emotion coding:</strong> usingcodes that represent emotions recalled, felt, or discussed by the participants (e.g., “hate”, “love”, “worry”, “hope”)</p></li>
+<li><p><strong>Values coding:</strong> usingcodes that represent the participant’s values (V), attitudes (A) and beliefs (B). The codes will usually distinguish between the three, using (e.g., “V: respect”, “B: hard work leads to success”, “A: Open-Mindedness”).</p></li>
+<li><p><strong>Evaluation coding:</strong> adding tags to codes with + or - to represent positivity or negativity (e.g., “+ successful candidates”, “- mistakes made”, “+ lessons learned”)</p></li>
+</ul>
+</section>
+<section id="literary-method" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="literary-method"><span class="header-section-number">10.4.3</span> Literary method</h3>
+<ul>
+<li><p><strong>Dramaturgical coding:</strong> using prefixes to assign categories to codes:</p>
+<ul>
+<li><p>Objectives (e.g.&nbsp;“OBJ: Marrying Peach”)</p></li>
+<li><p>Conflicts (e.g., “CON: Control over Mushroom Kingdom”)</p></li>
+<li><p>Tactics (e.g., “TAC: Kidnapping Peach”)</p></li>
+<li><p>Attitudes (e.g., “ATT: Courage”)</p></li>
+<li><p>Emotions (e.g., “EMO: Fear”)</p></li>
+<li><p>Subtexts (SUB): things that are implied and not explicitly stated.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="exploratory-method" class="level3" data-number="10.4.4">
+<h3 data-number="10.4.4" class="anchored" data-anchor-id="exploratory-method"><span class="header-section-number">10.4.4</span> Exploratory method</h3>
+<ul>
+<li><p><strong>Holistic coding:</strong> Applying codes to large chunks of data (as opposed to more detailed coding). Often used as a preliminary step before doing more detailed coding.</p></li>
+<li><p><strong>Provisional coding:</strong> Begins with an a priori list of codes (based on previous research), which are then revised, deleted, expanded.</p></li>
+<li><p><strong>Hypothesis coding:</strong> Coding based on an a priori hypothesis that the researcher wants to verify using qualitative data.</p></li>
+</ul>
+</section>
+<section id="procedural-methods" class="level3" data-number="10.4.5">
+<h3 data-number="10.4.5" class="anchored" data-anchor-id="procedural-methods"><span class="header-section-number">10.4.5</span> Procedural methods</h3>
+<ul>
+<li><p><strong>Protocol coding:</strong> Using a standardized coding scheme.</p></li>
+<li><p><strong>Causation coding:</strong> Coding aimed at capturing causal relationships in the data. The goal is to identify combinations of codes, such that CODE 1 -&gt; CODE 2 -&gt; CODE 3.</p></li>
+</ul>
+</section>
+<section id="grammatical-methods" class="level3" data-number="10.4.6">
+<h3 data-number="10.4.6" class="anchored" data-anchor-id="grammatical-methods"><span class="header-section-number">10.4.6</span> Grammatical methods</h3>
+<ul>
+<li><p><strong>Attribute coding:</strong> codes capturing the attributes of participant, the case, the interview, context, etc.</p></li>
+<li><p><strong>Magnitude coding:</strong> Tags added to codes to signify their magnitude (e.g., MAJOR/MODERATE/MINOR, 0 = no, 1 = possibly, and 2 = clearly, or ++ = very effective, + = effective, +- = mixed).</p></li>
+<li><p><strong>Subcoding:</strong> Second order tag that represents the hierarchical nature of codes (e.g., Course - design, Course - teaching, Course - evaluation).</p></li>
+<li><p><strong>Simultaneous coding:</strong> When two different codes are applied to the same chunk of data.</p></li>
+</ul>
+</section>
+<section id="a-standalone-method" class="level3" data-number="10.4.7">
+<h3 data-number="10.4.7" class="anchored" data-anchor-id="a-standalone-method"><span class="header-section-number">10.4.7</span> A standalone method</h3>
+<ul>
+<li><strong>Theming the data:</strong> coding with categories or themes similar to those who are employed to cluster codes in second cycle coding (see below).</li>
+</ul>
+</section>
+</section>
+<section id="tools-for-coding" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="tools-for-coding"><span class="header-section-number">10.5</span> Tools for coding</h2>
+<section id="nvivo" class="level4" data-number="10.5.0.1">
+<h4 data-number="10.5.0.1" class="anchored" data-anchor-id="nvivo"><span class="header-section-number">10.5.0.1</span> NVIVO</h4>
+<p>NVivo is a popular and powerful software for qualitative data analysis, but it may require a significant investment of time and money to fully utilize its capabilities.</p>
+<p>Pros:</p>
+<ul>
+<li><strong>Organized data analysis</strong>: NVivo provides a structured approach to organizing and analyzing qualitative data, making it easier to manage large datasets.</li>
+<li><strong>Supports multiple formats</strong>: It can handle various data formats, including text, audio, video, and social media content.</li>
+<li><strong>Advanced features</strong>: NVivo includes AI-powered autocoding and sentiment analysis, which can speed up the research process.</li>
+<li><strong>Visualization tools</strong>: The software offers robust visualization options, helping to create clear and insightful graphics.</li>
+<li><strong>Collaboration</strong>: NVivo supports team collaboration, allowing multiple users to work on the same project simultaneously.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li><strong>Steep learning curve</strong>: The software can be complex and may require significant time to learn and master.</li>
+<li><strong>High cost</strong>: NVivo can be expensive, especially for individual users or small organizations.</li>
+<li><strong>Limited free trial</strong>: NVivo offers a limited free trial, and there is no free version available.</li>
+<li><strong>interface clutter</strong>: The interface can be overwhelming for new users, making it difficult to navigate.</li>
+</ul>
+</section>
+<section id="qda-miner" class="level4" data-number="10.5.0.2">
+<h4 data-number="10.5.0.2" class="anchored" data-anchor-id="qda-miner"><span class="header-section-number">10.5.0.2</span> QDA Miner</h4>
+<p>QDA Miner is another powerful tool for qualitative data analysis, especially if you are looking for a cost-effective and user-friendly option.</p>
+<p>Pros:</p>
+<ul>
+<li><strong>User-friendly interface</strong>: QDA Miner is known for its intuitive design, making it accessible for both novice and experienced researchers.</li>
+<li><strong>Versatile data handling</strong>: It supports various data formats, including text, audio, and video, allowing for comprehensive analysis.</li>
+<li><strong>Integration with other tools</strong>: QDA Miner integrates well with other software like WordStat and SimStat, which is beneficial for mixed methods research.</li>
+<li><strong>Robust reporting features</strong>: The software offers strong reporting capabilities, enabling users to generate detailed analysis reports.</li>
+<li><strong>Cost-effective</strong>: Compared to some other qualitative data analysis tools, QDA Miner is relatively affordable and offers a free version.</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li><strong>Limited advanced features</strong>: While it is user-friendly, QDA Miner may lack some of the advanced features found in other software like NVivo.</li>
+<li><strong>Learning curve</strong>: Although it is generally user-friendly, there can still be a learning curve for those new to qualitative data analysis software.</li>
+<li><strong>Limited collaboration tools</strong>: QDA Miner may not offer as robust collaboration features as some other tools, which can be a drawback for team projects.</li>
+</ul>
+</section>
+<section id="libreqda" class="level4" data-number="10.5.0.3">
+<h4 data-number="10.5.0.3" class="anchored" data-anchor-id="libreqda"><span class="header-section-number">10.5.0.3</span> LibreQDA</h4>
+<p><a href="https://libreqda.org/">LibreQDA</a> is a free software developed by the <a href="https://www.usherbrooke.ca/flsh/recherche/centres-groupes-et-equipes-de-recherche/phun">Plateforme en humanités numériques</a> of the University of Sherbrooke. It is more limited than NVIVO and QDA Miner, but it’s free. According to its <a href="#0" style="font-size: 11pt;">documentation</a>, it allows users to :</p>
+<ul>
+<li>Importing a variety of text files (<code>.pdf</code>, <code>.docx</code>, <code>.odt</code>, <code>.txt</code> and more);</li>
+<li>Coding words, sentences or paragraphs using codes manually set by the user;</li>
+<li>Finding and analyzing themes of interest;</li>
+<li>Exporting a subset of coded selections or the project as a whole.</li>
+</ul>
+<p>Some of its main limitations are:</p>
+<ul>
+<li>Can’t process images, audio or video;</li>
+<li>Converts all documents to a nearly raw text format, which can result in files that are difficult to read if source documents had complex formatting;</li>
+<li>Instantly applies changes to each project for all team members, which can influence their reading and analysis of the documents;</li>
+<li>Does not provide any advanced modules to explore the co-occurence of codes, such as a summary view of the contents in a matrix.</li>
+</ul>
+</section>
+</section>
+<section id="the-codebook" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="the-codebook"><span class="header-section-number">10.6</span> The Codebook</h2>
+<section id="a-priori-codes" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="a-priori-codes"><span class="header-section-number">10.6.1</span> A priori codes</h3>
+<p>It may be useful to establish an a priori set of codes so that the researcher(s). These a priori codes should be drawn from, again, your topic, your research objectives, your methods, and preexisting theoretical or conceptual frameworks.</p>
+</section>
+<section id="revising-codes" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="revising-codes"><span class="header-section-number">10.6.2</span> Revising codes</h3>
+<p>When doing the first cycle of coding, it’s better to create too many codes than not enough codes. It’s also best to slightly “overcode” (adding codes that might end up being dropped later) than to “undercode” (not coding some segments that contain meaningful data). This will allow you to work with a comprehensive set of codes at the revision stages. This is when codes get adjusted, refined, combined, or divided into subcodes.</p>
+</section>
+<section id="defining-codes" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="defining-codes"><span class="header-section-number">10.6.3</span> Defining codes</h3>
+<p>Every code should have a definition that differentiates it from other codes and that can help coders apply code the data. In addition to the definition, an example of a data chunk to which the code would apply should be included.</p>
+</section>
+<section id="example" class="level3" data-number="10.6.4">
+<h3 data-number="10.6.4" class="anchored" data-anchor-id="example"><span class="header-section-number">10.6.4</span> Example</h3>
+<p>Here is an example of a codebook from a study (not yet published) on librarian experience and perceptions about the process of unbundling the “big deal” (journal subscriptions from large commercial publishers). Note that ideally this codebook would have included a definition of each code, as well as an example chunk of data to which the code was applied.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Codes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Decision-making</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Confidence in decisions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Factors involved in decision-making</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Librarians’ involvement in decisions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Attitude towards cancellation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attitude towards Big Deals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Consultation with librarians</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consultations with faculty</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Context</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cancellation process</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fear of faculty response</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Librarian opposition</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mitigation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Faculty response</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faculty awareness of publishing situation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consultation with faculty</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Relationship with faculty</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Need for behavioural change</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alternative means of access</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Open access</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Consultation or collaboration with other institutions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Liaising with top university admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communications with faculty/librarians</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Team members</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lessons learned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strategy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Covid impact</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transformative agreements</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Confidence in data/leaders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Methodology</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Assessing value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Measures</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faculty survey</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lessons learned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Analysis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Challenges</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Balancing impact</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Outcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Work role</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Role in cancellation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Experience</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Librarian knowledge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Practice</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Organizational structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Managerial style</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+</section>
+</section>
+<section id="second-cycle-coding" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="second-cycle-coding"><span class="header-section-number">10.7</span> Second cycle coding</h2>
+<p>In second cycle coding, we are assigning meaning to the codes. The goal here is to cluster codes in meaningful themes that will later guide the interpretation of the data and produce answers ot the research questions. According to <span class="citation" data-cites="miles2020">Miles, Huberman, and Saldaña (<a href="#ref-miles2020" role="doc-biblioref">2020</a>)</span> These clusters of codes can represent:</p>
+<ul>
+<li>Categories or themes</li>
+<li>Causes of explanations</li>
+<li>Relationships</li>
+<li>Concepts of theoretical constructs</li>
+</ul>
+<p>These clusters then allow us to finalize our code book.</p>
+<section id="finalized-code-book-example" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="finalized-code-book-example"><span class="header-section-number">10.7.1</span> Finalized code book example</h3>
+<p>Again, this codebook would ideally have included a definition of each code, as well as an example chunk of data to which the code was applied.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">themes</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Codes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="10" style="text-align: left; vertical-align: top !important;">Decision making</td>
+<td style="text-align: left;">Decision-making</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Confidence in decisions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Factors involved in decision-making</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Librarians’ involvement in decisions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Attitude towards cancellation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attitude towards Big Deals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Consultation with librarians</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consultations with faculty</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Context</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cancellation process</td>
+</tr>
+<tr class="odd">
+<td rowspan="10" style="text-align: left; vertical-align: top !important;">Faculty response</td>
+<td style="text-align: left;">Fear of faculty response</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Librarian opposition</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mitigation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Faculty response</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faculty awareness of publishing situation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consultation with faculty</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Relationship with faculty</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Need for behavioural change</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alternative means of access</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Open access</td>
+</tr>
+<tr class="odd">
+<td rowspan="8" style="text-align: left; vertical-align: top !important;">Strategy</td>
+<td style="text-align: left;">Consultation or collaboration with other institutions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Liaising with top university admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communications with faculty/librarians</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Team members</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lessons learned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strategy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Covid impact</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transformative agreements</td>
+</tr>
+<tr class="odd">
+<td rowspan="11" style="text-align: left; vertical-align: top !important;">Data analysis</td>
+<td style="text-align: left;">Confidence in data/leaders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Methodology</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Assessing value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Measures</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faculty survey</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lessons learned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Analysis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Challenges</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Balancing impact</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Outcome</td>
+</tr>
+<tr class="even">
+<td rowspan="7" style="text-align: left; vertical-align: top !important;">Roles and experience</td>
+<td style="text-align: left;">Work role</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Role in cancellation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Experience</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Librarian knowledge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Practice</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Organizational structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Managerial style</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+</section>
+<section id="intercoder-reliability" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="intercoder-reliability"><span class="header-section-number">10.8</span> Intercoder reliability</h2>
+<p>Intercoder reliability, also known as interrater reliability, is a measure of the consistency or agreement between different coders for the same data. This can be achieved by developing clear coding instructions, training coders, conducting pilot sessions to refine the coding scheme, and regularly discussing discrepancies to achieve consensus.</p>
+<p>There are different statistical methods for measuring intercoder reliability, the most common being Cohen’s Kappa, Krippendorff’s Alpha, or percentage agreement. A high value for either of these indicators suggests that the coding process is reliable and that the findings are not biased by individual coder differences.</p>
+<section id="cohens-kappa" class="level3" data-number="10.8.1">
+<h3 data-number="10.8.1" class="anchored" data-anchor-id="cohens-kappa"><span class="header-section-number">10.8.1</span> Cohen’s Kappa</h3>
+<p><span class="math display">\[k = (p_o&nbsp;– p_e) / (1 – p_e)\]</span></p>
+<p>where, P<sub>o</sub> is the relative observed agreement between raters and P<sub>e</sub> is the probability of chance agreement.</p>
+<p><em>k</em> ranges between 0 and 1 and is interpreted like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Cohen’s Kappa (k)</th>
+<th>Degree of agreement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>0.01-0.20</td>
+<td>Slight</td>
+</tr>
+<tr class="odd">
+<td>0.21-0.40</td>
+<td>Fair</td>
+</tr>
+<tr class="even">
+<td>0.41-0.60</td>
+<td>Moderate</td>
+</tr>
+<tr class="odd">
+<td>0.61-0.80</td>
+<td>Substantial</td>
+</tr>
+<tr class="even">
+<td>0.81-0.99</td>
+<td>Good</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>Perfect</td>
+</tr>
+</tbody>
+</table>
+<p><br><br> Here is an example:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">rater1</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rater2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rater3</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rater4</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rater5</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rater6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">2. Personality Disorder</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+<td style="text-align: left;">4. Neurosis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1. Depression</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+<td style="text-align: left;">3. Schizophrenia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+<td style="text-align: left;">5. Other</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Light's Kappa for m Raters
+
+ Subjects = 30 
+   Raters = 6 
+    Kappa = 0.459 
+
+        z = 2.31 
+  p-value = 0.0211 </code></pre>
+</div>
+</div>
+</section>
+<section id="krippendorffs-alpha" class="level3" data-number="10.8.2">
+<h3 data-number="10.8.2" class="anchored" data-anchor-id="krippendorffs-alpha"><span class="header-section-number">10.8.2</span> Krippendorff’s Alpha</h3>
+<p>Whereas Cohen’s Kappa is mainly used for nominal data, Krippendorff’s Alpha can handle various types of data, including nominal, ordinal, interval, and ratio scales. It also handles missing data better than the Cohen’s Kappa.</p>
+<p>Here’s an example:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">coder</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V2</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V4</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V5</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V6</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V7</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V8</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V9</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V10</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V11</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">V12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Krippendorf’s Alpha based on the <strong>nominal</strong> scale</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Krippendorff's alpha
+
+ Subjects = 12 
+   Raters = 4 
+    alpha = 0.743 </code></pre>
+</div>
+</div>
+<p>Krippendorf’s Alpha based on the <strong>ordinal</strong> scale</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Krippendorff's alpha
+
+ Subjects = 12 
+   Raters = 4 
+    alpha = 0.815 </code></pre>
+</div>
+</div>
+<p>Krippendorf’s Alpha based on the <strong>interval</strong> scale</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Krippendorff's alpha
+
+ Subjects = 12 
+   Raters = 4 
+    alpha = 0.849 </code></pre>
+</div>
+</div>
+<p>Krippendorf’s Alpha based on the <strong>ratio</strong> scale</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Krippendorff's alpha
+
+ Subjects = 12 
+   Raters = 4 
+    alpha = 0.797 </code></pre>
+</div>
+</div>
+</section>
+<section id="percentage-agreement" class="level3" data-number="10.8.3">
+<h3 data-number="10.8.3" class="anchored" data-anchor-id="percentage-agreement"><span class="header-section-number">10.8.3</span> Percentage agreement</h3>
+<p>The percentage agreement is a more simple methods that is simply, as its name suggest, the percentage of codes for which all coders are in agreement. Here’s 20 codes from 4 different coders.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">rater1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rater2</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rater3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rater4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>We can then calculate the percentage simple percentage agreement.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Percentage agreement (Tolerance=0)
+
+ Subjects = 20 
+   Raters = 4 
+  %-agree = 35 </code></pre>
+</div>
+</div>
+<p>If we want, we can change the tolerance level so that slight disagreement is still considered an agreement. For example, if we have a tolerance of 1, then all the cases where all coders rated 3 or 4 will be considered as agreements.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Percentage agreement (Tolerance=1)
+
+ Subjects = 20 
+   Raters = 4 
+  %-agree = 90 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="drawing-insights" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="drawing-insights"><span class="header-section-number">10.9</span> Drawing insights</h2>
+<p>One we have finalized the first and second cycle coding process, it is time to interpret to interpret the data and use the codes to construct meaning in order to answer the research questions and fulfill the broader objectives of the study. <span class="citation" data-cites="miles2020">Miles, Huberman, and Saldaña (<a href="#ref-miles2020" role="doc-biblioref">2020</a>)</span> suggest a list of tatics for generating meaning:</p>
+<ul>
+<li>Noting patterns, themes</li>
+<li>Seeing plausibility</li>
+<li>Clustering</li>
+<li>Making metaphors</li>
+<li>Counting</li>
+<li>Contrasting/comparing</li>
+<li>Subsuming particulars into the general</li>
+<li>Factoring</li>
+<li>Noting relations</li>
+<li>Finding mediating variables</li>
+<li>Building a logical chain of evidence</li>
+<li>Making conceptual/theoretical coherence</li>
+</ul>
+</section>
+<section id="assessing-the-qualitative-data-analysis-process" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="assessing-the-qualitative-data-analysis-process"><span class="header-section-number">10.10</span> Assessing the qualitative data analysis process</h2>
+<section id="confirmability" class="level3" data-number="10.10.1">
+<h3 data-number="10.10.1" class="anchored" data-anchor-id="confirmability"><span class="header-section-number">10.10.1</span> Confirmability</h3>
+<ul>
+<li>The methods are clearly described.</li>
+<li>The conclusions are supported by the data.</li>
+<li>The researcher’s personal assumptions, values and potential biases are transparently reported.</li>
+<li>Competing conclusions have been considered.</li>
+</ul>
+</section>
+<section id="dependability" class="level3" data-number="10.10.2">
+<h3 data-number="10.10.2" class="anchored" data-anchor-id="dependability"><span class="header-section-number">10.10.2</span> Dependability</h3>
+<ul>
+<li>The research questions are clear and the methods align with them.</li>
+<li>The theoretical framework is well defined.</li>
+<li>Data was collected across various settings, times, respondents, etc.</li>
+<li>Intercoder reliability checks were made with good results.</li>
+</ul>
+</section>
+<section id="credibility" class="level3" data-number="10.10.3">
+<h3 data-number="10.10.3" class="anchored" data-anchor-id="credibility"><span class="header-section-number">10.10.3</span> Credibility</h3>
+<ul>
+<li>Descriptions are contextualized, rich, and meaningful.</li>
+<li>The reported insights are plausible.</li>
+<li>The data is linked to concepts in prior or emerging theory.</li>
+</ul>
+</section>
+<section id="transferability" class="level3" data-number="10.10.4">
+<h3 data-number="10.10.4" class="anchored" data-anchor-id="transferability"><span class="header-section-number">10.10.4</span> Transferability</h3>
+<ul>
+<li>The sample and its characteristics are described enough to allow comparison with other samples</li>
+<li>The limitations related to the sample size or composition are discussed.</li>
+<li>The processes and outcomes are applicable to comparable settings.</li>
+<li>The findings are connected to theory,</li>
+<li>New theories and their transferability are clearly stated.</li>
+</ul>
+</section>
+</section>
+<section id="exercise" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="exercise"><span class="header-section-number">10.11</span> Exercise</h2>
+<p>To practice qualitative data analysis, we are going to use the <a href="https://tqrmul.com/dataset/">TQRMUL dataset</a>, which consists of video and audio recordings together with transcripts of five interviews with undergraduate students on the subject of friendship.</p>
+<p><strong>Details upcoming….</strong></p>
+</section>
+<section id="references" class="level2" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="references"><span class="header-section-number">10.12</span> References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-miles2020" class="csl-entry" role="listitem">
+Miles, Matthew B., A. M. Huberman, and Johnny Saldaña. 2020. <em>Qualitative Data Analysis: A Methods Sourcebook</em>. Fourth edition. Los Angeles: SAGE.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script>
