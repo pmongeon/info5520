@@ -449,12 +449,19 @@ One we have finalized the first and second cycle coding process, it is time to i
 -   The sample and its characteristics are described enough to allow comparison with other samples
 -   The limitations related to the sample size or composition are discussed.
 -   The processes and outcomes are applicable to comparable settings.
--   The findings are connected to theory,
--   New theories and their transferability are clearly stated.
+-   The findings are connected to theory, old or new.
 
 ## Exercise
 
 To practice qualitative data analysis, we are going to use the [TQRMUL dataset](https://tqrmul.com/dataset/), which consists of video and audio recordings together with transcripts of five interviews with undergraduate students on the subject of friendship.
+
+You can download the files here:
+
+-   [Trevor](https://pmongeon.github.io/info5520/files/playscript_transcript_trevor.docx)
+-   [Alexander](https://pmongeon.github.io/info5520/files/playscript_transcript_alexander.docx)
+-   [Deborah](https://pmongeon.github.io/info5520/files/playscript_transcript_deborah.docx)
+-   [Louise](https://pmongeon.github.io/info5520/files/playscript_transcript_louise.docx)
+-   [Shazia](https://pmongeon.github.io/info5520/files/playscript_transcript_shazia.docx)
 
 **Details upcoming....**
 
