@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,7 +88,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="include/webex.css">
 </head>
@@ -245,8 +298,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#processing-data" id="toc-processing-data" class="nav-link active" data-scroll-target="#processing-data"><span class="header-section-number">11.1</span> Processing data</a>
+  <ul class="collapse">
+  <li><a href="#splitting-columns" id="toc-splitting-columns" class="nav-link" data-scroll-target="#splitting-columns"><span class="header-section-number">11.1.1</span> Splitting columns</a></li>
+  <li><a href="#pivot-and-unpivot-columns" id="toc-pivot-and-unpivot-columns" class="nav-link" data-scroll-target="#pivot-and-unpivot-columns"><span class="header-section-number">11.1.2</span> Pivot and unpivot columns</a></li>
+  <li><a href="#combining-datasets" id="toc-combining-datasets" class="nav-link" data-scroll-target="#combining-datasets"><span class="header-section-number">11.1.3</span> Combining datasets</a></li>
+  </ul></li>
+  <li><a href="#analyzing-data" id="toc-analyzing-data" class="nav-link" data-scroll-target="#analyzing-data"><span class="header-section-number">11.2</span> Analyzing data</a>
+  <ul class="collapse">
+  <li><a href="#analyzing-categorical-data" id="toc-analyzing-categorical-data" class="nav-link" data-scroll-target="#analyzing-categorical-data"><span class="header-section-number">11.2.1</span> Analyzing categorical data</a></li>
+  <li><a href="#analyzing-numerical-data" id="toc-analyzing-numerical-data" class="nav-link" data-scroll-target="#analyzing-numerical-data"><span class="header-section-number">11.2.2</span> Analyzing numerical data</a></li>
+  <li><a href="#measuring-the-relationship-between-two-variables" id="toc-measuring-the-relationship-between-two-variables" class="nav-link" data-scroll-target="#measuring-the-relationship-between-two-variables"><span class="header-section-number">11.2.3</span> Measuring the relationship between two variables</a></li>
+  </ul></li>
+  <li><a href="#visualizing-data" id="toc-visualizing-data" class="nav-link" data-scroll-target="#visualizing-data"><span class="header-section-number">11.3</span> Visualizing data</a>
+  <ul class="collapse">
+  <li><a href="#visualizing-a-categorical-variable" id="toc-visualizing-a-categorical-variable" class="nav-link" data-scroll-target="#visualizing-a-categorical-variable"><span class="header-section-number">11.3.1</span> Visualizing a categorical variable</a></li>
+  <li><a href="#visualizing-a-numerical-variable" id="toc-visualizing-a-numerical-variable" class="nav-link" data-scroll-target="#visualizing-a-numerical-variable"><span class="header-section-number">11.3.2</span> Visualizing a numerical variable</a></li>
+  <li><a href="#visualizing-multiple-variables" id="toc-visualizing-multiple-variables" class="nav-link" data-scroll-target="#visualizing-multiple-variables"><span class="header-section-number">11.3.3</span> Visualizing multiple variables</a></li>
+  <li><a href="#two-categorical-variables-1" id="toc-two-categorical-variables-1" class="nav-link" data-scroll-target="#two-categorical-variables-1"><span class="header-section-number">11.3.4</span> Two categorical variables</a></li>
+  <li><a href="#two-numerical-variables-1" id="toc-two-numerical-variables-1" class="nav-link" data-scroll-target="#two-numerical-variables-1"><span class="header-section-number">11.3.5</span> Two numerical variables</a></li>
+  <li><a href="#a-numerical-and-a-categorical-variables" id="toc-a-numerical-and-a-categorical-variables" class="nav-link" data-scroll-target="#a-numerical-and-a-categorical-variables"><span class="header-section-number">11.3.6</span> A numerical and a categorical variables</a></li>
+  <li><a href="#timelines" id="toc-timelines" class="nav-link" data-scroll-target="#timelines"><span class="header-section-number">11.3.7</span> Timelines</a></li>
+  </ul></li>
+  <li><a href="#predicting-a-variable-based-on-multiple-other-variables" id="toc-predicting-a-variable-based-on-multiple-other-variables" class="nav-link" data-scroll-target="#predicting-a-variable-based-on-multiple-other-variables"><span class="header-section-number">11.4</span> Predicting a variable based on multiple other variables</a>
+  <ul class="collapse">
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">11.4.1</span> Logistic regression</a></li>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression"><span class="header-section-number">11.4.2</span> Linear regression</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11.5</span> References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -270,9 +356,2602 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Under construction…</p>
+<p>By the end of this chapter, you will be able to:</p>
+<ul>
+<li>Tidy data principles</li>
+<li>Separating and merging columns</li>
+<li>Pivoting and unpivoting columns</li>
+<li>Combining datasets</li>
+<li>Understand what categorical data is and how to identify it in a dataset.</li>
+<li>Understand the difference between nominal categorical data and ordinal categorical data.</li>
+<li>Understand the concepts of distribution, frequency (count), and relative frequency (proportion), and how to represent them using tables.</li>
+<li>Know how to transform raw textual data into categorical data.</li>
+<li>Calculate measures of central tendency</li>
+<li>Calculate measures of dispersion</li>
+<li>Use these measures to summarize numerical data.</li>
+<li>Choose an appropriate visualization method for different types of variables.</li>
+<li>Visualize multiple variables in Excel.</li>
+<li>Format visualizations effectively.</li>
+<li>Logistic regression</li>
+<li>Linear regression</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Disclaimer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter has a lot more content than previous ones. Indeed, it draws from 5 weeks of an undergraduate “working with data” course, as well as 2 weeks from the “Introduction to Data Science” course. While I may reorganize the content and divide it again in a few chapters in the future, the goal was to cover, in one chapter for now, the entire quantitative data analysis process, so that this may constitute a useful resource for you now and in the future. I have divided in in 4 core parts:</p>
+<ol type="1">
+<li>Processing the data</li>
+<li>Analyzing/summarizing the data</li>
+<li>Visualizing the data</li>
+<li>Logistic and linear regression (to predict the values of a dichotomous or numerical variable based on multiple other variables).</li>
+</ol>
+</div>
+</div>
+<section id="processing-data" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="processing-data"><span class="header-section-number">11.1</span> Processing data</h2>
+<p>Data is stored in all kinds of places, can be accessed in many different ways, and comes in all shapes and forms. Therefore, much of the researcher’s work can sometimes be related to the processing and cleaning of the data to get it ready for analysis. Here are a few principles to structure data in a tabular format (e.g., an Excel spreadsheet) in a way that maximizes the data usability:</p>
+<ol type="1">
+<li>Each column represents a single variable.</li>
+<li>Each cell contains a single value.</li>
+<li>Each row contains a single observation.</li>
+</ol>
+<p>In some circles, data that follows these principles is called <strong>tidy</strong> data.</p>
+<section id="splitting-columns" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="splitting-columns"><span class="header-section-number">11.1.1</span> Splitting columns</h3>
+<p>Let’s take a look at a dataset that is <strong>not</strong> tidy. You can download the dataset <a href="https://pmongeon.github.io/mgmt2605/files/ch6/ch6_practice_data.xlsx">here</a> to practice following the steps below. There is also a video walkthrough with additional explanations at the end of the section.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT1001, 92 (A+); MGMT2605, 86 (A); MGMT5450, 84 (A-)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT1001, 77 (B+); MGMT2605, 100 (A+); MGMT5450, 74 (B)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT1001, 86 (A); MGMT2605, 70 (B-); MGMT5450, 99 (A+)</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+<p>We can see that for each course, students are listed in a single cell, and their grades as well. To make this data tidy, a first thing we might might to do is separate each grade observation into its own row. We have nine grades in total in the set, so we would expect nine rows in total.</p>
+<p>First you will want to open the <strong>Power Query Editor</strong> by selecting all of the data and clicking on <strong>Data</strong> then <strong>From Table/Range.</strong></p>
+<p><img src="images/clipboard-1887422567.png" class="img-fluid"></p>
+<p>Then I check the my table has headers, because it does.</p>
+<p><img src="images/clipboard-2914178236.png" class="img-fluid"></p>
+<p>This will open the Power Query Editor</p>
+<p><img src="images/clipboard-1523509015.png" class="img-fluid"></p>
+<p>Then follow these steps to transform your data:</p>
+<ol type="1">
+<li>Select the <strong>grade</strong> column.</li>
+<li>In the <strong>Transform</strong> menu, click on <strong>Split columns</strong>.</li>
+<li>Select the delimiter. In this case, choose <strong>custom</strong> and then comma followed by a space: <code>;</code></li>
+<li>Click on <strong>Advanced options</strong>.</li>
+<li>Select Split into <strong>Rows.</strong></li>
+</ol>
+<p>When you are done with your transformations in the Power Query Editor. You close it by clicking the <strong>Close &amp; Load</strong> button.</p>
+<p><img src="images/clipboard-1253066994.png" class="img-fluid"></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT1001, 92 (A+)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT2605, 86 (A)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT5450, 84 (A-)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT1001, 77 (B+)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT2605, 100 (A+)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT5450, 74 (B)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT1001, 86 (A)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT2605, 70 (B-)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT5450, 99 (A+)</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>We made some progress, but now we need to separate the course code from the grades following these steps in the <strong>Power Query Editor</strong>:</p>
+<ol type="1">
+<li>Select the grade column.</li>
+<li>In the <strong>Transform</strong> menu, click on <strong>Split columns</strong>.</li>
+<li>Select the delimiter. In this case, choose <strong>custom</strong> and then comma followed by a space: <code>,</code></li>
+<li>Click on <strong>Advanced options</strong>.</li>
+<li>Select Split into <strong>Columns.</strong></li>
+</ol>
+<p>The result should look like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">course_code</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">92 (A+)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">86 (A)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">84 (A-)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">77 (B+)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">100 (A+)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">74 (B)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">86 (A)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">70 (B-)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">99 (A+)</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>This is starting to look great, although we still have the issue of the numeric and letter grades being lumped together in a cell. To make this data truly tidy, we want to separate the numeric and the letter grades, following these steps in the <strong>Power Query Editor</strong>:</p>
+<ol type="1">
+<li>Select the grade column.</li>
+<li>In the <strong>Transform</strong> menu, click on <strong>Split columns</strong>.</li>
+<li>Select the delimiter. In this case, choose <strong>space</strong>.</li>
+<li>Click on <strong>Advanced options</strong>.</li>
+<li>Select Split into <strong>Columns.</strong></li>
+<li>Give an appropriate name to your new columns by double clicking on the current names.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">course_code</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade_numeric</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade_letter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">(A+)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">(A)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">84</td>
+<td style="text-align: left;">(A-)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">(B+)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">(A+)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">74</td>
+<td style="text-align: left;">(B)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">(A)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">(B-)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: left;">(A+)</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>In this case, our letter grades are written in between parentheses, so we can remove the parentheses using the following steps:</p>
+<ol type="1">
+<li>Select the column containing the letter grades</li>
+<li>Right click, select <strong>Replace values…</strong></li>
+<li>Replace ( by nothing.</li>
+<li>Repeat step 1 and 2.</li>
+<li>Replace ) by nothing.</li>
+</ol>
+<p>Your result should look like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">course_code</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade_numeric</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade_letter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">A+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">84</td>
+<td style="text-align: left;">A-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">B+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">A+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">74</td>
+<td style="text-align: left;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">B-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: left;">A+</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Finally, click on <strong>close and load</strong> in the <strong>home</strong> menu of the Power Query Editor. That’s it, now we have a tidy data set of grades!</p>
+<section id="video-walkthrough" class="level4" data-number="11.1.1.1">
+<h4 data-number="11.1.1.1" class="anchored" data-anchor-id="video-walkthrough"><span class="header-section-number">11.1.1.1</span> Video walkthrough</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9d85c2d7-0d46-4f23-8b45-b20001509cd2&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Separate data into rows and columns">
+</iframe>
+</section>
+</section>
+<section id="pivot-and-unpivot-columns" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="pivot-and-unpivot-columns"><span class="header-section-number">11.1.2</span> Pivot and unpivot columns</h3>
+<p>For some reason, you may encounter datasets in matrix form where a group of columns are in fact different observations of a same variable (in this case, three course codes). You can download the example dataset <a href="https://pmongeon.github.io/mgmt2605/files/ch6/ch6_dataset2.xlsx">here</a>, which we use in the steps below. Again you will also find a video demo with more explanations at the end of the section.</p>
+<p>The dataset looks like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MGMT1001</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MGMT2605</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MGMT5450</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">99</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="unpivot-columns" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="unpivot-columns">Unpivot columns</h4>
+<p>The unpivot functions can be used to create a new variable (a new column) for which the values will be the three course codes. This can be done in just a few clicks:</p>
+<ol type="1">
+<li>Select the three columns that have course codes as headers.</li>
+<li>In the <strong>Transform</strong> menu, click on <strong>Unpivot columns.</strong></li>
+<li>Double click on the new <strong>attributes</strong> column to rename it to <strong>course_code</strong>.</li>
+<li>Double click on the new values column to rename it to <strong>grade</strong>,</li>
+</ol>
+<p>The resulting table should look like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">course_code</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">92</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT1001</td>
+<td style="text-align: left;">86</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT2605</td>
+<td style="text-align: left;">70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">MGMT5450</td>
+<td style="text-align: left;">99</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>That’s it, we’ve made the dataset tidy again!</p>
+</section>
+<section id="pivot-a-column" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="pivot-a-column">pivot a column</h4>
+<p>If, for some reason, one wished to do the opposite operation and create multiple columns containing each possible value of a variable. This can be done with (you guessed it) the <strong><code>pivot</code></strong> function in the Power Query Editor.</p>
+<ol type="1">
+<li>Select the column to pivot.</li>
+<li>In the <strong>Transform</strong> menu, click on <strong>pivot column</strong>.</li>
+<li>Select which column contains the values for the new columns (the <strong>grade</strong> column in this case)</li>
+<li>Under <strong>Avanced options</strong>, select <strong>Don’t aggregate</strong>.</li>
+</ol>
+<p>The resulting table should look like the original dataset:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">student</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MGMT1001</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MGMT2605</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MGMT5450</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Smith, Emily</td>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Johnson, Michael</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brown, Olivia</td>
+<td style="text-align: left;">86</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">99</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="video-demo" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="video-demo">Video demo</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9743bf8f-070b-4072-b037-b2000188d7ff&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Pivot and unpivot columns">
+</iframe>
+</section>
+</section>
+<section id="combining-datasets" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="combining-datasets"><span class="header-section-number">11.1.3</span> Combining datasets</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The steps decribed below for combining datasets are not done in the Power Query Editor like most of the transformation above. You need to perform these operations directly in your Excel spreadsheet.</p>
+</div>
+</div>
+<p>Sometimes the data will come in separate files so you will have to combine the pieces into a single and tidy dataset. If your two datasets contains parts of the same observations in the same order, you may be able to simply copy and paste columns from one dataset into the other. Similarly, if the two datasets have the same columns, you may be able to copy and paste rows from one dataset into the other. However, life is not always that easy, and sometimes you need to look up information about a particular entry in your dataset in another dataset with a different structure. Take the following two tables, for example.</p>
+<p><img src="images/clipboard-3443851484.png" class="img-fluid"></p>
+<p>We have on the one hand a table of grades that students received in three different courses, and on the other end a table of course details. If we want to determine, for example, the average grade in Fall or Winter semester course, we need to bring these columns into the grades dataset. In the section below, you will learn how to use the VLOOKUP function to perform this task.</p>
+<section id="the-vlookup-function" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-vlookup-function">The VLOOKUP() function</h4>
+<p>The <code>VLOOPKUP()</code> function can be used to combine the columns of two datasets that do not necessarily share the same structure. It looks like this:</p>
+<p><code>=VLOOKUP(lookup_value, table_array, column, col_index_num, [range_lookup])</code></p>
+<ul>
+<li><p>The <strong>lookup value</strong> can be a single value, like “MGMT1001” or the coordinates of a cell that contains the value like <strong>B2</strong>.</p></li>
+<li><p>The <strong>table array</strong> is the group of rows and columns (the range) in which you want to look for the lookup value. In the example above, the range would be A2:E5, A2 being the upper left corner of the range (we don’t need to include the column names), and E5 the bottom right corner of the range. However, you should always make sure that every element of your range coordinates is preceded with a dollar sign, like this: <strong>$G$2:$J$5</strong> This fixes the range to ensure that it is not automatically modified when you copy and paste your formula to look up different values.</p></li>
+<li><p>The <strong>column index number</strong> is the number of the column in the table array that contain the values you want to bring into the other dataset. For example, in the range above, the value I’m interested in is the third column of the range, so <strong>3</strong> is the value I need to include in this part of the formula.</p></li>
+<li><p>The <strong>range lookup</strong> can take two values: TRUE or FALSE. For the purpose of this course, you should always use <strong>FALSE</strong>. TRUE is used when you want to determine whether the lookup value falls within a range of values in the table array (e.g., look up if 92 is between 90 and 100 and is a A+).</p></li>
+</ul>
+<p>Putting it all together, what we get <strong><code>=VLOOKUP(B2,$G$2:$J$5,3,FALSE)</code></strong>.</p>
+<p>We need to select the cell where we want the semester information to be added, and then insert or formula in the cell or in the box above.</p>
+<p><img src="images/clipboard-1358082907.png" class="img-fluid"></p>
+<p>The result should be:</p>
+<p><img src="images/clipboard-3798798012.png" class="img-fluid"></p>
+<p>And then we double click the bottom right corner of the cell to copy the formula over the entire column, or just copy and paste it, which gives us the following result:</p>
+<p><img src="images/clipboard-1752530064.png" class="img-fluid"></p>
+<p>The following video demonstrates how to use <code>VLOOKUP()</code> function using the same example we just when through.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=5228a3f2-3ed4-41bd-990a-b2000181356c&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="VLOOKUP">
+</iframe>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beware of complex relationships in the data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The examples we went through went relatively smoothly because our grade data did not contain complex relationships. Data will often complex relationships (e.g.&nbsp;a course taught by two instructors) or, which require special attention if we don’t want to produce valid results when we analyze the data. The following video demonstrates how this can be an issue.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d0bcf05a-0414-4b8e-99e5-b20100db9887&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Duplication issues">
+</iframe>
+<p>The important thing to remember here is that <strong>you will often have to construct multiple tables from the same data in order to answer different questions</strong>.</p>
+</div>
+</div>
+</section>
+<section id="exercise" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="exercise">Exercise</h4>
+<p>In <strong>Brightspace</strong>, under <strong>content</strong> and then <strong>data</strong>, you will find a dataset of publications authored by Dalhousie researchers, from 2023. The following four challenges will allow you to practice the skills that you have now learned:</p>
+<ol type="1">
+<li>Prepare a table with the top 15 most frequent topics covered in the dataset. Topics are separated by a semi-colon (do not further split keywords in their subparts using the comma as a&nbsp;delimiter).</li>
+<li>Prepare a table with the top 10 authors in the dataset with the highest number of publications and paste it below. The names should be in the <em>last name, first name</em> format and must not include the author ID (the number in parentheses included after each name). <strong>Hint:</strong> When removing the author ID, remember that you can split columns only at the first or last instance of the chosen delimiter. There’s also an easy way to remove the author IDs using the Find and replace function outside the Power Query Editor.</li>
+<li>Prepare a table with the top 10 countries, other than Canada, with the largest publications in the dataset. <strong>Beware</strong> of the fact that a publication can be co-authored by multiple authors with affiliations in the same country. You only want to count the country once for each paper. For example, if a paper was co-authored by researchers at Dal (Canada), Harvard (US) and Berkeley (US), we want this paper to count as one paper from the US (not two). This means that you will need to <strong>keep only relevant columns</strong> in your table and <strong>remove duplicates</strong> before you create your pivot table.</li>
+<li>Prepare a table with the number of publications by discipline, ranked from the discipline with the most to the discipline with the least.&nbsp; You will notice that the <strong>discipline</strong> column of the Dal 2023 publications table is empty. You will need to <strong>look at</strong> the <strong>journal</strong> in the sheet of the Excel file named “Journal Classification” to obtain the discipline of each paper.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="analyzing-data" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="analyzing-data"><span class="header-section-number">11.2</span> Analyzing data</h2>
+<section id="analyzing-categorical-data" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="analyzing-categorical-data"><span class="header-section-number">11.2.1</span> Analyzing categorical data</h3>
+<p>Categorical variables are groups or categories that can be <strong>nominal</strong> or <strong>ordinal</strong>.</p>
+<section id="nominal-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="nominal-data">Nominal data</h4>
+<p>Nominal variables represent categories or groups between which there is no logical or hierarchical relationship.</p>
+</section>
+<section id="ordinal-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ordinal-data">Ordinal data</h4>
+<p>Ordinal variables represent categories or groups that have a logical order. They are often used to transform numerical variables.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Categories represented with numbers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is important to look at your data to understand what the values represent. Sometimes you may have groups that are represented with numbers. When deciding what type of statistical analysis is adequate for a given variable, you most likely will want to consider treating those variables as categorical and not numerical..</p>
+</div>
+</div>
+</section>
+<section id="example-titanic-passengers-dataset" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="example-titanic-passengers-dataset">Example: Titanic passengers dataset</h4>
+<p>The following examples and videos are using a simplified version (available <a href="https://pmongeon.github.io/info5520/files/titanic.xlsx">here</a>) of the titanic dataset (available <a href="https://www.kaggle.com/datasets/vinicius150987/titanic3">here</a>). This is what our practice dataset looks like:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 1. Titanic passengers (10 random rows shown))</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">age.group</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ticket</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">cabin</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Appleton, Mrs. Edward Dale (Charlotte Lamson)</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: left;">36 to 59</td>
+<td style="text-align: left;">11769</td>
+<td style="text-align: right;">51.4792</td>
+<td style="text-align: left;">C101</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Artagaveytia, Mr. Ramon</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: left;">60+</td>
+<td style="text-align: left;">PC 17609</td>
+<td style="text-align: right;">49.5042</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Astor, Col. John Jacob</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: left;">36 to 59</td>
+<td style="text-align: left;">PC 17757</td>
+<td style="text-align: right;">227.5250</td>
+<td style="text-align: left;">C62 C64</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Astor, Mrs. John Jacob (Madeleine Talmadge Force)</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">PC 17757</td>
+<td style="text-align: right;">227.5250</td>
+<td style="text-align: left;">C62 C64</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Lamb, Mr. John Joseph</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">240261</td>
+<td style="text-align: right;">10.7083</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Queenstown</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Laroche, Miss. Louise</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">0 to 17</td>
+<td style="text-align: left;">SC/Paris 2123</td>
+<td style="text-align: right;">41.5792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Laroche, Miss. Simonne Marie Anne Andree</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">0 to 17</td>
+<td style="text-align: left;">SC/Paris 2123</td>
+<td style="text-align: right;">41.5792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Laroche, Mr. Joseph Philippe Lemercier</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">SC/Paris 2123</td>
+<td style="text-align: right;">41.5792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Cherbourg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Barry, Miss. Julia</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">330844</td>
+<td style="text-align: right;">7.8792</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Queenstown</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Barton, Mr. David John</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">324669</td>
+<td style="text-align: right;">8.0500</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Beavan, Mr. William Thomas</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">323951</td>
+<td style="text-align: right;">8.0500</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="identifying-categorical-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="identifying-categorical-data">Identifying categorical data</h4>
+<p>In this chapter, we are focusing on categorical data, so the first step is determining which columns in our dataset contain categorical data and what type of categorical data (nominal or ordinal) they are. In the following video, I walk you through this process:</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b813f440-2c46-4136-9e71-b207011fa99f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Identifying categorical variables in a dataset">
+</iframe>
+</section>
+<section id="summarizing-categorical-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="summarizing-categorical-data">Summarizing categorical data</h4>
+<p>There is not a lot that you can do with a single categorical variable other than reporting the frequency (count) and relative frequency (percentage) of observations for each category. To do this, we are going to use a tool that we have already learned: <strong>pivot tables</strong>.</p>
+<section id="frequency" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="frequency">Frequency</h5>
+<p>A typical tool to analyze categorical data is to count the number of observation that fall into each of the groups.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Frequency of passengers by port of embarkation</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">270</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">914</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="relative-frequency" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="relative-frequency">Relative frequency</h5>
+<p>The relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each count by the total.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>relative frequency of passengers by port of embarkation</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">freq</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rel_freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">270</td>
+<td style="text-align: right;">0.2062643</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">0.0939649</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">914</td>
+<td style="text-align: right;">0.6982429</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.0015279</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="rounding-the-values" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="rounding-the-values">Rounding the values</h5>
+<p>When we calculate the relative frequency, we obtain numbers with a lot of decimals. We can remove or add decimals by selecting our data and clicking on the<img src="images/clipboard-3943976952.png" class="img-fluid"> or <img src="images/clipboard-470576680.png" class="img-fluid"> buttons, respectively.</p>
+</section>
+<section id="converting-the-relative-frequency-to-percentages" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="converting-the-relative-frequency-to-percentages">Converting the relative frequency to percentages</h5>
+<p>Another thing we might want to do is show the relative frequency as a percentage. This can be done by clicking the <code>%</code> button in excel.</p>
+<p><img src="images/clipboard-3286961558.png" class="img-fluid"></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>relative frequency of passengers by port of embarkation</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">freq</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rel_freq (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">270</td>
+<td style="text-align: right;">20.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">9.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">914</td>
+<td style="text-align: right;">69.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="demo" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo">Demo</h5>
+<p>In this video, I show you how to summarize categorical data using the frequency and the relative frequency.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e7f3f874-b7dc-4d77-9770-b207013178a9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Frequency distributions">
+</iframe>
+</section>
+</section>
+<section id="converting-numerical-data-into-categorical-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="converting-numerical-data-into-categorical-data">Converting numerical data into categorical data</h4>
+<p>Just because a column in a dataset does not contain categorical data, doesn’t mean it can’t be transformed into categorical data. For examples, age groups (e.g.&nbsp;0-17, 18-35, etc.) are groups (categorical) based on age (numerical). Here’s a video showing we can make that transformation in our Titanic dataset.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ac572cba-5d16-4939-b774-b2070138b96f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Converting numerical data to categorical data">
+</iframe>
+</section>
+</section>
+<section id="analyzing-numerical-data" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="analyzing-numerical-data"><span class="header-section-number">11.2.2</span> Analyzing numerical data</h3>
+<p>While summarizing categorical data is done with frequency and relative frequency tables, numerical data can be summarized using <strong>descriptive statistics</strong> divided into three groups:</p>
+<ol type="1">
+<li>Measures of central tendency.</li>
+<li>Measures of dispersion.</li>
+<li>Measures of skewness.</li>
+</ol>
+<p>In this chapter, we will focus on only the first two: measures of <strong>central tendency</strong> and measures of <strong>dispersion.</strong></p>
+<section id="measures-of-central-tendency" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="measures-of-central-tendency">Measures of central tendency</h4>
+<p>Measures of central tendency help you summarize data by looking at the central point within it. While the mode (the value(s) with the highest frequency) is also considered a measure of central tendency, in this chapter we will only consider two: the <strong>average</strong> (or mean), and the <strong>median</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 46%">
+<col style="width: 27%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>description</th>
+<th>formula</th>
+<th>Excel function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Average or Mean</td>
+<td>The sum of values divided by the number of observations</td>
+<td><span class="math display">\[ \overline{X}  = \frac{\sum{X}}{n} \]</span></td>
+<td><code>=AVERAGE(x:x)</code></td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td>the middle value of a set of number once sorted in ascending or descending order</td>
+<td><p>If n is odd:</p>
+<p><span class="math display">\[ M_x = x_\frac{n + 1}{2} \]</span></p>
+<p>If <em>n</em> is even:</p>
+<p><span class="math display">\[ M_x = \frac{x_{(n/2)} + x_{(n/2)+1}}{2} \]</span></p></td>
+<td><p><code>=MEDIAN(x:x)</code></p>
+<p><code>=PERCENTILE(x:x,0.50)</code></p>
+<p><code>=QUARTILE(x:x,2)</code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Table 8.1. Measures of central tendency</p>
+<section id="demo-1" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-1">Demo</h5>
+<p>In the following video, I explain the how to manually calculate the average and median in a set of numerical data.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7c4be068-39f3-4c5f-a69b-b20b0009becf&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Measures of central tendency">
+</iframe>
+</section>
+</section>
+<section id="measures-of-dispersion" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="measures-of-dispersion">Measures of dispersion</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 52%">
+<col style="width: 22%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Definition</th>
+<th>Formula</th>
+<th>Excel formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Variance (Var)</td>
+<td>Expected squared deviation from the mean. Measures how far numbers spread around the average</td>
+<td><span class="math display">\[ Var = \frac{\sum{(x_i-\overline{x})^2}}{N} \]</span></td>
+<td><code>=VAR(x:x)</code></td>
+</tr>
+<tr class="even">
+<td>Standard deviation (SD)</td>
+<td>Square root of the Variance.</td>
+<td><span class="math display">\[ SD = \sqrt{\frac{\sum{(x_i-\overline{x})^2}}{N}} \]</span></td>
+<td><code>=STDEV(x)</code></td>
+</tr>
+<tr class="odd">
+<td>Range</td>
+<td>Difference between the minimum and maximum values in the data.</td>
+<td>N/A</td>
+<td><p><strong>Minimum value:</strong> <code>=MIN(x:x)</code></p>
+<p><strong>Maximum value:</strong> <code>=MAX(x:x)</code></p>
+<p><strong>Range:</strong> <code>=MAX(x:x)-MIN(x:x)</code></p></td>
+</tr>
+<tr class="even">
+<td>Interquartile range (IQR)</td>
+<td>The difference between the first quartile (Q1) and the third quartile (Q3). It measures the spread of the middle 50% of the data.</td>
+<td>N/A</td>
+<td><p><strong>Q1:</strong> <code>=QUARTILE(x:x,1)</code></p>
+<p><strong>Q3:</strong> <code>=QUARTILE(x:x,3)</code></p>
+<p><strong>IQR:</strong> <code>=Q3-Q1</code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Table 8.2. Measures of dispersion</p>
+<section id="demo-2" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-2">Demo</h5>
+<p>In the following video, I explain the how to manually calculate the different measures of dispersion in a set of numerical data.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=40ec48bc-473b-486a-8ba1-b20b000bd171&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Measures of dispersion">
+</iframe>
+</section>
+</section>
+<section id="creating-a-descriptive-statistics-summary" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="creating-a-descriptive-statistics-summary">Creating a descriptive statistics summary</h4>
+<p>Using the measures of central tendency and dispersion listed above, we can construct a descriptive statistics summary for any number of numerical variables in a dataset. Note that these summaries don’t typically display the interquartile range (IQR) and the range, but instead provide the actual values required to calculate them (i.e., Min, Q1, Q3, Max).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 8.3. Descriptive statistics summary of age and fare in the Titanic dataset.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">VAR</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">1046</td>
+<td style="text-align: right;">29.898</td>
+<td style="text-align: right;">14.415</td>
+<td style="text-align: right;">207.791</td>
+<td style="text-align: right;">21.000</td>
+<td style="text-align: right;">28.000</td>
+<td style="text-align: right;">39.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">80.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fare</td>
+<td style="text-align: right;">1308</td>
+<td style="text-align: right;">33.295</td>
+<td style="text-align: right;">51.759</td>
+<td style="text-align: right;">2678.960</td>
+<td style="text-align: right;">7.896</td>
+<td style="text-align: right;">14.454</td>
+<td style="text-align: right;">31.275</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">512.329</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="demo-3" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-3">Demo</h5>
+<p>In the following video, I show you how to create descriptive statistics summary in Excel.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=67692594-a1b5-49fc-a47b-b207014a1f9f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Summarize numerical data">
+</iframe>
+</section>
+</section>
+</section>
+<section id="measuring-the-relationship-between-two-variables" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="measuring-the-relationship-between-two-variables"><span class="header-section-number">11.2.3</span> Measuring the relationship between two variables</h3>
+<section id="two-categorical-variables" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="two-categorical-variables">Two categorical variables</h4>
+<p>When we want to combine multiple categorical variable to analyze them jointly, we can use a <strong>contingency table</strong> (aka <strong>cross-tabulation</strong> or <strong>crosstab</strong>), which displays the frequency (or relative frequency) distribution two variables. Here’s an example from the Titanic dataset, where we combined the Embark and the Sex columns</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 9.1. Frequency of male and female Titanic passengers by port of embarkation</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">female</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">male</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cherbourg</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">270</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queenstown</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Southampton</td>
+<td style="text-align: right;">291</td>
+<td style="text-align: right;">623</td>
+<td style="text-align: right;">914</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sum</td>
+<td style="text-align: right;">464</td>
+<td style="text-align: right;">843</td>
+<td style="text-align: right;">1307</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>In this table:</p>
+<ul>
+<li>The column represent the categories of one variable (sex: male and female).</li>
+<li>The rows represent the categories of another variable (Embark: Cherbourg, Queenstown, Southampton).</li>
+<li>The cells show the frequency counts of the combinations of these categories.</li>
+</ul>
+<section id="demo-4" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-4">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=53bdb8c7-9366-4a3c-906c-b20701572c69&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Combining two categorical variables">
+</iframe>
+</section>
+</section>
+<section id="a-categorical-and-a-numerical-variable" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-categorical-and-a-numerical-variable">A categorical and a numerical variable</h4>
+<p>As we saw in Chapter 8, numerical data can be summarized using a descriptive statistics summary that includes measures of central tendency and measures of dispersion. To summarize the relationship between a categorical variable and a numerical, we simply have to calculate these measures for each group of the categorical variable. For example, the table belows shows the descriptive statistics summary for the <em>fare</em> variable for each <em>passenger class</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 9.2. Descriptive statistics summary of fare for each passenger class</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">VAR</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Q3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">323</td>
+<td style="text-align: right;">87.509</td>
+<td style="text-align: right;">80.447</td>
+<td style="text-align: right;">6471.748</td>
+<td style="text-align: right;">30.696</td>
+<td style="text-align: right;">60.000</td>
+<td style="text-align: right;">107.662</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">512.329</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">277</td>
+<td style="text-align: right;">21.179</td>
+<td style="text-align: right;">13.607</td>
+<td style="text-align: right;">185.154</td>
+<td style="text-align: right;">13.000</td>
+<td style="text-align: right;">15.046</td>
+<td style="text-align: right;">26.000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">73.500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">708</td>
+<td style="text-align: right;">13.303</td>
+<td style="text-align: right;">11.494</td>
+<td style="text-align: right;">132.120</td>
+<td style="text-align: right;">7.750</td>
+<td style="text-align: right;">8.050</td>
+<td style="text-align: right;">15.246</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">69.550</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="demo-5" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-5">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6dc088ec-1ed1-47aa-a74b-b207016c45e8&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Summarizing categorical and numerical data jointly">
+</iframe>
+</section>
+</section>
+<section id="two-numerical-variables" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="two-numerical-variables">Two numerical variables</h4>
+<p>The relationship between two numerical variable can be captured by a single number called the <strong>correlation coefficient</strong>. It is calculated using the <code>CORREL(x:x,y:y)</code> function in Excel, where <code>x:x</code> is a column of numerical data, and <code>y:y</code> is another column of numerical data.</p>
+<p>Suppose you have the following data:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">A</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>To find the correlation coefficient between columns A and B, you would type <strong><code>=CORREL(A1:A5, B1:B5)</code></strong> in a new cell. The result will be <strong>1</strong>, which indicates a perfect positive correlation. <strong>0</strong> would mean that there is no correlation at all (no relationship between the two variables), and <strong>-1</strong> would indicate a perfect negative correlation. The closer the value is to 1 or -1, the stronger the linear relationship between the two variables.</p>
+<section id="demo-6" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-6">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e390bbfc-fd93-4cf6-89b1-b2070176dcea&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Correlation between two numerical variables.">
+</iframe>
+</section>
+</section>
+</section>
+</section>
+<section id="visualizing-data" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="visualizing-data"><span class="header-section-number">11.3</span> Visualizing data</h2>
+<p>If you are interested in a deep dive in data visualization that goes well beyond the scope of this course, I recommend the <em>Fundamentals of Data Visualization</em> book by Claus O. Wilke available <a href="https://clauswilke.com/dataviz/index.html">here</a>. <a href="https://clauswilke.com/dataviz/figure-titles-captions.html">This specific chapter</a> of the Wilke book will give you some information on how to format tables and figures. Here is a video showing how to paste your tables and figures in Word from your Excel, as well as how to make format them appropriately.</p>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f0d9e5f5-84a9-46a6-9f7e-b22e002a7ea0&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Formatting tables and figures">
+</iframe>
+<section id="identifying-the-data-and-the-purpose-of-the-visualization" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="identifying-the-data-and-the-purpose-of-the-visualization">Identifying the data and the purpose of the visualization</h4>
+<p>Data visualizations can be fun and colorful, but remember that their most important feature is their informativeness, and that not all data can or should be visualized. Often times, not producing a visualization is the best way to go. So, before you start thinking about <em>how</em> to visualize your data, the first thing you will want to do is think about the purpose: <em>What</em> do you want to visualize, and <em>why</em>? Asking yourself these important questions will save you a lot of time and unnecessary suffering down the road, by preventing you from embarking on a journey to fix a problem that is not a problem and that does not need fixing.</p>
+</section>
+<section id="choosing-the-right-visualization-method" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="choosing-the-right-visualization-method">Choosing the right visualization method</h4>
+<p>While there is rarely a single best way to visualize a specific variable, there are usually not so many options that make sense. Your main constraint is the type of data that you are working with, so that is the first question you have to answer before thinking about how it can be visualized. In fact, these are the same questions that you had to ask yourself in Chapter 7 and Chapter 8, where you learned to identify and summarize categorical and numerical data. In the next few sections, we explore the types of visualizations that are recommended for each type of data.</p>
+</section>
+<section id="visualizing-a-categorical-variable" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="visualizing-a-categorical-variable"><span class="header-section-number">11.3.1</span> Visualizing a categorical variable</h3>
+<p>If you are working with a categorical variable, such as the port of embarkation of the Titanic passengers. The first thing you need to do is summarize the data by calculating the frequency (counts) and/or relative frequency (percentages), just like you learned in Chapter 7. Once you have summarized your data, you can think about how to visualize that summary.</p>
+<section id="visualizing-frequencies" class="level4" data-number="11.3.1.1">
+<h4 data-number="11.3.1.1" class="anchored" data-anchor-id="visualizing-frequencies"><span class="header-section-number">11.3.1.1</span> Visualizing frequencies</h4>
+<p>The most common and best way to visualize frequencies is the <strong>bar chart (or column chart in Excel)</strong>. Like this one:</p>
+<p><img src="images/clipboard-2119486445.png" class="img-fluid" width="539"></p>
+<p>You can also do an <strong>horizontal bar chart</strong>, like this one:</p>
+<p><img src="images/clipboard-4101209731.png" class="img-fluid" width="548"></p>
+<p>If you are working with a <strong>nominal variable</strong> then you should order the categories from either highest count to lowest count, or the other way around, as in the examples above. However, if you are working with a <strong>ordinal variable</strong> (i.e., the categories have a logical order), then you should keep that logical order for your visualization. For example, you would not want to reorder the passenger classes when visualizing the number of passengers in each class, but keep the logical order of the classes, like this:</p>
+<p><img src="images/clipboard-636353489.png" class="img-fluid" width="540"></p>
+</section>
+<section id="visualizing-relative-frequencies" class="level4" data-number="11.3.1.2">
+<h4 data-number="11.3.1.2" class="anchored" data-anchor-id="visualizing-relative-frequencies"><span class="header-section-number">11.3.1.2</span> Visualizing relative frequencies</h4>
+<p>You can think of a percentages as a parts of a pie, the whole pie being 100%, so a popular although sometimes criticized way to visualize percentages is the <strong>pie chart</strong>.</p>
+<p><img src="images/clipboard-2693495910.png" class="img-fluid" width="575"></p>
+<p>You can also use <strong>bar charts</strong> (horizontal or vertical) to visualize relative frequencies, like this:</p>
+<p><img src="images/clipboard-1158678644.png" class="img-fluid" width="554"></p>
+</section>
+<section id="demo-bar-charts-and-pie-charts" class="level4" data-number="11.3.1.3">
+<h4 data-number="11.3.1.3" class="anchored" data-anchor-id="demo-bar-charts-and-pie-charts"><span class="header-section-number">11.3.1.3</span> Demo: bar charts and pie charts</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=08f9a161-34dd-4500-b82d-b22500fcf483&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing single categorical variables">
+</iframe>
+</section>
+</section>
+<section id="visualizing-a-numerical-variable" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="visualizing-a-numerical-variable"><span class="header-section-number">11.3.2</span> Visualizing a numerical variable</h3>
+<section id="histogram" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="histogram">Histogram</h4>
+<p><img src="images/clipboard-3088527409.png" class="img-fluid" width="468"></p>
+</section>
+<section id="box-plot" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="box-plot">Box plot</h4>
+<p>The box plot is a visual representation of the descriptive statistics summary that you learned to do in Chapter 8. Here is our summary of the <em>Age</em> variable.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Var</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Q1</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Q3</th>
+<th style="text-align: right;">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Age</td>
+<td style="text-align: right;">1046</td>
+<td style="text-align: right;">29.9</td>
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">207.8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+<p>The box plot below uses the first quartile (Q1) and the third quartile (Q3) to create a box, with a line inside the box representing the median. The mean is represented by an X, and the whiskers show the range of the data outside the box, and the outliers (extreme values) are show as dots outside of the whiskers. There are different acceptable methods to locate the whiskers, the simplest one is to use the min and the max, other common practices include placing them at 1.5 times the interquartile range (IQR) from the nearest quartile, at one standard deviation above and below the mean, or at the 2nd and 98th percentiles. As I am writing this, I still do not know how Excel determines where to put the whiskers, but it seems close to the 99th percentile and the 1st, this is just a guess at that point as my investigations have not been fruitful.</p>
+<p><img src="images/clipboard-3430799064.png" class="img-fluid" width="428"></p>
+</section>
+<section id="demo-histograms-and-box-plots" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="demo-histograms-and-box-plots">Demo: histograms and box plots</h4>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7ec95565-4a4e-4063-8e0a-b225010268bd&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing single numerical variables">
+</iframe>
+</section>
+</section>
+<section id="visualizing-multiple-variables" class="level3" data-number="11.3.3">
+<h3 data-number="11.3.3" class="anchored" data-anchor-id="visualizing-multiple-variables"><span class="header-section-number">11.3.3</span> Visualizing multiple variables</h3>
+<p>Just like in the previous chapter, the choices available to you for visualizing the relationship between two or more variables are are strictly determined by the type of data your are working with. Basically, there are three possible combinations</p>
+<ul>
+<li><p>Two or more categorical variables</p></li>
+<li><p>Two or more numerical variables</p></li>
+<li><p>A combination of categorical and numerical variables</p></li>
+</ul>
+<p>Here we treat timelines as a case of their own, so that would make four different possibilities.</p>
+<p>The section below provides examples of visualizations and at the end of the chapter you will find a series of video demonstration how to produce these graphs in Excel.</p>
+</section>
+<section id="two-categorical-variables-1" class="level3" data-number="11.3.4">
+<h3 data-number="11.3.4" class="anchored" data-anchor-id="two-categorical-variables-1"><span class="header-section-number">11.3.4</span> Two categorical variables</h3>
+<p>When you have two categorical variables, the process is very similar as for single categorical variables. We need to create a contigency table, as we have learned in Chapter 7, and then we have a series of choices available to us.</p>
+<section id="side-by-side-bars" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="side-by-side-bars">Side-by-side bars</h4>
+<p>The side-by-side bars have the benefit of being very clear and allow us to display the data label (this should be avoided, however, when there are two many bars and the numbers start getting to close to each other or overlapping. However, side-by-side bars can be less space efficient than stacked bars (see below) when dealing with categories with many groups.</p>
+<p><img src="images/clipboard-873295196.png" class="img-fluid" width="405"></p>
+</section>
+<section id="stacked-bars" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="stacked-bars">Stacked bars</h4>
+<p>Stacking the bars can a nice option also. These graphs are more space efficient, but the data labels can be harder to read. The labels can also get crowded and start overlapping when categories have small number of observations.</p>
+<p>One issue with stacked bars when we do <em>not</em> use data labels is that it becomes difficult to see which differences between the size of two bars that are on top of the others (in this case the difference between male passengers in the first and second classes would be hard to see if the number was not included).</p>
+<p><img src="images/clipboard-3039759823.png" class="img-fluid" width="401"></p>
+</section>
+<section id="stacked-bars-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="stacked-bars-1">100% stacked bars</h4>
+<p>100% stacked bars actually allow you to reshape the bars by shaping them based on percentages, while still allowing you to show the count as the data label (unless you are working with aggregated data already in the form of percentages, then the data label would also show percentages).</p>
+<p><img src="images/clipboard-2291528055.png" class="img-fluid" width="395"></p>
+</section>
+<section id="adding-a-third-variable" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="adding-a-third-variable">Adding a third variable</h4>
+<p>Sometimes, you may wish to add a third categorical variable in the mix. This is possible, as in the example below showing, for each passenger class, the number of passenger of each sex that survived or died.</p>
+<p><img src="images/clipboard-2053308833.png" class="img-fluid" width="533"></p>
+<p>Here again, we can use stacked bars, however we can see that in some cases the numbers are small and overlap with the axes and are a bit harder to read. This is still a nice way to visualize the relationship between the three categorical variables (sex, survived, and passenger class).</p>
+<p><img src="images/clipboard-119899320.png" class="img-fluid" width="504"></p>
+<section id="demo-7" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-7">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f964c1cc-09e0-46e5-9033-b2250135deb6&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing multiple categorical variables">
+</iframe>
+</section>
+</section>
+</section>
+<section id="two-numerical-variables-1" class="level3" data-number="11.3.5">
+<h3 data-number="11.3.5" class="anchored" data-anchor-id="two-numerical-variables-1"><span class="header-section-number">11.3.5</span> Two numerical variables</h3>
+<section id="scatterplot" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="scatterplot">Scatterplot</h4>
+<p>The go to graph when dealing with two numerical variables is the scatterplot, which displays each observation as a dot on the graph situated at coordinates determined by the two numerical variables. In the example below, we plotted the relationship between age and ticket fare. We also added a linear trend line and the R<sup>2</sup> to help determine the direction and strength of the relationship between the two. Since the red line has a positive slope (it goes up as age and ticket fare increase, we can quickly see that the relationship is positive, and the low R<sup>2</sup> value of 0.0318 tells confirms that the relationship is not strong. This is generally teh case when the dots do not seem to follow a regular pattern and are scattered all over and away from the trend line.</p>
+<p><img src="images/clipboard-301519945.png" class="img-fluid" width="397"></p>
+<section id="demo-8" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-8">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b2de025c-a4dd-4c8a-85f0-b225013df747&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing the relationship between numerical variables">
+</iframe>
+</section>
+</section>
+</section>
+<section id="a-numerical-and-a-categorical-variables" class="level3" data-number="11.3.6">
+<h3 data-number="11.3.6" class="anchored" data-anchor-id="a-numerical-and-a-categorical-variables"><span class="header-section-number">11.3.6</span> A numerical and a categorical variables</h3>
+<p>When dealing with a numerical and a categorical variables, we have two choices… we can produce a panel of histograms (one for each possible value of the categorical variable) or make a graph with multiple box plots (one for each value of the categorical variable).</p>
+<p>The example below show a <strong>panel of three histograms</strong> (one for each passenger class) with the age distribution of Titanic passengers. This works pretty well, although it’s hard to see if there is a difference between the distribution for the second and third class. Another issue is that if that if we are working with a categorical variable with a lot of possible values, the amount of space needed to visualize each distribution may quickly become an issue.</p>
+<p><img src="images/clipboard-4224568966.png" class="img-fluid"></p>
+<section id="demo-9" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-9">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae9be6a8-bd49-4bca-8093-b2250145eff7&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing the relationship between a categorical and a numerical variable.">
+</iframe>
+</section>
+<section id="box-plots-series" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="box-plots-series">Box plots series</h4>
+<p>The two problems with histogram panels (the amount of space they take and the challenge in seeing differences) make the <strong>series of box plots</strong> an interesting alternative. As you can see, the example below is much more space efficient, and we can clearly see that the third class passengers tend to be younger then the second class passengers, who tend to be significantly younger than first class passengers. While they may not be the most popular visualization methods, box plots are a very clear and efficient way of visualizing distributions of a numerical variable for different groups.</p>
+<p><img src="images/clipboard-2339486616.png" class="img-fluid" width="387"></p>
+<section id="demo-10" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-10">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=abae6774-caac-4496-b0ff-b225014c1e0e&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Making a graph with multiple box plots">
+</iframe>
+</section>
+</section>
+</section>
+<section id="timelines" class="level3" data-number="11.3.7">
+<h3 data-number="11.3.7" class="anchored" data-anchor-id="timelines"><span class="header-section-number">11.3.7</span> Timelines</h3>
+<p>Finally, <strong>line graphs</strong> are preferred when one of the variable is a temporal unit (a date, a year, a day, etc.). In the example below, we observe the trend of the number of publications in the Canadian Journal of Administrative Sciences over four decades.</p>
+<p><img src="images/clipboard-1514404511.png" class="img-fluid" width="469"></p>
+<p>We can add multiple trends to in the same graph too. For example, the graph below shows the average number of institutions and countries listed on the publications in the journals, which indicate an increase in interinstitutional and international collaboration in the field over time.</p>
+<p><img src="images/clipboard-3825569185.png" class="img-fluid" width="507"></p>
+<p>That’s it, now you know how approach the visualization of multiple variables at once to show the relationship between them. The section below contains a series of videos demonstrating how to construct the graphs that you have encountered in this chapter (and a few more).</p>
+<section id="demo-11" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="demo-11">Demo</h5>
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=1cc26b1b-3d28-4afc-9650-b225017ed350&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Line graphs">
+</iframe>
+</section>
+</section>
+</section>
+<section id="predicting-a-variable-based-on-multiple-other-variables" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="predicting-a-variable-based-on-multiple-other-variables"><span class="header-section-number">11.4</span> Predicting a variable based on multiple other variables</h2>
+<section id="logistic-regression" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="logistic-regression"><span class="header-section-number">11.4.1</span> Logistic regression</h3>
+<p>Regression is a method used to determine the relationship between a dependent variable (the variable we want to predict) and one or more independent variables (the predictors available to make the prediction). There are a wide variety of regression methods, but in this course we will learn two: the <strong>logistic regression</strong>, which is used to predict a <strong>categorical dependent variable</strong>, and the <strong>linear regression</strong>, which is used to predict a <strong>continuous dependent variable</strong>.</p>
+<p>In this chapter, we focus on the <strong>binomial</strong> logistic regression (we will refer to it as logistic regression or simply regression in the rest of the chapter), which means that our dependent variable is dichotomous (e.g., yes or no, pass vs fail). Ordinal logistic regression (for ordinal dependent variables) and multinominal logistic regression (for variables with more than 2 categories) are beyond the scope of the course.</p>
+<section id="logistic-function" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="logistic-function">Logistic function</h4>
+<p>Logistic regression is called this way because it fits a <strong>logistic function</strong> (an s-shaped curve) to the data to model the relationship between the predictors and a categorical outcome. More specifically, it models the <strong>probability</strong> of an outcome (the dependent categorical variable) based on the value of the independent variable. Here’s an example:</p>
+<p><img src="images/logistic_function.jpg" class="img-fluid" width="515"></p>
+<p>The model gives us, for each value of the independent variable (Copper content, in this example), the probability (odds) that the painting is an original. The point where the logistic curve reaches .5 (50%) on the y-axis is where the cut-off happens: the model predicts that any painting with a copper content above that point is an original.</p>
+</section>
+<section id="odds" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="odds">Odds</h4>
+<p>We can convert probabilities into odds by dividing the probability <em>p</em> of the one outcome by the probability of the other outcome, so because there are only two outcomes, then <code>odds = p / 1-p</code>. For example, say we have a bag of 10 balls, 2 red and 8 black. If we draw a ball at random, we have a 8/10 = 80% chance of drawing a black ball. The odds of drawing a black ball are thus 0.8/(1-0.8) = 0.8/0.2 = <strong>4</strong>. There is a 4 to 1 chance that we’ll draw a black ball over a red one.</p>
+<p>However, the output of the logistic regression model is the natural logarithm of the odds: <code>log odds = ln(p/1-p)</code>, so it is not so easily interpreted.</p>
+</section>
+<section id="logistic-regression-example" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="logistic-regression-example">Logistic regression example</h4>
+<p>Here we will use the Titanic passenger dataset.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">age group</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ticket</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">cabin</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Allen, Miss. Elisabeth Walton</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">24160</td>
+<td style="text-align: right;">211.3375</td>
+<td style="text-align: left;">B5</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Allison, Master. Hudson Trevor</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">0 to 17</td>
+<td style="text-align: left;">113781</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: left;">C22 C26</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Allison, Miss. Helen Loraine</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">0 to 17</td>
+<td style="text-align: left;">113781</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: left;">C22 C26</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Allison, Mr. Hudson Joshua Creighton</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">113781</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: left;">C22 C26</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">18 to 35</td>
+<td style="text-align: left;">113781</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: left;">C22 C26</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Anderson, Mr. Harry</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">36 to 59</td>
+<td style="text-align: left;">19952</td>
+<td style="text-align: right;">26.5500</td>
+<td style="text-align: left;">E12</td>
+<td style="text-align: left;">Southampton</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<section id="choose-a-set-of-predictors-independent-variables" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="choose-a-set-of-predictors-independent-variables">Choose a set of predictors (independent variables)</h5>
+<p>Looking at our dataset, we can identify some variables that we think might affect the probability that a passenger survived. In our model, we will choose <strong>Sex, Age, Pclass, and Fare.</strong>. We can now remove the variables that we don’t need in our model by selecting the ones we want to keep.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">211.3375</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="dealing-with-missing-data" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="dealing-with-missing-data">Dealing with missing data</h5>
+<p>We can count the number of empty cells for each variable to see if some data is missing. We do this for each variable in the set.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">missing_values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">survived</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sex</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">263</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fare</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pclass</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Once we have identified that some columns contain missing data, we have two choices. We do nothing and these cases will be left out of the regression model, or we fill the empty cells in some way (this is called imputation). We have many missing values (177 out of 891 observations is quite large) and leaving out these observations could negatively affect the performance of our regression model. Therefore, we will assign the average age for all 177 missing age values, which is a typical <em>imputation mechanism</em> to replace missing values with an estimate based on the available data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">211.3375</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26.5500</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="visualizing-the-relationships" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="visualizing-the-relationships">Visualizing the relationships</h5>
+<p>To explore the relationship between variables. we can visualize the distribution of independent variable values for each value of the dependent variable. We can use box plots for continuous independent variables and bar charts for the categorical variables.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">male</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">male</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">male</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Let’s create box plots for all our independent variables and outcome.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/10.7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And let’s make bar charts for our categorical independent variables.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/10.8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-the-model" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="creating-the-model">Creating the model</h5>
+<p>The following code generates our logistic regression model using the <code>glm()</code> function (glm stands for general linear model). The syntax is <code>gml(predicted variable ~ predictor1 + predictor2 + preductor3..., data, family)</code> where data is our dataset and the family is the type of regression model we want to create. In our case, the family is <strong>binomial</strong>.</p>
+</section>
+<section id="model-summary" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="model-summary">Model summary</h5>
+<p>Now that we have created our model, we can look at the coefficients (estimates) which tell us about the relationship between our predictors and the predicted variable. The <strong>Pr(&gt;|z|)</strong> column represents the <strong>p-value</strong>, which determines whether the effect observed is statistically significant. It is common to use 0.05 as the threshold for statistical significance, so all the effects in our model are statistically significant (p &lt; 0.05) except for the fare (p &gt; 0.05).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Std. Error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">z value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pr(&gt;|z|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.2805940</td>
+<td style="text-align: right;">0.4116103</td>
+<td style="text-align: right;">10.3996285</td>
+<td style="text-align: right;">0.0000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sexmale</td>
+<td style="text-align: right;">-2.4893690</td>
+<td style="text-align: right;">0.1497232</td>
+<td style="text-align: right;">-16.6264796</td>
+<td style="text-align: right;">0.0000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">-0.0319317</td>
+<td style="text-align: right;">0.0060478</td>
+<td style="text-align: right;">-5.2798944</td>
+<td style="text-align: right;">0.0000001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fare</td>
+<td style="text-align: right;">0.0007146</td>
+<td style="text-align: right;">0.0016281</td>
+<td style="text-align: right;">0.4389321</td>
+<td style="text-align: right;">0.6607108</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pclass</td>
+<td style="text-align: right;">-1.0410960</td>
+<td style="text-align: right;">0.1097710</td>
+<td style="text-align: right;">-9.4842577</td>
+<td style="text-align: right;">0.0000000</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="converting-log-odds-to-odds-ratio" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="converting-log-odds-to-odds-ratio">Converting log odds to odds ratio</h5>
+<p>As we mentioned above, the coefficients produced by the model are log odds, which are difficult to interpret. We can convert them to odds ratio, which are easier to interpret. We can now see that according to our model, female passengers were 12 times more likely to survive than male passengers.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">(Intercept)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sexmale</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">72.28337</td>
+<td style="text-align: right;">0.0829623</td>
+<td style="text-align: right;">0.9685727</td>
+<td style="text-align: right;">1.000715</td>
+<td style="text-align: right;">0.3530675</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="adding-confidence-intervals" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="adding-confidence-intervals">Adding confidence intervals</h5>
+<p>The confidence intervals are an estimation of the precision odds ratio. In the example below, We use a 95% confidence interval which means that we are 95% of our estimated coefficients for a predictor are between the 2.5<sup>th</sup> percentile and the 97.5th percentile (the two values reported in the tables). If we were using a sample to make claims about a population, which does not really apply here due to the unique case of the titanic, we could then think of the confidence interval as indicating a 95% probability that the true coefficient for the entire population is situated in between the two values.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">odds_ratio</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">2.5 %</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">97.5 %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">72.2833656</td>
+<td style="text-align: right;">32.6163916</td>
+<td style="text-align: right;">164.0005638</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sexmale</td>
+<td style="text-align: right;">0.0829623</td>
+<td style="text-align: right;">0.0615772</td>
+<td style="text-align: right;">0.1107899</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">0.9685727</td>
+<td style="text-align: right;">0.9570331</td>
+<td style="text-align: right;">0.9800127</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fare</td>
+<td style="text-align: right;">1.0007149</td>
+<td style="text-align: right;">0.9975736</td>
+<td style="text-align: right;">1.0040235</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pclass</td>
+<td style="text-align: right;">0.3530675</td>
+<td style="text-align: right;">0.2840577</td>
+<td style="text-align: right;">0.4369938</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="model-predictions" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="model-predictions">Model predictions</h5>
+<p>First we add to our data the probability that the passenger survived as calculated by the model.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">211.3375</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9216158</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.6956141</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9638736</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.4751405</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9275404</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.3178611</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Then we obtain the prediction by creating a new variable called prediction and setting the value to 1 if the calculated probability of survival is greater than 50% and 0 otherwise.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">survived</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">age</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fare</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pclass</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">probability</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">prediction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">211.3375</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9216158</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.6956141</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9638736</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.4751405</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">151.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9275404</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26.5500</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.3178611</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Then we can print a table comparing the model’s prediction to the real data.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>        predicted
+survived   0   1
+       0 680 128
+       1 161 339</code></pre>
+</div>
+</div>
+<p>Finally, we can calculate how well our model fits the data (how good was it at predicting the independent variable) by testing, for each passenger in the dataset, whether the prediction matched the actual outcome for that passenger. Because that test gives TRUE (1) or FALSE (0) for every row of the dataset, calculating the mean of the test results gives us the percentage of correct predictions, which in our case is about 78%.</p>
+</section>
+</section>
+</section>
+<section id="linear-regression" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="linear-regression"><span class="header-section-number">11.4.2</span> Linear regression</h3>
+<p>Linear regression uses a straight line to model the relationship between categorical or numerical predictors (independent variables) and a numerical predicted value (dependent variable). for a single predictor variable, the formula for the prediction is:</p>
+<p><span class="math display">\[ y = intercept + slope × x \]</span></p>
+<p>In statistical terms, the same formula is written like this:</p>
+<p><span class="math display">\[ y = β_0 + βx \]</span></p>
+<p>And if we have multiple independent variables, the formula becomes:</p>
+<p><span class="math display">\[ y = β_0 + β_1x_1 + β_2x_2 .... β_nx_n \]</span></p>
+<p>To determine how well the model fits the data (how well does <code>x</code> predict <code>y</code>. the linear model uses the square of the residuals (<strong>r<sup>2</sup></strong>). The residuals are the difference between the predicted values and the real data, measured by the vertical distance between the line and the data points. Here’s a figure from <span class="citation" data-cites="rhys2020">Rhys (<a href="#ref-rhys2020" role="doc-biblioref">2020</a>)</span> to help you visualize this.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/linear_regression_1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="text-align:center" width="343"></p>
+</figure>
+</div>
+<p>We can see in this figure that the intercept is where the line crosses the y-axis. The slope is calculated by dividing the difference in the predicted value of y by the difference in the value of x.</p>
+<p>When working with categorical predictors, the intercept is the mean value of the base category, and the slope is the difference between the means of each category. Here’s an example taken again from <span class="citation" data-cites="rhys2020">Rhys (<a href="#ref-rhys2020" role="doc-biblioref">2020</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/linear_regression_2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="text-align:center" width="343"></p>
+</figure>
+</div>
+<section id="building-a-linear-regression-model" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="building-a-linear-regression-model">Building a linear regression model</h4>
+<p>Let’s use on-time data for all flights that departed NYC (i.e.&nbsp;JFK, LGA or EWR) in 2013 to try to build a model that will predicted delayed arrival. For this we will use the flights dataset included in the nycflights13 package. We will consider the following variables in our model:</p>
+<ul>
+<li><p>origin: airport of departure (JFK, LGA, EWR)</p></li>
+<li><p>carrier (we will only compare United Airlines - UA, and American Airlines - AA)</p></li>
+<li><p>distance: flight distance in miles.</p></li>
+<li><p>dep_delay: delay of departure in minutes</p></li>
+<li><p>arr_delay: delay of arrival in minutes (this is our independent variable)</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">origin</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">carrier</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">distance</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">dep_delay</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">arr_delay</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EWR</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: right;">1400</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LGA</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: right;">1416</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">JFK</td>
+<td style="text-align: left;">AA</td>
+<td style="text-align: right;">1089</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EWR</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: right;">719</td>
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LGA</td>
+<td style="text-align: left;">AA</td>
+<td style="text-align: right;">733</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JFK</td>
+<td style="text-align: left;">UA</td>
+<td style="text-align: right;">2475</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">7</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="visualizing-the-relationship-between-the-variables" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="visualizing-the-relationship-between-the-variables">Visualizing the relationship between the variables</h4>
+<p>We can explore the relationship between our independent variables and our independent variable. How we will approach this depends on the type of independent variables we have.</p>
+<section id="continuous-independent-variables" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="continuous-independent-variables">Continuous independent variables</h5>
+<p>For continuous independent variables, we do scatter plots with a fitted regression line. We can see in the plot below that there appears to be a linear relationship between the delay at departure and the delay at arrival (which is of course not so surprising). We can display the slope and the <strong>coefficient of determination</strong> <strong>(R<sup>2</sup>)</strong> of the regression line.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The coefficient of determination (R<sup>2</sup>)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The coefficient of determination should not be mistaken for the square of residuals, even thought they have the same notation (R<sup><sub>2</sub></sup>). The coefficient of determination tells us how well the regression line fits the data. It’s value ranges from 0 to 1. An R<sup>2</sup> of 0 means that the linear regression model doesn’t predict your dependent variable any better than just using the average, and a value of 1 indicates that the model perfectly predicts the exact value of the dependent variable.</p>
+<p>Another way to interpret the coefficient of determination is to consider it as a measure of the variation in the dependent variable is explained (or determined) by the model. For instance, a R<sup>2</sup> of 0.80 indicates that 80% of the variation in the dependent variable is explained by the model.</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see that the the linear regression model using considering only the departure delay explains 79% of the variation in the arrival delay. That makes dep_delay a good predictor in our model. On the other hand, the flight distance explains less then 1% of the arrival delays, as we can see in the next graph. This makes distance a very weak predictor of arrival delays.</p>
+<section id="distance" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="distance">Distance</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="categorical-independent-variables" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="categorical-independent-variables">Categorical independent variables</h5>
+<p>To test the linear relationship between a categorical independent variable and the dependent variable, we can use a similar approach: a scatterplot with a linear regression line. However, to do this we need to <strong>transform the categorical variable into a numeric variable</strong> (in the graph, you will see the airports represented by a number). Also, When dealing with factors variables with more than two categories (factors with more than 2 levels), we need to choose a base level to which we will compare each of the other levels. In other words, all our graphs should display only two categories.</p>
+<section id="carrier" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="carrier">Carrier</h6>
+<p>The plot below shows that there is hardly any relationship between the carrier and the arrival delay, with the variable explaining less than 1% of the variation in arrival delays.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="origin" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="origin">Origin</h6>
+<p>Since origin has three levels (EWR, LGA and JFK), we want to plot choose a base level and compare each other level to this one. So let’s choose level 1 (EWR) as our base and compare it with level 2 (LGA).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And then we compare airport 1 (EWR) with aiport 3 (JFK).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ch11_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Again, we can see that the airport from which the flight takes off explains less than 1% of the arrival delays and is therefore a poor predictor.</p>
+</section>
+</section>
+</section>
+<section id="building-the-multiple-linear-regression-model" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="building-the-multiple-linear-regression-model">Building the multiple linear regression model</h4>
+<p>The process to build the model is the same as the one we used for the logistic regression in the previous chapter. In fact, the process is simpler here because we do not need to convert the coefficient into odds ratios to make them easier to interpret. We can build the model that predicts delay at arrival based on the distance of the flight, the carrier and the origin (we’ll leave the delay of departure out of the model for now).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Std. Error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">t value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.6299672</td>
+<td style="text-align: right;">0.3577348</td>
+<td style="text-align: right;">12.942455</td>
+<td style="text-align: right;">0.0000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">distance</td>
+<td style="text-align: right;">-0.0007208</td>
+<td style="text-align: right;">0.0002005</td>
+<td style="text-align: right;">-3.595645</td>
+<td style="text-align: right;">0.0003238</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carrierAA</td>
+<td style="text-align: right;">-3.6699113</td>
+<td style="text-align: right;">0.3907133</td>
+<td style="text-align: right;">-9.392849</td>
+<td style="text-align: right;">0.0000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">originLGA</td>
+<td style="text-align: right;">-0.7238011</td>
+<td style="text-align: right;">0.4052653</td>
+<td style="text-align: right;">-1.785993</td>
+<td style="text-align: right;">0.0741037</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">originJFK</td>
+<td style="text-align: right;">1.6725192</td>
+<td style="text-align: right;">0.4638028</td>
+<td style="text-align: right;">3.606100</td>
+<td style="text-align: right;">0.0003110</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">r.squared</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">adj.r.squared</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.0017078</td>
+<td style="text-align: right;">0.0016633</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>The estimate coefficient represents the slope of the linear trend line for each predictor, so we can plug these values into our linear equation.</p>
+<p><span class="math display">\[ ArrDelay = 4.63 - 0.00distance - 3.67AA - 0.72LGA + 1.67JFK \]</span></p>
+<p>We can see that most coefficients are statistically significant, which appears to indicate that they are good predictors, but let’s hold on for a minute before drawing too hasty conclusions. Look at the Adjusted R-squared (r<sup>2</sup>). It has a value of 0.001663, which is extremely small and indicate that the model explains less than 1% of the variance in delays. In other words, our model does <strong>not</strong> at all allow us to make predictions about delays. How can almost all predictors in a model be statistically significant and still be very bad predictors?</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beware of too large sample
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Statistically significant predictors in a model with low predictive value mostly occur when our data set or sample is too large. What’s a good sample size? a good rule of thumb is 10% of the total observations, with at least ten observations per variable in the model but no more than 1000 observations in total. Let’s do this again with a sample of 500 observations. We can use the create a sample of a specific size that will be used in the <code>lm()</code> function.</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Std. Error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">t value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">1.7864104</td>
+<td style="text-align: right;">4.825768</td>
+<td style="text-align: right;">0.3701816</td>
+<td style="text-align: right;">0.7114056</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">distance</td>
+<td style="text-align: right;">0.0010263</td>
+<td style="text-align: right;">0.002696</td>
+<td style="text-align: right;">0.3806790</td>
+<td style="text-align: right;">0.7036047</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carrierAA</td>
+<td style="text-align: right;">-11.7890174</td>
+<td style="text-align: right;">5.456539</td>
+<td style="text-align: right;">-2.1605301</td>
+<td style="text-align: right;">0.0312108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">originLGA</td>
+<td style="text-align: right;">8.7171575</td>
+<td style="text-align: right;">5.586179</td>
+<td style="text-align: right;">1.5604865</td>
+<td style="text-align: right;">0.1192840</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">originJFK</td>
+<td style="text-align: right;">12.4601593</td>
+<td style="text-align: right;">6.401921</td>
+<td style="text-align: right;">1.9463157</td>
+<td style="text-align: right;">0.0521823</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">r.squared</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">adj.r.squared</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.0121575</td>
+<td style="text-align: right;">0.0041749</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>We see that the model still does a terrible job at predicting arrival delays, and that none of the predictors are statistically significant (at the p &lt; 0.05 level).</p>
+<section id="adding-departure-delay-to-the-model" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="adding-departure-delay-to-the-model">Adding departure delay to the model</h5>
+<p>Finally, let’s add the departure delay to the model. We’ve seen in the figure above, in which we plotted the arrival delay against the departure delay, that our data points seemed to follow our trend line, so we can expect that adding this predictor will improve our model.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Std. Error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">t value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-6.3578887</td>
+<td style="text-align: right;">2.2143259</td>
+<td style="text-align: right;">-2.871253</td>
+<td style="text-align: right;">0.0042641</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">distance</td>
+<td style="text-align: right;">-0.0016663</td>
+<td style="text-align: right;">0.0012631</td>
+<td style="text-align: right;">-1.319249</td>
+<td style="text-align: right;">0.1876969</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carrierAA</td>
+<td style="text-align: right;">-4.6325615</td>
+<td style="text-align: right;">2.3377374</td>
+<td style="text-align: right;">-1.981643</td>
+<td style="text-align: right;">0.0480731</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">originLGA</td>
+<td style="text-align: right;">4.1617315</td>
+<td style="text-align: right;">2.4576793</td>
+<td style="text-align: right;">1.693358</td>
+<td style="text-align: right;">0.0910177</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">originJFK</td>
+<td style="text-align: right;">6.6899799</td>
+<td style="text-align: right;">2.8138690</td>
+<td style="text-align: right;">2.377502</td>
+<td style="text-align: right;">0.0178100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dep_delay</td>
+<td style="text-align: right;">1.0215813</td>
+<td style="text-align: right;">0.0159641</td>
+<td style="text-align: right;">63.992388</td>
+<td style="text-align: right;">0.0000000</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">r.squared</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">adj.r.squared</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.8927765</td>
+<td style="text-align: right;">0.8916913</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>We can see that when we consider the delay in the departure, we can more accurately predict the delay at arrival, with around 80% of the variance explained by our model!</p>
+</section>
+</section>
+</section>
+</section>
+<section id="references" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="references"><span class="header-section-number">11.5</span> References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-rhys2020" class="csl-entry" role="listitem">
+Rhys, Hefin. 2020. <em>Machine Learning with r, the Tidyverse, and Mlr</em>. Shelter Island, NY: Manning publications.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script>

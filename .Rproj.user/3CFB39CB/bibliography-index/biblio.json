@@ -4843,6 +4843,27 @@
             "title": "Qualitative data analysis: A methods sourcebook",
             "title-short": "Qualitative data analysis",
             "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rhys",
+                    "given": "Hefin"
+                }
+            ],
+            "id": "rhys2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "OCLC: on1121083327",
+            "publisher": "Manning publications",
+            "publisher-place": "Shelter Island, NY",
+            "title": "Machine learning with r, the tidyverse, and mlr",
+            "type": "book"
         }
     ],
     "project_biblios": [

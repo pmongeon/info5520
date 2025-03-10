@@ -2,6 +2,1176 @@
 bibliography: references.bib
 ---
 
-# Quantitative data analysis
+## Quantitative data analysis
 
-Under construction...
+By the end of this chapter, you will be able to:
+
+-   Tidy data principles
+-   Separating and merging columns
+-   Pivoting and unpivoting columns
+-   Combining datasets
+-   Understand what categorical data is and how to identify it in a dataset.
+-   Understand the difference between nominal categorical data and ordinal categorical data.
+-   Understand the concepts of distribution, frequency (count), and relative frequency (proportion), and how to represent them using tables.
+-   Know how to transform raw textual data into categorical data.
+-   Calculate measures of central tendency
+-   Calculate measures of dispersion
+-   Use these measures to summarize numerical data.
+-   Choose an appropriate visualization method for different types of variables.
+-   Visualize multiple variables in Excel.
+-   Format visualizations effectively.
+-   Logistic regression
+-   Linear regression
+
+::: callout-important
+### Disclaimer
+
+This chapter has a lot more content than previous ones. Indeed, it draws from 5 weeks of an undergraduate "working with data" course, as well as 2 weeks from the "Introduction to Data Science" course. While I may reorganize the content and divide it again in a few chapters in the future, the goal was to cover, in one chapter for now, the entire quantitative data analysis process, so that this may constitute a useful resource for you now and in the future. I have divided in in 4 core parts:
+
+1.  Processing the data
+2.  Analyzing/summarizing the data
+3.  Visualizing the data
+4.  Logistic and linear regression (to predict the values of a dichotomous or numerical variable based on multiple other variables).
+:::
+
+## Processing data
+
+Data is stored in all kinds of places, can be accessed in many different ways, and comes in all shapes and forms. Therefore, much of the researcher's work can sometimes be related to the processing and cleaning of the data to get it ready for analysis. Here are a few principles to structure data in a tabular format (e.g., an Excel spreadsheet) in a way that maximizes the data usability:
+
+1.  Each column represents a single variable.
+2.  Each cell contains a single value.
+3.  Each row contains a single observation.
+
+In some circles, data that follows these principles is called **tidy** data.
+
+### Splitting columns
+
+Let's take a look at a dataset that is **not** tidy. You can download the dataset [here](https://pmongeon.github.io/mgmt2605/files/ch6/ch6_practice_data.xlsx) to practice following the steps below. There is also a video walkthrough with additional explanations at the end of the section.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(readxl)
+data<-tibble(student = c("Smith, Emily","Johnson, Michael","Brown, Olivia"),      
+             grade = c("MGMT1001, 92 (A+); MGMT2605, 86 (A); MGMT5450, 84 (A-)",                   "MGMT1001, 77 (B+); MGMT2605, 100 (A+); MGMT5450, 74 (B)",                   "MGMT1001, 86 (A); MGMT2605, 70 (B-); MGMT5450, 99 (A+)"))  
+
+data %>%     
+  kbl()
+```
+
+We can see that for each course, students are listed in a single cell, and their grades as well. To make this data tidy, a first thing we might might to do is separate each grade observation into its own row. We have nine grades in total in the set, so we would expect nine rows in total.
+
+First you will want to open the **Power Query Editor** by selecting all of the data and clicking on **Data** then **From Table/Range.**
+
+![](images/clipboard-1887422567.png)
+
+Then I check the my table has headers, because it does.
+
+![](images/clipboard-2914178236.png)
+
+This will open the Power Query Editor
+
+![](images/clipboard-1523509015.png)
+
+Then follow these steps to transform your data:
+
+1.  Select the **grade** column.
+2.  In the **Transform** menu, click on **Split columns**.
+3.  Select the delimiter. In this case, choose **custom** and then comma followed by a space: `;`
+4.  Click on **Advanced options**.
+5.  Select Split into **Rows.**
+
+When you are done with your transformations in the Power Query Editor. You close it by clicking the **Close & Load** button.
+
+![](images/clipboard-1253066994.png)
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data <- data %>%    
+  separate_rows(grade, sep = "; ")
+
+data %>% 
+  kbl()
+```
+
+We made some progress, but now we need to separate the course code from the grades following these steps in the **Power Query Editor**:
+
+1.  Select the grade column.
+2.  In the **Transform** menu, click on **Split columns**.
+3.  Select the delimiter. In this case, choose **custom** and then comma followed by a space: `,`
+4.  Click on **Advanced options**.
+5.  Select Split into **Columns.**
+
+The result should look like this:
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data %>%    
+  separate(grade, c("course_code","grade"), sep = ", ") %>%    
+  mutate(grade = str_squish(grade)) %>%    
+  kbl()
+```
+
+This is starting to look great, although we still have the issue of the numeric and letter grades being lumped together in a cell. To make this data truly tidy, we want to separate the numeric and the letter grades, following these steps in the **Power Query Editor**:
+
+1.  Select the grade column.
+2.  In the **Transform** menu, click on **Split columns**.
+3.  Select the delimiter. In this case, choose **space**.
+4.  Click on **Advanced options**.
+5.  Select Split into **Columns.**
+6.  Give an appropriate name to your new columns by double clicking on the current names.
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data %>%    
+  separate(grade, c("course_code","grade"), sep = ", ") %>%   
+  mutate(grade = str_squish(grade)) %>%   
+  separate(grade, c("grade_numeric","grade_letter"), sep=" ") %>%   
+  kbl()
+```
+
+In this case, our letter grades are written in between parentheses, so we can remove the parentheses using the following steps:
+
+1.  Select the column containing the letter grades
+2.  Right click, select **Replace values...**
+3.  Replace ( by nothing.
+4.  Repeat step 1 and 2.
+5.  Replace ) by nothing.
+
+Your result should look like this:
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data %>%    
+  separate(grade, c("course_code","grade"), sep = ", ") %>%    
+  mutate(grade = str_squish(grade)) %>%    
+  separate(grade, c("grade_numeric","grade_letter"), sep=" ") %>%   
+  mutate(grade_letter = str_remove_all(grade_letter,"[()]")) %>%    
+  kbl()
+```
+
+Finally, click on **close and load** in the **home** menu of the Power Query Editor. That's it, now we have a tidy data set of grades!
+
+#### Video walkthrough
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9d85c2d7-0d46-4f23-8b45-b20001509cd2&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Separate data into rows and columns">
+
+</iframe>
+
+### Pivot and unpivot columns
+
+For some reason, you may encounter datasets in matrix form where a group of columns are in fact different observations of a same variable (in this case, three course codes). You can download the example dataset [here](https://pmongeon.github.io/mgmt2605/files/ch6/ch6_dataset2.xlsx), which we use in the steps below. Again you will also find a video demo with more explanations at the end of the section.
+
+The dataset looks like this:
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data %>% 
+  separate(grade, c("course_code","grade"), sep = ", ") %>%    
+  mutate(grade = str_squish(grade)) %>%    
+  separate(grade, c("grade_numeric","grade_letter"), sep=" ") %>%   
+  mutate(grade_letter = str_remove_all(grade_letter,"[()]")) %>%   
+  select(student, course_code, grade = grade_numeric) %>%    
+  pivot_wider(names_from = "course_code", values_from = "grade") %>%     
+  kbl()
+```
+
+#### Unpivot columns {.unnumbered}
+
+The unpivot functions can be used to create a new variable (a new column) for which the values will be the three course codes. This can be done in just a few clicks:
+
+1.  Select the three columns that have course codes as headers.
+2.  In the **Transform** menu, click on **Unpivot columns.**
+3.  Double click on the new **attributes** column to rename it to **course_code**.
+4.  Double click on the new values column to rename it to **grade**,
+
+The resulting table should look like this:
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data %>%    
+  separate(grade, c("course_code","grade"), sep = ", ") %>%    
+  mutate(grade = str_squish(grade)) %>%    
+  separate(grade, c("grade_numeric","grade_letter"), sep=" ") %>%   
+  mutate(grade_letter = str_remove_all(grade_letter,"[()]")) %>%  
+  select(student, course_code, grade = grade_numeric) %>%   
+  kbl()
+```
+
+That's it, we've made the dataset tidy again!
+
+#### pivot a column {.unnumbered}
+
+If, for some reason, one wished to do the opposite operation and create multiple columns containing each possible value of a variable. This can be done with (you guessed it) the **`pivot`** function in the Power Query Editor.
+
+1.  Select the column to pivot.
+2.  In the **Transform** menu, click on **pivot column**.
+3.  Select which column contains the values for the new columns (the **grade** column in this case)
+4.  Under **Avanced options**, select **Don't aggregate**.
+
+The resulting table should look like the original dataset:
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+data %>%    
+  separate(grade, c("course_code","grade"), sep = ", ") %>%    
+  mutate(grade = str_squish(grade)) %>%    
+  separate(grade, c("grade_numeric","grade_letter"), sep=" ") %>%   
+  mutate(grade_letter = str_remove_all(grade_letter,"[()]")) %>%   
+  select(student, course_code, grade = grade_numeric) %>%    
+  pivot_wider(names_from = "course_code", values_from = "grade") %>%    
+  kbl()
+```
+
+#### Video demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9743bf8f-070b-4072-b037-b2000188d7ff&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Pivot and unpivot columns">
+
+</iframe>
+
+### Combining datasets
+
+::: callout-caution
+The steps decribed below for combining datasets are not done in the Power Query Editor like most of the transformation above. You need to perform these operations directly in your Excel spreadsheet.
+:::
+
+Sometimes the data will come in separate files so you will have to combine the pieces into a single and tidy dataset. If your two datasets contains parts of the same observations in the same order, you may be able to simply copy and paste columns from one dataset into the other. Similarly, if the two datasets have the same columns, you may be able to copy and paste rows from one dataset into the other. However, life is not always that easy, and sometimes you need to look up information about a particular entry in your dataset in another dataset with a different structure. Take the following two tables, for example.
+
+![](images/clipboard-3443851484.png)
+
+We have on the one hand a table of grades that students received in three different courses, and on the other end a table of course details. If we want to determine, for example, the average grade in Fall or Winter semester course, we need to bring these columns into the grades dataset. In the section below, you will learn how to use the VLOOKUP function to perform this task.
+
+#### The VLOOKUP() function {.unnumbered}
+
+The `VLOOPKUP()` function can be used to combine the columns of two datasets that do not necessarily share the same structure. It looks like this:
+
+`=VLOOKUP(lookup_value, table_array, column, col_index_num, [range_lookup])`
+
+-   The **lookup value** can be a single value, like "MGMT1001" or the coordinates of a cell that contains the value like **B2**.
+
+-   The **table array** is the group of rows and columns (the range) in which you want to look for the lookup value. In the example above, the range would be A2:E5, A2 being the upper left corner of the range (we don't need to include the column names), and E5 the bottom right corner of the range. However, you should always make sure that every element of your range coordinates is preceded with a dollar sign, like this: **\$G\$2:\$J\$5** This fixes the range to ensure that it is not automatically modified when you copy and paste your formula to look up different values.
+
+-   The **column index number** is the number of the column in the table array that contain the values you want to bring into the other dataset. For example, in the range above, the value I'm interested in is the third column of the range, so **3** is the value I need to include in this part of the formula.
+
+-   The **range lookup** can take two values: TRUE or FALSE. For the purpose of this course, you should always use **FALSE**. TRUE is used when you want to determine whether the lookup value falls within a range of values in the table array (e.g., look up if 92 is between 90 and 100 and is a A+).
+
+Putting it all together, what we get **`=VLOOKUP(B2,$G$2:$J$5,3,FALSE)`**.
+
+We need to select the cell where we want the semester information to be added, and then insert or formula in the cell or in the box above.
+
+![](images/clipboard-1358082907.png)
+
+The result should be:
+
+![](images/clipboard-3798798012.png)
+
+And then we double click the bottom right corner of the cell to copy the formula over the entire column, or just copy and paste it, which gives us the following result:
+
+![](images/clipboard-1752530064.png)
+
+The following video demonstrates how to use `VLOOKUP()` function using the same example we just when through.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=5228a3f2-3ed4-41bd-990a-b2000181356c&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="VLOOKUP">
+
+</iframe>
+
+::: callout-caution
+#### Beware of complex relationships in the data
+
+The examples we went through went relatively smoothly because our grade data did not contain complex relationships. Data will often complex relationships (e.g. a course taught by two instructors) or, which require special attention if we don't want to produce valid results when we analyze the data. The following video demonstrates how this can be an issue.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d0bcf05a-0414-4b8e-99e5-b20100db9887&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Duplication issues">
+
+</iframe>
+
+The important thing to remember here is that **you will often have to construct multiple tables from the same data in order to answer different questions**.
+:::
+
+#### Exercise {.unnumbered}
+
+In **Brightspace**, under **content** and then **data**, you will find a dataset of publications authored by Dalhousie researchers, from 2023. The following four challenges will allow you to practice the skills that you have now learned:
+
+1.  Prepare a table with the top 15 most frequent topics covered in the dataset. Topics are separated by a semi-colon (do not further split keywords in their subparts using the comma as a delimiter).
+2.  Prepare a table with the top 10 authors in the dataset with the highest number of publications and paste it below. The names should be in the *last name, first name* format and must not include the author ID (the number in parentheses included after each name). **Hint:** When removing the author ID, remember that you can split columns only at the first or last instance of the chosen delimiter. There’s also an easy way to remove the author IDs using the Find and replace function outside the Power Query Editor.
+3.  Prepare a table with the top 10 countries, other than Canada, with the largest publications in the dataset. **Beware** of the fact that a publication can be co-authored by multiple authors with affiliations in the same country. You only want to count the country once for each paper. For example, if a paper was co-authored by researchers at Dal (Canada), Harvard (US) and Berkeley (US), we want this paper to count as one paper from the US (not two). This means that you will need to **keep only relevant columns** in your table and **remove duplicates** before you create your pivot table.
+4.  Prepare a table with the number of publications by discipline, ranked from the discipline with the most to the discipline with the least.  You will notice that the **discipline** column of the Dal 2023 publications table is empty. You will need to **look at** the **journal** in the sheet of the Excel file named “Journal Classification” to obtain the discipline of each paper.
+
+## Analyzing data
+
+### Analyzing categorical data
+
+Categorical variables are groups or categories that can be **nominal** or **ordinal**.
+
+#### Nominal data {.unnumbered}
+
+Nominal variables represent categories or groups between which there is no logical or hierarchical relationship.
+
+#### Ordinal data {.unnumbered}
+
+Ordinal variables represent categories or groups that have a logical order. They are often used to transform numerical variables.
+
+::: callout-warning
+#### Categories represented with numbers
+
+It is important to look at your data to understand what the values represent. Sometimes you may have groups that are represented with numbers. When deciding what type of statistical analysis is adequate for a given variable, you most likely will want to consider treating those variables as categorical and not numerical..
+:::
+
+#### Example: Titanic passengers dataset {.unnumbered}
+
+The following examples and videos are using a simplified version (available [here](https://pmongeon.github.io/info5520/files/titanic.xlsx)) of the titanic dataset (available [here](https://www.kaggle.com/datasets/vinicius150987/titanic3)). This is what our practice dataset looks like:
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(kableExtra)
+library(openxlsx)
+titanic <-openxlsx::read.xlsx("files/titanic.xlsx") 
+titanic %>%
+  slice(c(9:12,478:481,668:670)) %>%  
+  kbl(caption ="Table 1. Titanic passengers (10 random rows shown))")
+```
+
+#### Identifying categorical data {.unnumbered}
+
+In this chapter, we are focusing on categorical data, so the first step is determining which columns in our dataset contain categorical data and what type of categorical data (nominal or ordinal) they are. In the following video, I walk you through this process:
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b813f440-2c46-4136-9e71-b207011fa99f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Identifying categorical variables in a dataset">
+
+</iframe>
+
+#### Summarizing categorical data {.unnumbered}
+
+There is not a lot that you can do with a single categorical variable other than reporting the frequency (count) and relative frequency (percentage) of observations for each category. To do this, we are going to use a tool that we have already learned: **pivot tables**.
+
+##### Frequency {.unnumbered}
+
+A typical tool to analyze categorical data is to count the number of observation that fall into each of the groups.
+
+```{r echo = FALSE}
+titanic %>% 
+  group_by(embarked) %>% 
+  summarize(freq = n()) %>% # n() counts the number of observations for each group.
+  kbl(caption = "Frequency of passengers by port of embarkation")
+```
+
+<br>
+
+##### Relative frequency {.unnumbered}
+
+The relative frequency is simply the frequency represented as a percentage rather than count. It is obtained by first computing the frequency and then calculating the relative frequency by dividing each count by the total.
+
+```{r echo = FALSE}
+titanic %>% 
+  group_by(embarked) %>% 
+  summarize(freq = n()) %>% # n() counts the number of observations for each group.
+  mutate(rel_freq = freq/sum(freq)) %>% 
+  kbl(caption = "relative frequency of passengers by port of embarkation")
+```
+
+<br>
+
+##### Rounding the values {.unnumbered}
+
+When we calculate the relative frequency, we obtain numbers with a lot of decimals. We can remove or add decimals by selecting our data and clicking on the![](images/clipboard-3943976952.png) or ![](images/clipboard-470576680.png) buttons, respectively.
+
+##### Converting the relative frequency to percentages {.unnumbered}
+
+Another thing we might want to do is show the relative frequency as a percentage. This can be done by clicking the `%` button in excel.
+
+![](images/clipboard-3286961558.png)
+
+```{r echo = FALSE}
+titanic %>% 
+  group_by(embarked) %>% 
+  summarize(freq = n()) %>% # n() counts the number of observations for each group.
+  mutate('rel_freq (%)' = round(freq/sum(freq)*100,1)) %>% 
+  kbl(caption = "relative frequency of passengers by port of embarkation")
+
+```
+
+<br>
+
+##### Demo {.unnumbered}
+
+In this video, I show you how to summarize categorical data using the frequency and the relative frequency.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e7f3f874-b7dc-4d77-9770-b207013178a9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Frequency distributions">
+
+</iframe>
+
+#### Converting numerical data into categorical data {.unnumbered}
+
+Just because a column in a dataset does not contain categorical data, doesn't mean it can't be transformed into categorical data. For examples, age groups (e.g. 0-17, 18-35, etc.) are groups (categorical) based on age (numerical). Here's a video showing we can make that transformation in our Titanic dataset.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ac572cba-5d16-4939-b774-b2070138b96f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Converting numerical data to categorical data">
+
+</iframe>
+
+### Analyzing numerical data
+
+While summarizing categorical data is done with frequency and relative frequency tables, numerical data can be summarized using **descriptive statistics** divided into three groups:
+
+1.  Measures of central tendency.
+2.  Measures of dispersion.
+3.  Measures of skewness.
+
+In this chapter, we will focus on only the first two: measures of **central tendency** and measures of **dispersion.**
+
+#### Measures of central tendency {.unnumbered}
+
+Measures of central tendency help you summarize data by looking at the central point within it. While the mode (the value(s) with the highest frequency) is also considered a measure of central tendency, in this chapter we will only consider two: the **average** (or mean), and the **median**.
+
++-----------------+----------------------------------------------------------------------------------+-----------------------------------------------+-------------------------+
+| Statistic       | description                                                                      | formula                                       | Excel function          |
++=================+==================================================================================+===============================================+=========================+
+| Average or Mean | The sum of values divided by the number of observations                          | $$ \overline{X}  = \frac{\sum{X}}{n} $$       | `=AVERAGE(x:x)`         |
++-----------------+----------------------------------------------------------------------------------+-----------------------------------------------+-------------------------+
+| Median          | the middle value of a set of number once sorted in ascending or descending order | If n is odd:                                  | `=MEDIAN(x:x)`          |
+|                 |                                                                                  |                                               |                         |
+|                 |                                                                                  | $$ M_x = x_\frac{n + 1}{2} $$                 | `=PERCENTILE(x:x,0.50)` |
+|                 |                                                                                  |                                               |                         |
+|                 |                                                                                  | If *n* is even:                               | `=QUARTILE(x:x,2)`      |
+|                 |                                                                                  |                                               |                         |
+|                 |                                                                                  | $$ M_x = \frac{x_{(n/2)} + x_{(n/2)+1}}{2} $$ |                         |
++-----------------+----------------------------------------------------------------------------------+-----------------------------------------------+-------------------------+
+
+Table 8.1. Measures of central tendency
+
+##### Demo {.unnumbered}
+
+In the following video, I explain the how to manually calculate the average and median in a set of numerical data.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7c4be068-39f3-4c5f-a69b-b20b0009becf&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Measures of central tendency">
+
+</iframe>
+
+#### Measures of dispersion {.unnumbered}
+
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+---------------------------------+
+| Statistic                 | Definition                                                                                                                        | Formula                                                | Excel formula                   |
++===========================+===================================================================================================================================+========================================================+=================================+
+| Variance (Var)            | Expected squared deviation from the mean. Measures how far numbers spread around the average                                      | $$ Var = \frac{\sum{(x_i-\overline{x})^2}}{N} $$       | `=VAR(x:x)`                     |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+---------------------------------+
+| Standard deviation (SD)   | Square root of the Variance.                                                                                                      | $$ SD = \sqrt{\frac{\sum{(x_i-\overline{x})^2}}{N}} $$ | `=STDEV(x)`                     |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+---------------------------------+
+| Range                     | Difference between the minimum and maximum values in the data.                                                                    | N/A                                                    | **Minimum value:** `=MIN(x:x)`  |
+|                           |                                                                                                                                   |                                                        |                                 |
+|                           |                                                                                                                                   |                                                        | **Maximum value:** `=MAX(x:x)`  |
+|                           |                                                                                                                                   |                                                        |                                 |
+|                           |                                                                                                                                   |                                                        | **Range:** `=MAX(x:x)-MIN(x:x)` |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+---------------------------------+
+| Interquartile range (IQR) | The difference between the first quartile (Q1) and the third quartile (Q3). It measures the spread of the middle 50% of the data. | N/A                                                    | **Q1:** `=QUARTILE(x:x,1)`      |
+|                           |                                                                                                                                   |                                                        |                                 |
+|                           |                                                                                                                                   |                                                        | **Q3:** `=QUARTILE(x:x,3)`      |
+|                           |                                                                                                                                   |                                                        |                                 |
+|                           |                                                                                                                                   |                                                        | **IQR:** `=Q3-Q1`               |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+---------------------------------+
+
+Table 8.2. Measures of dispersion
+
+##### Demo {.unnumbered}
+
+In the following video, I explain the how to manually calculate the different measures of dispersion in a set of numerical data.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=40ec48bc-473b-486a-8ba1-b20b000bd171&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Measures of dispersion">
+
+</iframe>
+
+#### Creating a descriptive statistics summary {.unnumbered}
+
+Using the measures of central tendency and dispersion listed above, we can construct a descriptive statistics summary for any number of numerical variables in a dataset. Note that these summaries don't typically display the interquartile range (IQR) and the range, but instead provide the actual values required to calculate them (i.e., Min, Q1, Q3, Max).
+
+```{r warning=FALSE, message=FALSE, echo = FALSE}
+library(tidyverse)
+library(kableExtra)
+library(openxlsx)
+openxlsx::read.xlsx("files/titanic.xlsx") %>%
+  pivot_longer(c("age","fare"), ## this is where we specify which variables to include
+               names_to = "variable", 
+               values_to = "value") %>% 
+  group_by(variable) %>%
+  select(variable, value) %>% 
+  drop_na() %>% 
+  summarize(N = n(),
+            Mean = round(mean(value),3),
+            SD = round(sd(value),3),
+            VAR = round(var(value),3),
+            Q1 = round(quantile(value,0.25),3),
+            Median = round(median(value),3),
+            Q3 = round(quantile(value,0.75),3),
+            Min = round(min(value),3),
+            Max = round(max(value),3)
+            ) %>% 
+  kbl(caption="Table 8.3. Descriptive statistics summary of age and fare in the Titanic dataset.")
+```
+
+##### Demo {.unnumbered}
+
+In the following video, I show you how to create descriptive statistics summary in Excel.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=67692594-a1b5-49fc-a47b-b207014a1f9f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Summarize numerical data">
+
+</iframe>
+
+### Measuring the relationship between two variables
+
+#### Two categorical variables {.unnumbered}
+
+When we want to combine multiple categorical variable to analyze them jointly, we can use a **contingency table** (aka **cross-tabulation** or **crosstab**), which displays the frequency (or relative frequency) distribution two variables. Here's an example from the Titanic dataset, where we combined the Embark and the Sex columns
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(openxlsx)
+titanic <- openxlsx::read.xlsx("files/titanic.xlsx")
+
+addmargins(table(embarked = titanic$embarked, sex = titanic$sex)) %>% 
+  kbl(caption="Table 9.1. Frequency of male and female Titanic passengers by port of embarkation")
+```
+
+In this table:
+
+-   The column represent the categories of one variable (sex: male and female).
+-   The rows represent the categories of another variable (Embark: Cherbourg, Queenstown, Southampton).
+-   The cells show the frequency counts of the combinations of these categories.
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=53bdb8c7-9366-4a3c-906c-b20701572c69&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Combining two categorical variables">
+
+</iframe>
+
+#### A categorical and a numerical variable {.unnumbered}
+
+As we saw in Chapter 8, numerical data can be summarized using a descriptive statistics summary that includes measures of central tendency and measures of dispersion. To summarize the relationship between a categorical variable and a numerical, we simply have to calculate these measures for each group of the categorical variable. For example, the table belows shows the descriptive statistics summary for the *fare* variable for each *passenger class*.
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(openxlsx)
+openxlsx::read.xlsx("files/titanic.xlsx") %>%
+  group_by(pclass) %>%
+  select(pclass, value=fare) %>% 
+  drop_na() %>% 
+  summarize(N = n(),
+            Mean = round(mean(value),3),
+            SD = round(sd(value),3),
+            VAR = round(var(value),3),
+            Q1 = round(quantile(value,0.25),3),
+            Median = round(median(value),3),
+            Q3 = round(quantile(value,0.75),3),
+            Min = round(min(value),3),
+            Max = round(max(value),3)
+            ) %>% 
+  kbl(caption="Table 9.2. Descriptive statistics summary of fare for each passenger class")
+
+```
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6dc088ec-1ed1-47aa-a74b-b207016c45e8&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Summarizing categorical and numerical data jointly">
+
+</iframe>
+
+#### Two numerical variables {.unnumbered}
+
+The relationship between two numerical variable can be captured by a single number called the **correlation coefficient**. It is calculated using the `CORREL(x:x,y:y)` function in Excel, where `x:x` is a column of numerical data, and `y:y` is another column of numerical data.
+
+Suppose you have the following data:
+
+```{r echo=FALSE}
+tibble(A = c(1,2,3,4,5), B=c(2,4,6,8,10)) %>% 
+  kbl()
+
+```
+
+To find the correlation coefficient between columns A and B, you would type **`=CORREL(A1:A5, B1:B5)`** in a new cell. The result will be **1**, which indicates a perfect positive correlation. **0** would mean that there is no correlation at all (no relationship between the two variables), and **-1** would indicate a perfect negative correlation. The closer the value is to 1 or -1, the stronger the linear relationship between the two variables.
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e390bbfc-fd93-4cf6-89b1-b2070176dcea&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Correlation between two numerical variables.">
+
+</iframe>
+
+## Visualizing data
+
+If you are interested in a deep dive in data visualization that goes well beyond the scope of this course, I recommend the *Fundamentals of Data Visualization* book by Claus O. Wilke available [here](https://clauswilke.com/dataviz/index.html). [This specific chapter](https://clauswilke.com/dataviz/figure-titles-captions.html) of the Wilke book will give you some information on how to format tables and figures. Here is a video showing how to paste your tables and figures in Word from your Excel, as well as how to make format them appropriately.
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f0d9e5f5-84a9-46a6-9f7e-b22e002a7ea0&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Formatting tables and figures">
+
+</iframe>
+
+#### Identifying the data and the purpose of the visualization {.unnumbered}
+
+Data visualizations can be fun and colorful, but remember that their most important feature is their informativeness, and that not all data can or should be visualized. Often times, not producing a visualization is the best way to go. So, before you start thinking about *how* to visualize your data, the first thing you will want to do is think about the purpose: *What* do you want to visualize, and *why*? Asking yourself these important questions will save you a lot of time and unnecessary suffering down the road, by preventing you from embarking on a journey to fix a problem that is not a problem and that does not need fixing.
+
+#### Choosing the right visualization method {.unnumbered}
+
+While there is rarely a single best way to visualize a specific variable, there are usually not so many options that make sense. Your main constraint is the type of data that you are working with, so that is the first question you have to answer before thinking about how it can be visualized. In fact, these are the same questions that you had to ask yourself in Chapter 7 and Chapter 8, where you learned to identify and summarize categorical and numerical data. In the next few sections, we explore the types of visualizations that are recommended for each type of data.
+
+### Visualizing a categorical variable
+
+If you are working with a categorical variable, such as the port of embarkation of the Titanic passengers. The first thing you need to do is summarize the data by calculating the frequency (counts) and/or relative frequency (percentages), just like you learned in Chapter 7. Once you have summarized your data, you can think about how to visualize that summary.
+
+#### Visualizing frequencies
+
+The most common and best way to visualize frequencies is the **bar chart (or column chart in Excel)**. Like this one:
+
+![](images/clipboard-2119486445.png){width="539"}
+
+You can also do an **horizontal bar chart**, like this one:
+
+![](images/clipboard-4101209731.png){width="548"}
+
+If you are working with a **nominal variable** then you should order the categories from either highest count to lowest count, or the other way around, as in the examples above. However, if you are working with a **ordinal variable** (i.e., the categories have a logical order), then you should keep that logical order for your visualization. For example, you would not want to reorder the passenger classes when visualizing the number of passengers in each class, but keep the logical order of the classes, like this:
+
+![](images/clipboard-636353489.png){width="540"}
+
+#### Visualizing relative frequencies
+
+You can think of a percentages as a parts of a pie, the whole pie being 100%, so a popular although sometimes criticized way to visualize percentages is the **pie chart**.
+
+![](images/clipboard-2693495910.png){width="575"}
+
+You can also use **bar charts** (horizontal or vertical) to visualize relative frequencies, like this:
+
+![](images/clipboard-1158678644.png){width="554"}
+
+#### Demo: bar charts and pie charts
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=08f9a161-34dd-4500-b82d-b22500fcf483&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing single categorical variables">
+
+</iframe>
+
+### Visualizing a numerical variable
+
+#### Histogram {.unnumbered}
+
+![](images/clipboard-3088527409.png){width="468"}
+
+#### Box plot {.unnumbered}
+
+The box plot is a visual representation of the descriptive statistics summary that you learned to do in Chapter 8. Here is our summary of the *Age* variable.
+
+| Variable |    N | Mean |   SD |   Var | Min |  Q1 | Median |  Q3 | Max |
+|----------|-----:|-----:|-----:|------:|----:|----:|-------:|----:|----:|
+| Age      | 1046 | 29.9 | 14.4 | 207.8 |   0 |  21 |     28 |  39 |  80 |
+
+The box plot below uses the first quartile (Q1) and the third quartile (Q3) to create a box, with a line inside the box representing the median. The mean is represented by an X, and the whiskers show the range of the data outside the box, and the outliers (extreme values) are show as dots outside of the whiskers. There are different acceptable methods to locate the whiskers, the simplest one is to use the min and the max, other common practices include placing them at 1.5 times the interquartile range (IQR) from the nearest quartile, at one standard deviation above and below the mean, or at the 2nd and 98th percentiles. As I am writing this, I still do not know how Excel determines where to put the whiskers, but it seems close to the 99th percentile and the 1st, this is just a guess at that point as my investigations have not been fruitful.
+
+![](images/clipboard-3430799064.png){width="428"}
+
+#### Demo: histograms and box plots {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7ec95565-4a4e-4063-8e0a-b225010268bd&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing single numerical variables">
+
+</iframe>
+
+### Visualizing multiple variables
+
+Just like in the previous chapter, the choices available to you for visualizing the relationship between two or more variables are are strictly determined by the type of data your are working with. Basically, there are three possible combinations
+
+-   Two or more categorical variables
+
+-   Two or more numerical variables
+
+-   A combination of categorical and numerical variables
+
+Here we treat timelines as a case of their own, so that would make four different possibilities.
+
+The section below provides examples of visualizations and at the end of the chapter you will find a series of video demonstration how to produce these graphs in Excel.
+
+### Two categorical variables
+
+When you have two categorical variables, the process is very similar as for single categorical variables. We need to create a contigency table, as we have learned in Chapter 7, and then we have a series of choices available to us.
+
+#### Side-by-side bars {.unnumbered}
+
+The side-by-side bars have the benefit of being very clear and allow us to display the data label (this should be avoided, however, when there are two many bars and the numbers start getting to close to each other or overlapping. However, side-by-side bars can be less space efficient than stacked bars (see below) when dealing with categories with many groups.
+
+![](images/clipboard-873295196.png){width="405"}
+
+#### Stacked bars {.unnumbered}
+
+Stacking the bars can a nice option also. These graphs are more space efficient, but the data labels can be harder to read. The labels can also get crowded and start overlapping when categories have small number of observations.
+
+One issue with stacked bars when we do *not* use data labels is that it becomes difficult to see which differences between the size of two bars that are on top of the others (in this case the difference between male passengers in the first and second classes would be hard to see if the number was not included).
+
+![](images/clipboard-3039759823.png){width="401"}
+
+#### 100% stacked bars {.unnumbered}
+
+100% stacked bars actually allow you to reshape the bars by shaping them based on percentages, while still allowing you to show the count as the data label (unless you are working with aggregated data already in the form of percentages, then the data label would also show percentages).
+
+![](images/clipboard-2291528055.png){width="395"}
+
+#### Adding a third variable {.unnumbered}
+
+Sometimes, you may wish to add a third categorical variable in the mix. This is possible, as in the example below showing, for each passenger class, the number of passenger of each sex that survived or died.
+
+![](images/clipboard-2053308833.png){width="533"}
+
+Here again, we can use stacked bars, however we can see that in some cases the numbers are small and overlap with the axes and are a bit harder to read. This is still a nice way to visualize the relationship between the three categorical variables (sex, survived, and passenger class).
+
+![](images/clipboard-119899320.png){width="504"}
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f964c1cc-09e0-46e5-9033-b2250135deb6&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing multiple categorical variables">
+
+</iframe>
+
+### Two numerical variables
+
+#### Scatterplot {.unnumbered}
+
+The go to graph when dealing with two numerical variables is the scatterplot, which displays each observation as a dot on the graph situated at coordinates determined by the two numerical variables. In the example below, we plotted the relationship between age and ticket fare. We also added a linear trend line and the R^2^ to help determine the direction and strength of the relationship between the two. Since the red line has a positive slope (it goes up as age and ticket fare increase, we can quickly see that the relationship is positive, and the low R^2^ value of 0.0318 tells confirms that the relationship is not strong. This is generally teh case when the dots do not seem to follow a regular pattern and are scattered all over and away from the trend line.
+
+![](images/clipboard-301519945.png){width="397"}
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b2de025c-a4dd-4c8a-85f0-b225013df747&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing the relationship between numerical variables">
+
+</iframe>
+
+### A numerical and a categorical variables
+
+When dealing with a numerical and a categorical variables, we have two choices... we can produce a panel of histograms (one for each possible value of the categorical variable) or make a graph with multiple box plots (one for each value of the categorical variable).
+
+The example below show a **panel of three histograms** (one for each passenger class) with the age distribution of Titanic passengers. This works pretty well, although it's hard to see if there is a difference between the distribution for the second and third class. Another issue is that if that if we are working with a categorical variable with a lot of possible values, the amount of space needed to visualize each distribution may quickly become an issue.
+
+![](images/clipboard-4224568966.png)
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae9be6a8-bd49-4bca-8093-b2250145eff7&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Visualizing the relationship between a categorical and a numerical variable.">
+
+</iframe>
+
+#### Box plots series {.unnumbered}
+
+The two problems with histogram panels (the amount of space they take and the challenge in seeing differences) make the **series of box plots** an interesting alternative. As you can see, the example below is much more space efficient, and we can clearly see that the third class passengers tend to be younger then the second class passengers, who tend to be significantly younger than first class passengers. While they may not be the most popular visualization methods, box plots are a very clear and efficient way of visualizing distributions of a numerical variable for different groups.
+
+![](images/clipboard-2339486616.png){width="387"}
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=abae6774-caac-4496-b0ff-b225014c1e0e&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Making a graph with multiple box plots">
+
+</iframe>
+
+### Timelines
+
+Finally, **line graphs** are preferred when one of the variable is a temporal unit (a date, a year, a day, etc.). In the example below, we observe the trend of the number of publications in the Canadian Journal of Administrative Sciences over four decades.
+
+![](images/clipboard-1514404511.png){width="469"}
+
+We can add multiple trends to in the same graph too. For example, the graph below shows the average number of institutions and countries listed on the publications in the journals, which indicate an increase in interinstitutional and international collaboration in the field over time.
+
+![](images/clipboard-3825569185.png){width="507"}
+
+That's it, now you know how approach the visualization of multiple variables at once to show the relationship between them. The section below contains a series of videos demonstrating how to construct the graphs that you have encountered in this chapter (and a few more).
+
+##### Demo {.unnumbered}
+
+<iframe src="https://dal.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=1cc26b1b-3d28-4afc-9650-b225017ed350&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Line graphs">
+
+</iframe>
+
+## Predicting a variable based on multiple other variables
+
+### Logistic regression
+
+Regression is a method used to determine the relationship between a dependent variable (the variable we want to predict) and one or more independent variables (the predictors available to make the prediction). There are a wide variety of regression methods, but in this course we will learn two: the **logistic regression**, which is used to predict a **categorical dependent variable**, and the **linear regression**, which is used to predict a **continuous dependent variable**.
+
+In this chapter, we focus on the **binomial** logistic regression (we will refer to it as logistic regression or simply regression in the rest of the chapter), which means that our dependent variable is dichotomous (e.g., yes or no, pass vs fail). Ordinal logistic regression (for ordinal dependent variables) and multinominal logistic regression (for variables with more than 2 categories) are beyond the scope of the course.
+
+#### Logistic function {.unnumbered}
+
+Logistic regression is called this way because it fits a **logistic function** (an s-shaped curve) to the data to model the relationship between the predictors and a categorical outcome. More specifically, it models the **probability** of an outcome (the dependent categorical variable) based on the value of the independent variable. Here's an example:
+
+![](images/logistic_function.jpg){width="515"}
+
+The model gives us, for each value of the independent variable (Copper content, in this example), the probability (odds) that the painting is an original. The point where the logistic curve reaches .5 (50%) on the y-axis is where the cut-off happens: the model predicts that any painting with a copper content above that point is an original.
+
+#### Odds {.unnumbered}
+
+We can convert probabilities into odds by dividing the probability *p* of the one outcome by the probability of the other outcome, so because there are only two outcomes, then `odds = p / 1-p`. For example, say we have a bag of 10 balls, 2 red and 8 black. If we draw a ball at random, we have a 8/10 = 80% chance of drawing a black ball. The odds of drawing a black ball are thus 0.8/(1-0.8) = 0.8/0.2 = **4**. There is a 4 to 1 chance that we'll draw a black ball over a red one.
+
+However, the output of the logistic regression model is the natural logarithm of the odds: `log odds = ln(p/1-p)`, so it is not so easily interpreted.
+
+#### Logistic regression example {.unnumbered}
+
+Here we will use the Titanic passenger dataset.
+
+```{r 10.2, echo=FALSE}
+library(tidyverse)
+data <- read_xlsx("files/titanic.xlsx")
+head(data) %>% 
+  kbl()
+```
+
+##### Choose a set of predictors (independent variables) {.unnumbered}
+
+Looking at our dataset, we can identify some variables that we think might affect the probability that a passenger survived. In our model, we will choose **Sex, Age, Pclass, and Fare.**. We can now remove the variables that we don't need in our model by selecting the ones we want to keep.
+
+```{r echo=FALSE}
+data <- data %>% 
+  select(survived, sex, age, fare, pclass)
+
+head(data) %>% 
+  kbl()
+```
+
+##### Dealing with missing data {.unnumbered}
+
+We can count the number of empty cells for each variable to see if some data is missing. We do this for each variable in the set.
+
+```{r 10.4, echo=FALSE}
+tibble(variable = c('survived','sex','age','fare','pclass'),
+       missing_values = c(sum(is.na(data$survived)),sum(is.na(data$sex)),sum(is.na(data$age)),sum(is.na(data$fare)),sum(is.na(data$pclass)))) %>% 
+  kbl()
+
+```
+
+Once we have identified that some columns contain missing data, we have two choices. We do nothing and these cases will be left out of the regression model, or we fill the empty cells in some way (this is called imputation). We have many missing values (177 out of 891 observations is quite large) and leaving out these observations could negatively affect the performance of our regression model. Therefore, we will assign the average age for all 177 missing age values, which is a typical *imputation mechanism* to replace missing values with an estimate based on the available data.
+
+```{r 10.5, echo = FALSE}
+## We use na.rm = TRUE otherwise mean(Age) would return NA due to the missing values.
+data <- data %>% 
+  mutate(age = replace_na(age, round(mean(age, na.rm=TRUE),0)))
+
+head(data) %>% 
+  kbl()
+```
+
+##### Visualizing the relationships {.unnumbered}
+
+To explore the relationship between variables. we can visualize the distribution of independent variable values for each value of the dependent variable. We can use box plots for continuous independent variables and bar charts for the categorical variables.
+
+```{r 10.6, message=FALSE, warning=FALSE, echo=FALSE}
+data_untidy <- gather(data, key = "Variable", value = "Value",
+                        -survived) ## Creates key-value pairs for all columns except Survive
+head(data_untidy) %>% 
+  kbl()
+```
+
+Let's create box plots for all our independent variables and outcome.
+
+```{r 10.7, echo=FALSE, warning=FALSE}
+data_untidy %>% 
+  mutate(survived = as.character(survived)) %>% 
+  filter(Variable != "pclass" & Variable != "sex") %>%
+  ggplot(aes(survived, as.numeric(Value))) +
+  facet_wrap(~ Variable, scales = "free_y") +
+  geom_boxplot(draw_quantiles = c(0.25, 0.5, 0.75)) +
+  ylab("")
+```
+
+And let's make bar charts for our categorical independent variables.
+
+```{r 10.8, echo=FALSE, warning=FALSE}
+data_untidy %>%
+  mutate(survived = as.character(survived)) %>% 
+  filter(Variable == "pclass" | Variable == "sex") %>%
+  ggplot(aes(Value, fill = survived)) +
+  facet_wrap(~ Variable, scales = "free_x") +
+  geom_bar(position = "fill") +
+  ylab("Percentage") +
+  scale_y_continuous(labels = scales::percent)
+
+```
+
+##### Creating the model {.unnumbered}
+
+The following code generates our logistic regression model using the `glm()` function (glm stands for general linear model). The syntax is `gml(predicted variable ~ predictor1 + predictor2 + preductor3..., data, family)` where data is our dataset and the family is the type of regression model we want to create. In our case, the family is **binomial**.
+
+```{r 10.9, echo=FALSE}
+model <- glm(survived ~ sex + age + fare + pclass,
+             data = data,
+             family = binomial)
+```
+
+##### Model summary {.unnumbered}
+
+Now that we have created our model, we can look at the coefficients (estimates) which tell us about the relationship between our predictors and the predicted variable. The **Pr(\>\|z\|)** column represents the **p-value**, which determines whether the effect observed is statistically significant. It is common to use 0.05 as the threshold for statistical significance, so all the effects in our model are statistically significant (p \< 0.05) except for the fare (p \> 0.05).
+
+```{r 10.10, echo=FALSE}
+summary(model)$coefficients %>% 
+  kbl()
+```
+
+##### Converting log odds to odds ratio {.unnumbered}
+
+As we mentioned above, the coefficients produced by the model are log odds, which are difficult to interpret. We can convert them to odds ratio, which are easier to interpret. We can now see that according to our model, female passengers were 12 times more likely to survive than male passengers.
+
+```{r 10.11, echo=FALSE}
+bind_rows(exp(model$coefficients)) %>% 
+  kbl()
+```
+
+##### Adding confidence intervals {.unnumbered}
+
+The confidence intervals are an estimation of the precision odds ratio. In the example below, We use a 95% confidence interval which means that we are 95% of our estimated coefficients for a predictor are between the 2.5^th^ percentile and the 97.5th percentile (the two values reported in the tables). If we were using a sample to make claims about a population, which does not really apply here due to the unique case of the titanic, we could then think of the confidence interval as indicating a 95% probability that the true coefficient for the entire population is situated in between the two values.
+
+```{r 10.12,  message=FALSE, warning=FALSE, echo=FALSE}
+odds_ratio <- cbind(odds_ratio = exp(model$coefficients), 
+                    exp(confint(model, level = .95)))
+
+odds_ratio %>% 
+  kbl()
+```
+
+##### Model predictions {.unnumbered}
+
+First we add to our data the probability that the passenger survived as calculated by the model.
+
+```{r 10.13, echo=FALSE}
+
+data <- tibble(head(data, 1308),
+               probability = model$fitted.values)
+
+head(data) %>% 
+  kbl()
+```
+
+Then we obtain the prediction by creating a new variable called prediction and setting the value to 1 if the calculated probability of survival is greater than 50% and 0 otherwise.
+
+```{r 10.14, echo=FALSE}
+data <- data %>% 
+  mutate(prediction = if_else(probability > 0.5,1,0))
+
+head(data) %>% 
+  kbl()
+```
+
+Then we can print a table comparing the model's prediction to the real data.
+
+```{r 10.15, echo=FALSE}
+table(survived = data$survived, 
+      predicted = data$prediction)
+```
+
+Finally, we can calculate how well our model fits the data (how good was it at predicting the independent variable) by testing, for each passenger in the dataset, whether the prediction matched the actual outcome for that passenger. Because that test gives TRUE (1) or FALSE (0) for every row of the dataset, calculating the mean of the test results gives us the percentage of correct predictions, which in our case is about 78%.
+
+### Linear regression
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(ggpubr)
+library(nycflights13)
+library(ggpmisc)
+```
+
+Linear regression uses a straight line to model the relationship between categorical or numerical predictors (independent variables) and a numerical predicted value (dependent variable). for a single predictor variable, the formula for the prediction is:
+
+$$ y = intercept + slope × x $$
+
+In statistical terms, the same formula is written like this:
+
+$$ y = β_0 + βx $$
+
+And if we have multiple independent variables, the formula becomes:
+
+$$ y = β_0 + β_1x_1 + β_2x_2 .... β_nx_n $$
+
+To determine how well the model fits the data (how well does `x` predict `y`. the linear model uses the square of the residuals (**r^2^**). The residuals are the difference between the predicted values and the real data, measured by the vertical distance between the line and the data points. Here's a figure from @rhys2020 to help you visualize this.
+
+![](images/linear_regression_1.jpg){style="text-align:center" fig-align="center" width="343"}
+
+We can see in this figure that the intercept is where the line crosses the y-axis. The slope is calculated by dividing the difference in the predicted value of y by the difference in the value of x.
+
+When working with categorical predictors, the intercept is the mean value of the base category, and the slope is the difference between the means of each category. Here's an example taken again from @rhys2020.
+
+![](images/linear_regression_2.jpg){style="text-align:center" fig-align="center" width="343"}
+
+#### Building a linear regression model {.unnumbered}
+
+Let's use on-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013 to try to build a model that will predicted delayed arrival. For this we will use the flights dataset included in the nycflights13 package. We will consider the following variables in our model:
+
+-   origin: airport of departure (JFK, LGA, EWR)
+
+-   carrier (we will only compare United Airlines - UA, and American Airlines - AA)
+
+-   distance: flight distance in miles.
+
+-   dep_delay: delay of departure in minutes
+
+-   arr_delay: delay of arrival in minutes (this is our independent variable)
+
+```{r echo=FALSE}
+library(nycflights13)
+data <- flights %>% 
+  filter(carrier %in% c("UA", "AA")) %>% 
+  select(origin, carrier, distance, dep_delay, arr_delay) %>% 
+  mutate(origin = as_factor(origin),
+         carrier = as_factor(carrier)) %>% 
+  drop_na()
+
+head(data) %>% 
+  kbl()
+```
+
+#### Visualizing the relationship between the variables {.unnumbered}
+
+We can explore the relationship between our independent variables and our independent variable. How we will approach this depends on the type of independent variables we have.
+
+##### Continuous independent variables {.unnumbered}
+
+For continuous independent variables, we do scatter plots with a fitted regression line. We can see in the plot below that there appears to be a linear relationship between the delay at departure and the delay at arrival (which is of course not so surprising). We can display the slope and the **coefficient of determination** **(R^2^)** of the regression line.
+
+::: callout-note
+##### The coefficient of determination (R^2^)
+
+The coefficient of determination should not be mistaken for the square of residuals, even thought they have the same notation (R^~2~^). The coefficient of determination tells us how well the regression line fits the data. It's value ranges from 0 to 1. An R^2^ of 0 means that the linear regression model doesn't predict your dependent variable any better than just using the average, and a value of 1 indicates that the model perfectly predicts the exact value of the dependent variable.
+
+Another way to interpret the coefficient of determination is to consider it as a measure of the variation in the dependent variable is explained (or determined) by the model. For instance, a R^2^ of 0.80 indicates that 80% of the variation in the dependent variable is explained by the model.
+:::
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+data %>%
+  ggplot() +
+  aes(dep_delay, arr_delay) + 
+  stat_poly_line() +
+  stat_poly_eq(aes(label = paste(after_stat(eq.label),
+                                 after_stat(rr.label), sep = "*\", \"*"))) +
+  geom_point() + 
+  geom_smooth(method="lm")
+```
+
+We can see that the the linear regression model using considering only the departure delay explains 79% of the variation in the arrival delay. That makes dep_delay a good predictor in our model. On the other hand, the flight distance explains less then 1% of the arrival delays, as we can see in the next graph. This makes distance a very weak predictor of arrival delays.
+
+###### Distance {.unnumbered}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+data %>%
+  ggplot() +
+  aes(dep_delay, distance) + 
+  stat_poly_line() +
+  stat_poly_eq(aes(label = paste(after_stat(eq.label),
+                                 after_stat(rr.label), sep = "*\", \"*"))) +
+  geom_point() + 
+  geom_smooth(method="lm")
+```
+
+##### Categorical independent variables {.unnumbered}
+
+To test the linear relationship between a categorical independent variable and the dependent variable, we can use a similar approach: a scatterplot with a linear regression line. However, to do this we need to **transform the categorical variable into a numeric variable** (in the graph, you will see the airports represented by a number). Also, When dealing with factors variables with more than two categories (factors with more than 2 levels), we need to choose a base level to which we will compare each of the other levels. In other words, all our graphs should display only two categories.
+
+###### Carrier {.unnumbered}
+
+The plot below shows that there is hardly any relationship between the carrier and the arrival delay, with the variable explaining less than 1% of the variation in arrival delays.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+data %>%
+  mutate(carrier = as.numeric(carrier)) %>%
+  ggplot() +
+  aes(carrier, arr_delay) + 
+  stat_poly_line() +
+  stat_poly_eq(aes(label = paste(after_stat(eq.label),
+                                 after_stat(rr.label), sep = "*\", \"*"))) +
+  scale_x_continuous(breaks = c(1,2)) +
+  geom_jitter(size = 0.5) +
+  geom_smooth(method="lm") 
+```
+
+###### Origin {.unnumbered}
+
+Since origin has three levels (EWR, LGA and JFK), we want to plot choose a base level and compare each other level to this one. So let's choose level 1 (EWR) as our base and compare it with level 2 (LGA).
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+data %>%
+  mutate(origin = as.numeric(origin)) %>%
+  filter(origin %in% c(1,2)) %>% 
+  ggplot() +
+  aes(origin, arr_delay) + 
+  stat_poly_line() +
+  stat_poly_eq(aes(label = paste(after_stat(eq.label),
+                                 after_stat(rr.label), sep = "*\", \"*"))) +
+  scale_x_continuous(breaks = c(1,2)) +
+  geom_jitter(size = 0.5) +
+  geom_smooth(method="lm")
+```
+
+And then we compare airport 1 (EWR) with aiport 3 (JFK).
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+data %>%
+  mutate(origin = as.numeric(origin)) %>%
+  filter(origin %in% c(1,3)) %>% 
+  ggplot() +
+  aes(origin, arr_delay) + 
+  stat_poly_line() +
+  stat_poly_eq(aes(label = paste(after_stat(eq.label),
+  after_stat(rr.label), sep = "*\", \"*"))) +
+  scale_x_continuous(breaks = c(1,3)) +
+  geom_jitter(size = 0.5) +
+  geom_smooth(method="lm")
+```
+
+Again, we can see that the airport from which the flight takes off explains less than 1% of the arrival delays and is therefore a poor predictor.
+
+#### Building the multiple linear regression model {.unnumbered}
+
+The process to build the model is the same as the one we used for the logistic regression in the previous chapter. In fact, the process is simpler here because we do not need to convert the coefficient into odds ratios to make them easier to interpret. We can build the model that predicts delay at arrival based on the distance of the flight, the carrier and the origin (we'll leave the delay of departure out of the model for now).
+
+```{r echo=FALSE}
+model <- lm(arr_delay ~ distance + carrier + origin, 
+            data = data)
+```
+
+```{r echo=FALSE}
+x <- summary(model)
+
+summary(model)$coefficients %>% 
+  kbl()
+
+tibble(r.squared = x$r.squared, adj.r.squared = x$adj.r.squared) %>% 
+  kbl()
+
+```
+
+The estimate coefficient represents the slope of the linear trend line for each predictor, so we can plug these values into our linear equation.
+
+$$ ArrDelay = 4.63 - 0.00distance - 3.67AA - 0.72LGA + 1.67JFK $$
+
+We can see that most coefficients are statistically significant, which appears to indicate that they are good predictors, but let's hold on for a minute before drawing too hasty conclusions. Look at the Adjusted R-squared (r^2^). It has a value of 0.001663, which is extremely small and indicate that the model explains less than 1% of the variance in delays. In other words, our model does **not** at all allow us to make predictions about delays. How can almost all predictors in a model be statistically significant and still be very bad predictors?
+
+::: callout-caution
+##### Beware of too large sample
+
+Statistically significant predictors in a model with low predictive value mostly occur when our data set or sample is too large. What's a good sample size? a good rule of thumb is 10% of the total observations, with at least ten observations per variable in the model but no more than 1000 observations in total. Let's do this again with a sample of 500 observations. We can use the create a sample of a specific size that will be used in the `lm()` function.
+:::
+
+```{r echo=FALSE}
+model <- lm(arr_delay ~ distance + carrier + origin, 
+            data = sample_n(data, 500))
+
+x <- summary(model)
+
+summary(model)$coefficients %>% 
+  kbl()
+
+tibble(r.squared = x$r.squared, adj.r.squared = x$adj.r.squared) %>% 
+  kbl()
+
+```
+
+We see that the model still does a terrible job at predicting arrival delays, and that none of the predictors are statistically significant (at the p \< 0.05 level).
+
+##### Adding departure delay to the model {.unnumbered}
+
+Finally, let's add the departure delay to the model. We've seen in the figure above, in which we plotted the arrival delay against the departure delay, that our data points seemed to follow our trend line, so we can expect that adding this predictor will improve our model.
+
+```{r echo=FALSE}
+model <- lm(arr_delay ~ distance + carrier + origin + dep_delay, 
+            data = sample_n(data, 500))
+
+summary<- summary(model)
+
+summary$coefficients %>% 
+  kbl()
+
+
+tibble(r.squared = summary$r.squared, adj.r.squared = summary$adj.r.squared) %>% 
+  kbl()
+```
+
+We can see that when we consider the delay in the departure, we can more accurately predict the delay at arrival, with around 80% of the variance explained by our model!
+
+## References
