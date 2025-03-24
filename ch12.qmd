@@ -4,5 +4,14 @@ bibliography: references.bib
 
 # Principles of effective communication of research
 
-Under construction...
+## Research outcomes
 
+... upcoming.
+
+## Knowledge mobilization plan
+
+The (not so) simple act of completing a research project does not guarantee that it will reach its potential outcomes. For this to happen, your work needs to reach the places where and the people for who it can have an impact. The purpose of the knowledge mobilization plan is to provide details on the different **outputs** (e.g., research article, policy brief, blog post, podcast) and **events** (e.g., round table, seminar, workshop) that you will produce, organize, or take part to reach your **audiences** (e.g., your peers, researchers in other fields, practitioners, policymakers, members of the public, etc.)**.** As much as possible and relevant, your knowledge mobilization plan should provide details on the specific **channels** that you will use to share your outputs (e.g., what journal specifically, which blog platform, what conference, etc.).
+
+You should also make sure to clearly link outputs, activities and audiences in your plan. This means that you should avoid providing a list of audiences, a list of outputs, and a list of activities one after the other. Instead, describe different startegies/activities that each include one or multiple specific target audiences, outputs and/or activities.
+
+Finally, you should make sure to provide, when possible, a **succint** justification for your choices. Think of this as the why? Why is this an important audience, why are these the best output format and channels to reach them?
