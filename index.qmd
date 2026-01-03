@@ -5,8 +5,6 @@ This book is a work-in-progress intended to support the course INFO5520 - Resear
 ::: callout-important
 ## Important note
 
-Winter 2025 will be the first iteration of this new version of the course, which means that:
-
 -   Most content is not yet available and will be uploaded over the course of the semester.
 -   Depending on time constraints, some chapters may end up being very briefs, or include only a set of slides used for in-class presentations.
 
@@ -21,17 +19,17 @@ This book can be accessed directly from your browser (without going through Brig
 
 | Week | Section | Topic |
 |:--:|----|----|
-| 1 | Introduction | Course overview, key concepts in research |
-| 2 | Conceptual phase | Literature review |
-| 3 | Conceptual phase | Research problems, purpose, and questions |
-| 4 | Methodological phase | Methodological designs, research ethics |
-| 5 | Methodological phase | Sampling |
-| 6 | Methodological phase | Defining, operationalizing and measuring concepts |
-| 7 | Methodological phase | Qualitative data collection |
-| 8 | Methodological phase | Quantitative data collection |
-| 9 | Analytical phase | Qualitative data analysis |
-| 10 | Analytical phase | Descriptive and inferential statistics |
-| 11 | Reporting phase | Principle of effective written, visual and oral presentation of research. |
+| 1 | Conceptual phase | Course overview; What is research (ch1); Literature review (ch2) |
+| 2 | Conceptual phase | Research problems, purpose, and questions (ch3) |
+| 3 | Methodological phase | Research designs (ch4), research ethics (ch5) |
+| 4 | Methodological phase | Sampling (ch6); Defining, operationalizing and measuring concepts (ch7) |
+| 5 | Methodological phase | Qualitative data collection (ch8) |
+| 6 | Methodological phase | Quantitative data collection (ch9) |
+| 7 | Analytical phase | Qualitative data analysis (ch10) |
+| 8 | Analytical phase | Descriptive and inferential statistics (ch11) |
+| 9 | Reporting phase | Knowledge mobilization (ch12) |
+| 10 | Reporting phase | Working session |
+| 11 | Reporting phase | Group presentations |
 | 12 | Reporting phase | Group presentations |
 
 ::: callout-important

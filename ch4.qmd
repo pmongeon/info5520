@@ -2,7 +2,7 @@
 bibliography: references.bib
 ---
 
-# Methodological designs
+# Research designs
 
 ## Slides
 
