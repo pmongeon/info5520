@@ -2,7 +2,7 @@
 bibliography: references.bib
 ---
 
-# Knowledge mobilization
+# Principles of effective communication of research
 
 ## Knowledge mobilization plan
 
