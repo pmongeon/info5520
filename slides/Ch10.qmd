@@ -1,0 +1,56 @@
+---
+title: "The analytical phase"
+subtitle: "Part 1: Qualitative data analysis"
+format: 
+  revealjs:
+#    smaller: true
+    scrollable: true
+    slide-number: true
+    show-slide-number: all
+    show-notes: false
+    chalkboard: true
+---
+
+## Plan
+
+-   The qualitative data analysis process
+-   Developing a codebook
+-   Coding
+-   Intercoder reliability
+-   Drawing insights from qualitative analysis
+
+## The qualitative data analysis process
+
+1.  Creating a preliminary codebook (optional, deductive approach)
+2.  Segmenting the data.
+3.  First cycle coding
+4.  Developping/expanding/finalizing codebook.
+5.  Second cycle coding.
+6.  Intercoder or intracoder reliability testing (not always necessary).
+7.  Repeating step 3-4-5-6 until stabilization/agreement.
+8.  Drawing conclusions.
+
+# Developing a code book
+
+## Coding approaches
+
+-   **Descriptive coding:** using codes (usually nouns) that describe what the segment of data is about, its topic. (e.g., “businesses”, “books”, “activities”, “colleagues”).
+
+-   **In Vivo coding:** using the words used by participants as codes.
+
+-   **Process coding:** using active words (ending in “ing”) to code for processes and actions (e.g., “spending time with each other”, “listening”, “taking the lead”).
+
+-   **Concept coding:** codes that represent higher level meaning, which is not explicit in the data. (e.g., “existential dread”, “the American dream”)
+
+## Inductive vs Deductive coding
+
+-   **Inductive**: Start with the data no preliminary codebook
+
+-   **deductive**: Start with a pre-established codebook - apply to the data.
+
+## Tools for coding {.smaller}
+
+-   Nvivo
+-   QDA Miner
+-   LibreQDA
+-   Excel

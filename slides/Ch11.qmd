@@ -1,0 +1,148 @@
+---
+title: "Knowledge Mobilization"
+subtitle: "INFO5520 - Research methods"
+date: "2026-03-11"
+format:
+  revealjs:
+    theme: [default]
+    slide-number: true
+    toc: false
+    incremental: false
+    transition: slide
+    chalkboard: true
+    code-overflow: wrap
+    smaller: true 
+    footer: "INFO5520 - Research Methods"
+execute:
+  echo: false
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Welcome & Agenda
+
+------------------------------------------------------------------------
+
+## Knowledge Mobilization (KMb)
+
+> Purposeful activities that facilitate the **creation, sharing, uptake,
+> and use** of research knowledge to inform **practice, policy, systems,
+> and the public good**.
+
+Can be two-way (not just pushing information) and start at at the design
+stage (not just at the end)
+
+------------------------------------------------------------------------
+
+## KMb Fits in the Research Cycle
+
+1.  **Co-define questions** with stakeholders
+2.  **Co-design methods & materials** (surveys, protocols, instruments)
+3.  **Sense-making** during analysis (member checks, workshops)
+4.  **Share & adapt** products to audience context
+5.  **Evaluate & iterate** (what changed? for whom?)
+
+::: notes
+Emphasize iteration and relational work; it’s not a single deliverable.
+:::
+
+------------------------------------------------------------------------
+
+## Who are your audiences
+
+-   Other researchers
+-   Practitioners: librarians, archivists, records managers
+-   Decision/policy makers: library boards, university admins, funders,
+    government
+-   Organizations: professional associations, media, NGOs
+-   Communities: patrons, underrepresented groups, Indigenous
+    communities
+
+Think of a few stakeholders for your project and why your project might
+matter to them.
+
+------------------------------------------------------------------------
+
+## Knowledge mobilization plan
+
+-   Objectives
+-   Audiences & needs
+-   Channels/products
+-   Timeline & responsibilities
+-   Resources & budget
+-   Evaluation
+
+------------------------------------------------------------------------
+
+## Matching Audiences to Channels
+
+| Audience | Need/Interest | Formats | Channels |
+|------------------|------------------|------------------|------------------|
+| Public library directors | Program or budget choices | 1–2 page brief, dashboard snapshot | Email via association list, webinar |
+| Frontline librarians | Implementation guidance | Checklist, how-to, workshop | In-service training, conference session |
+| Policy makers | High-level options | Policy note with options/risks | Meetings, stakeholder roundtables |
+| Researchers | Methods & evidence | Article, preprint, dataset/code | OA journal, repository (e.g., OSF, Dataverse) |
+| Communities | Local relevance | Plain-language summary, zine, posters | Community events, social media |
+
+------------------------------------------------------------------------
+
+## Examples of formats
+
+-   Plain-language summary
+-   Policy brief
+-   Slide deck
+-   Podcast
+-   Video
+-   Infographic
+-   Workshop
+-   Dataset
+-   Code
+-   Preprint
+-   Blogpost
+-   Interactive dashboard
+
+------------------------------------------------------------------------
+
+## Evaluation
+
+-   **Reach**: views, downloads, attendees, media hits, social shares
+-   **Usefulness**: stakeholder feedback, satisfaction, intention to use
+-   **Uptake/influcence**: citations in policy docs, protocol changes,
+    new pilots
+-   **Outcomes**: measured changes, cost/time savings
+
+**How to collect the data?** surveys, interviews, metrics, etc.
+
+------------------------------------------------------------------------
+
+## Example
+
+**Study**: Impact of extended weekend hours on student success in an
+academic library.
+
+-   **Audiences**: Provost, library staff, student union
+-   **Products**: 2-page decision brief (Provost); checklist & training
+    session (staff); plain-language summary & infographic (students)
+-   **Timeline**: Interim results mid-term; final at semester end;
+    follow-up at 6 months
+-   **Evaluation**: Brief downloads; policy memo citation; attendance at
+    staff session; change in gate counts & student feedback
+
+------------------------------------------------------------------------
+
+## Another example
+
+**Study**: Digital literacy program effectiveness for older adults.
+
+-   **Audiences**: City council, program coordinators, community centers
+-   **Products**: Policy note with options; facilitator guide; community
+    posters (large-font)
+-   **Equity**: Transportation stipends, large-print materials,
+    translation
+-   **Evaluation**: Pre/post skill measures; adoption by 3 centers;
+    testimonials
+
+------------------------------------------------------------------------
+
+## 
